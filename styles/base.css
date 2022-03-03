@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+@font-face {
+  font-family: 'Futura Font';
+  src: url('../font/VNFFutura\ BB\ Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Futura Font', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ul li {
+  list-style: none;
+}

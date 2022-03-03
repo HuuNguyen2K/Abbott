@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Immunity</title>
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/immunity.css" />
+  </head>
+  <body>
+    <div style="height: 100vh" id="video"></div>
+    <script>
+      // let getLength = null
+      const initVideo = () => {
+        const videoEle = document.querySelector('#video')
+        const video = document.createElement('video')
+        const source = document.createElement('source')
+
+        source.setAttribute(
+          'src',
+          'https://media.w3.org/2010/05/sintel/trailer_hd.mp4'
+        )
+
+        source.setAttribute('type', 'video/mp4')
+        video.width = '100%'
+        video.appendChild(source)
+        videoEle.appendChild(video)
+        video.play()
+        video.addEventListener('ended', () => video.remove())
+      }
+
+      window.onload = () => {
+        initVideo()
+      }
+    </script>
+  </body>
+</html>

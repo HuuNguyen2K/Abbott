@@ -1,0 +1,209 @@
+:root {
+  --main-color: #9e0966;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-120%);
+  }
+}
+
+body {
+  overflow-y: hidden;
+  position: relative;
+}
+
+#video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .room {
+  position: absolute;
+  top: 338px;
+  z-index: 1;
+  font-size: 23px;
+  text-shadow: 2px 2px #c3c3c3;
+  color: var(--main-color);
+}
+
+.container .room.active,
+.container .room:hover {
+  color: #ffea6c;
+  text-shadow: 0px 0px 30px #fdec6e;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.container .room.room-1 {
+  left: 10%;
+}
+
+.container .room.room-2 {
+  left: 31.5%;
+  top: 326px;
+  text-align: center;
+}
+
+.container .room.room-3 {
+  left: 57%;
+}
+
+.container .room.room-4 {
+  left: 78%;
+}
+
+.container .invite-choice {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container .invite-choice img {
+  width: 380px;
+}
+
+.container .text {
+  /* width: 1380px; */
+  width: 89.6%;
+  position: absolute;
+  top: 18%;
+  left: 65px;
+  font-size: 25px;
+  overflow: hidden;
+}
+
+.container .text span {
+  display: block;
+  white-space: nowrap;
+  color: #fff;
+  transform: translateX(100%);
+  animation: move linear 10s infinite;
+  text-shadow: 2px 2px #5e5e5e;
+}
+
+.container .burger {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.container .burger div {
+  border-radius: 20px;
+  height: 8px;
+  width: 50px;
+  background-color: var(--main-color);
+  margin: 5px;
+}
+
+.burger ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+}
+
+.burger.toggle ul {
+  max-height: 500px;
+}
+
+.burger ul li a {
+  padding: 5px;
+  display: block;
+  font-size: 15px;
+  background-color: var(--main-color);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.burger ul li a:hover {
+  background-color: #fff;
+  color: var(--main-color);
+}
+
+@keyframes burger_none {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-500%);
+  }
+}
+
+.burger > div {
+  transition: transform ease-in 0.2s;
+}
+
+.toggle div:nth-child(1) {
+  transform: rotate(-45deg) translate(-12px, 6.25px);
+}
+
+.toggle div:nth-child(2) {
+  animation: burger_none ease-in 0.4s forwards;
+}
+
+.toggle div:nth-child(3) {
+  transform: rotate(45deg) translate(-12px, -6.25px);
+}
+
+@media screen and (max-width: 1440px) {
+  .container .room.room-2 {
+    left: 30.4%;
+  }
+
+  .container .text {
+    top: 19%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .container {
+    min-width: 1350px;
+    overflow-y: hidden;
+  }
+
+  .container .room {
+    top: 338px;
+  }
+
+  .container .room.room-2 {
+    top: 320px;
+  }
+
+  .container .invite-choice {
+    top: 72%;
+  }
+
+  .container .text {
+    width: 1218px;
+    position: absolute;
+    top: 20%;
+    left: 55px;
+    font-size: 30px;
+    overflow: hidden;
+  }
+}

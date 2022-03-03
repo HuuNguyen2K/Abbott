@@ -1,0 +1,9 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+video {
+  width: 100% !important;
+  height: auto;
+}
