@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information</title>
+    <link rel="stylesheet" href="./styles/base.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="login-form">
+        <div>Vui lòng nhập tên hiển thị</div>
+        <div>
+          <span>Họ :</span>
+          <input id="firstName" name="firstName" type="text" />
+        </div>
+        <div>
+          <span>Tên :</span>
+          <input id="lastName" name="lastName" type="text" />
+        </div>
+        <div>
+          <label for="img">Chọn ảnh đại diện (không bắt buộc)</label>
+          <input
+            style="visibility: hidden"
+            type="file"
+            accept="image/*"
+            name="img"
+            id="img"
+          />
+          <img id="blah" src="#" alt="your image" />
+        </div>
+        <button type="submit">Hoàn tất</button>
+      </form>
+    </div>
+    <script>
+      const imgInp = document.querySelector('#blah')
+      imgInp.onchange = (evt) => {
+        const [file] = imgInp.files
+        if (file) {
+          blah.src = URL.createObjectURL(file)
+          console.log(blah.src)
+        }
+      }
+    </script>
+  </body>
+</html>

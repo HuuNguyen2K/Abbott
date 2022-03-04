@@ -21,6 +21,8 @@ const login = () => {
 
     console.log(idValue)
     console.log(passwordValue)
+
+    window.location.href = 'information.html'
   })
 }
 
