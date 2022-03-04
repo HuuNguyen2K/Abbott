@@ -29,7 +29,7 @@ const initVideo = () => {
     const video = document.createElement('video')
     const source = document.createElement('source')
     const container = document.querySelector('.container')
-  
+
     source.setAttribute(
       'src',
       'https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4'
