@@ -1,31 +1,11 @@
-const timerColorChange = () => {
-  const TIMTEWAIT = 3
-  const TIMEBLINK = 0.5
-  let count = 0
-  const text = document.querySelectorAll('.r-a')
-  setInterval(() => {
-    count += 0.1
-    if (count >= TIMTEWAIT + TIMEBLINK) count = 0
-    if (count >= TIMTEWAIT) {
-      text.forEach((i) => {
-        if (!i.classList.contains('active')) i.classList.add('active')
-      })
-    } else {
-      text.forEach((i) => {
-        if (i.classList.contains('active')) i.classList.remove('active')
-      })
-    }
-  }, 100)
-}
-
 const initVideo = () => {
   const videoEle = document.querySelector('#video')
 
   const search = window.location.search.substring(1)
   const params = new URLSearchParams(search)
-  const firstTme = params.get('firstTime')
+  const firstTime = params.get('firstTime')
 
-  if (firstTme === 'true') {
+  if (firstTime === 'true') {
     const video = document.createElement('video')
     const source = document.createElement('source')
     const container = document.querySelector('.container')
@@ -44,22 +24,14 @@ const initVideo = () => {
       container.style.display = 'block'
       video.remove()
       videoEle.remove()
-      window.location.href = 'lobby.html'
+      window.location.href = 'welcome.html'
     })
-
     return
   }
-
+  
   videoEle.remove()
-}
-
-const burger = () => {
-  const toggle = document.querySelector('.burger')
-  toggle.addEventListener('click', () => toggle.classList.toggle('toggle'))
 }
 
 window.onload = () => {
   initVideo()
-  timerColorChange()
-  burger()
 }
