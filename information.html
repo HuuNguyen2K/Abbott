@@ -14,34 +14,27 @@
         <div>
           <span>Họ :</span>
           <input id="firstName" name="firstName" type="text" />
+          <p id="err-firstName" style="color: red"></p>
         </div>
         <div>
           <span>Tên :</span>
           <input id="lastName" name="lastName" type="text" />
+          <p id="err-lastName" style="color: red"></p>
         </div>
         <div>
-          <label for="img">Chọn ảnh đại diện (không bắt buộc)</label>
+          <label for="imgInput">Chọn ảnh đại diện (không bắt buộc)</label>
           <input
             style="visibility: hidden"
             type="file"
             accept="image/*"
             name="img"
-            id="img"
+            id="imgInput"
           />
-          <img id="blah" src="#" alt="your image" />
+          <img width="200" id="imgPr" src="#" alt="" />
         </div>
         <button type="submit">Hoàn tất</button>
       </form>
     </div>
-    <script>
-      const imgInp = document.querySelector('#blah')
-      imgInp.onchange = (evt) => {
-        const [file] = imgInp.files
-        if (file) {
-          blah.src = URL.createObjectURL(file)
-          console.log(blah.src)
-        }
-      }
-    </script>
+    <script src="./scripts/information.js"></script>
   </body>
 </html>

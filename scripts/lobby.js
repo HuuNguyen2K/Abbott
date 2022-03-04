@@ -1,12 +1,25 @@
+const compareTimeEvent = () => {
+  fetch('../time.txt')
+    .then((response) => response.text())
+    .then((text) => {
+      const eventTime = Date.parse(new Date(text))
+
+      setInterval(() => {
+        const currentTime = Date.parse(new Date())
+        if (eventTime === currentTime) console.log(eventTime)
+      }, 1000)
+    })
+}
+
 const timerColorChange = () => {
-  const TIMTEWAIT = 3
-  const TIMEBLINK = 0.5
+  const TIME_WAIT = 3
+  const TIME_BLINK = 0.5
   let count = 0
   const text = document.querySelectorAll('.r-a')
   setInterval(() => {
     count += 0.1
-    if (count >= TIMTEWAIT + TIMEBLINK) count = 0
-    if (count >= TIMTEWAIT) {
+    if (count >= TIME_WAIT + TIME_BLINK) count = 0
+    if (count >= TIME_WAIT) {
       text.forEach((i) => {
         if (!i.classList.contains('active')) i.classList.add('active')
       })
@@ -23,9 +36,9 @@ const initVideo = () => {
 
   const search = window.location.search.substring(1)
   const params = new URLSearchParams(search)
-  const firstTme = params.get('firstTime')
+  const firstTime = params.get('firstTime')
 
-  if (firstTme === 'true') {
+  if (firstTime === 'true') {
     const video = document.createElement('video')
     const source = document.createElement('source')
     const container = document.querySelector('.container')
@@ -62,4 +75,5 @@ window.onload = () => {
   initVideo()
   timerColorChange()
   burger()
+  compareTimeEvent()
 }
