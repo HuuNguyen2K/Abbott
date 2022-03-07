@@ -1,5 +1,5 @@
 const login = () => {
-  const URL_API_PREFIX = ''
+  const URL_API_PREFIX = 'http://hoithaodaithaoduong.com/api/'
   const form = document.querySelector('#login-form')
   const id = document.querySelector('#id')
   const password = document.querySelector('#password')
@@ -20,33 +20,26 @@ const login = () => {
 
     if (!idValue || !passwordValue) return
 
-    console.log(idValue)
-    console.log(passwordValue)
+    const url =
+      URL_API_PREFIX + `sign_in?uid=${idValue}&password=${passwordValue}`
 
-    const url = URL_API_PREFIX + 'sign_in'
-    const data = {
-      uid: idValue,
-      password: passwordValue,
-    }
-
-    const rsJSON = await fetch(url, {
+    await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
     })
-
-    const rs = JSON.parse(rsJSON)
-
-    if(rs.status === 200) {
-      // login success and do something
-
-      
-      window.location.href = 'information.html'
-    }
-
-
+      .then((respone) => respone.json())
+      .then((rs) => {
+        if (rs.success === true) {
+          // login success and do something
+          const { data } = rs
+          localStorage.setItem('user', JSON.stringify(data))
+          window.location.href = 'lobby.html?firstTime=true'
+        } else {
+          document.querySelector('.login-fail').classList.remove('d-none')
+        }
+      })
   })
 }
 
