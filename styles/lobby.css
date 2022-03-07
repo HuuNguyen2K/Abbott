@@ -102,6 +102,25 @@ body {
   text-shadow: 2px 2px #5e5e5e;
 }
 
+.menu-icon {
+  cursor: pointer;
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  height: 60px;
+  width: 60px;
+}
+
+.menu-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.menu-content img {
+  width: 1000px;
+}
+
 .burger {
   position: fixed;
   top: 20px;
