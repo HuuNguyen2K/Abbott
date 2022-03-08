@@ -20,8 +20,6 @@ const login = () => {
         const { data } = rs
         localStorage.setItem('user', JSON.stringify(data))
         window.location.href = 'lobby.html?firstTime=true'
-      } else {
-        document.querySelector('.login-fail').classList.remove('d-none')
       }
     })
   })
@@ -84,21 +82,13 @@ function Login() {
             <span>Password</span>
             <input id='password' name='Password' type='text' />
           </div>
-          <div className='group'>
-            <button type='submit'>Đăng nhập</button>
+          <div className='action'>
             <button>
               <a href='sign-in.html'>Đăng ký</a>
             </button>
+            <button type='submit'>Đăng nhập</button>
           </div>
         </form>
-        <div className='login-fail d-none'>
-          <p>Thông tin đăng nhập chưa chính xác</p>
-          <p>Vui lòng nhập đúng cú pháp:</p>
-          <p>ID (số điện thoại đăng ký)</p>
-          <p>Password (Họ và tên viết liền không dấu)</p>
-          <p>Nếu chưa có tài khoản, vui lòng trở về màn hình</p>
-          <p>đăng nhập và đăng kí theo hướng dẫn</p>
-        </div>
       </div>
     </div>
   )
