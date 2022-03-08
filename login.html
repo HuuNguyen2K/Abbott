@@ -6,32 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/login.css" />
   </head>
   <body>
-    <div class="container">
-      <div>Vui lòng đăng nhập bằng ID và Password được cấp qua tin nhắn</div>
-      <form id="login-form">
-        <div>
-          <span>ID :</span>
-          <input id="id" name="ID" type="text" />
-          <p style="color: red" id="err-id"></p>
-        </div>
-        <div>
-          <span>Password :</span>
-          <input id="password" name="Password" type="text" />
-          <p style="color: red" id="err-pass"></p>
-        </div>
-        <button type="submit">Đăng nhập</button>
-      </form>
-      <div class="login-fail d-none">
-        <p>Thông tin đăng nhập chưa chính xác</p>
-        <p>Vui lòng nhập đúng cú pháp:</p>
-        <p>ID (số điện thoại đăng ký)</p>
-        <p>Password (Họ và tên viết liền không dấu)</p>
-        <p>Nếu chưa có tài khoản, vui lòng trở về màn hình</p>
-        <p>đăng nhập và đăng kí theo hướng dẫn</p>
-      </div>
-    </div>
-    <script src="./scripts/login.js"></script>
+    <div id="root"></div>
+    <div id="video"></div>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="./scripts/fetch.js"></script>
+    <script type="text/babel" src="./scripts/login.js"></script>
   </body>
 </html>
