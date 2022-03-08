@@ -9,30 +9,10 @@
     <link rel="stylesheet" href="./styles/immunity.css" />
   </head>
   <body>
+    <div class="container" style="background-image: url('./images/room1.png')">
+      <a href="#" class="shield"></a>
+    </div>
     <div style="height: 100vh" id="video"></div>
-    <script>
-      // let getLength = null
-      const initVideo = () => {
-        const videoEle = document.querySelector('#video')
-        const video = document.createElement('video')
-        const source = document.createElement('source')
-
-        source.setAttribute(
-          'src',
-          'https://media.w3.org/2010/05/sintel/trailer_hd.mp4'
-        )
-
-        source.setAttribute('type', 'video/mp4')
-        video.width = '100%'
-        video.appendChild(source)
-        videoEle.appendChild(video)
-        video.play()
-        video.addEventListener('ended', () => video.remove())
-      }
-
-      window.onload = () => {
-        initVideo()
-      }
-    </script>
+    <script src="./scripts/immunity.js"></script>
   </body>
 </html>
