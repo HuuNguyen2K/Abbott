@@ -4,6 +4,15 @@
   --info-phone-normal: 576px;
 }
 
+.menu-icon {
+  cursor: pointer;
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  height: 60px;
+  width: 60px;
+}
+
 #menu {
   visibility: hidden;
   position: fixed;
