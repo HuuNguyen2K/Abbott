@@ -31,6 +31,10 @@ img {
   display: block;
 }
 
+.d-block {
+  display: block;
+}
+
 .d-none {
   display: none;
 }
