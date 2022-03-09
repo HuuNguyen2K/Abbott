@@ -1,10 +1,11 @@
 :root {
-  --main-color: #f5e9a8;
+  --menu-main-color: #f5e9a8;
   --info-ipad: 768px;
   --info-phone-normal: 576px;
 }
 
 #menu {
+  visibility: hidden;
   position: fixed;
   top: 0;
   right: -100%;
@@ -22,6 +23,7 @@
 
 #menu.menu-visible {
   right: 0;
+  visibility: visible;
 }
 
 #menu .menu-overlay {
@@ -50,7 +52,7 @@
   font-weight: bold;
   text-align: center;
   margin: 160px 0 56px;
-  color: var(--main-color);
+  color: var(--menu-main-color);
 }
 
 /* --- List menu --- */
@@ -73,7 +75,7 @@
 #menu .menu-root .menu-item a:hover,
 #menu .menu-root .menu-item .submenu-title:hover,
 #menu .menu-root .menu-item .submenu-title:hover i::before {
-  color: var(--main-color);
+  color: var(--menu-main-color);
 }
 
 #menu .menu-root .menu-item:not(:last-child) {

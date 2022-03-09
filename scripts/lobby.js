@@ -75,7 +75,7 @@ const handleToggleMenu = () => {
   const _menu = document.querySelector('#menu')
   const element = document.querySelectorAll('[data-control-menu]')
 
-  element && element.forEach(ele => {
+  element.length && element.forEach(ele => {
     ele.addEventListener('click', (evt) => {
       const command = evt.target.dataset['controlMenu']
       // Force check class exists
@@ -87,15 +87,15 @@ const handleToggleMenu = () => {
 const handleToggleSubMenu = () => {
   const subMenu = document.querySelectorAll('#menu .menu-submenu')
 
-  subMenu && subMenu.forEach(ele => {
+  subMenu.length && subMenu.forEach(ele => {
     ele.previousElementSibling.addEventListener('click', (evt) => {
+      const parentElement = evt.target.closest('.menu-item')
       // Close all submenu is opened
       const menuItemHaveVisible = document.querySelectorAll('#menu .submenu-visible')
-      menuItemHaveVisible && menuItemHaveVisible.forEach(ele => {
+      menuItemHaveVisible.length && menuItemHaveVisible.forEach(ele => {
+        if (parentElement === ele) return
         ele.classList.toggle('submenu-visible', false)
       })
-
-      const parentElement = evt.target.closest('.menu-item')
       // Force check class exists
       parentElement.classList.toggle('submenu-visible')
     })
