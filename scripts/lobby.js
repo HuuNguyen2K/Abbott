@@ -71,42 +71,42 @@ const initVideo = () => {
 //   toggle.addEventListener('click', () => toggle.classList.toggle('toggle'))
 // }
 
-const handleToggleMenu = () => {
-  const _menu = document.querySelector('#menu')
-  const element = document.querySelectorAll('[data-control-menu]')
+// const handleToggleMenu = () => {
+//   const _menu = document.querySelector('#menu')
+//   const element = document.querySelectorAll('[data-control-menu]')
+//
+//   element && element.forEach(ele => {
+//     ele.addEventListener('click', (evt) => {
+//       const command = evt.target.dataset['controlMenu']
+//       // Force check class exists
+//       _menu.classList.toggle('menu-visible', command === 'open')
+//     })
+//   })
+// }
 
-  element && element.forEach(ele => {
-    ele.addEventListener('click', (evt) => {
-      const command = evt.target.dataset['controlMenu']
-      // Force check class exists
-      _menu.classList.toggle('menu-visible', command === 'open')
-    })
-  })
-}
-
-const handleToggleSubMenu = () => {
-  const subMenu = document.querySelectorAll('#menu .menu-submenu')
-
-  subMenu && subMenu.forEach(ele => {
-    ele.previousElementSibling.addEventListener('click', (evt) => {
-      // Close all submenu is opened
-      const menuItemHaveVisible = document.querySelectorAll('#menu .submenu-visible')
-      menuItemHaveVisible && menuItemHaveVisible.forEach(ele => {
-        ele.classList.toggle('submenu-visible', false)
-      })
-
-      const parentElement = evt.target.closest('.menu-item')
-      // Force check class exists
-      parentElement.classList.toggle('submenu-visible')
-    })
-  })
-}
+// const handleToggleSubMenu = () => {
+//   const subMenu = document.querySelectorAll('#menu .menu-submenu')
+//
+//   subMenu && subMenu.forEach(ele => {
+//     ele.previousElementSibling.addEventListener('click', (evt) => {
+//       // Close all submenu is opened
+//       const menuItemHaveVisible = document.querySelectorAll('#menu .submenu-visible')
+//       menuItemHaveVisible && menuItemHaveVisible.forEach(ele => {
+//         ele.classList.toggle('submenu-visible', false)
+//       })
+//
+//       const parentElement = evt.target.closest('.menu-item')
+//       // Force check class exists
+//       parentElement.classList.toggle('submenu-visible')
+//     })
+//   })
+// }
 
 window.onload = () => {
   initVideo()
   timerColorChange()
   // burger()
-  handleToggleMenu()
-  handleToggleSubMenu()
+  // handleToggleMenu()
+  // handleToggleSubMenu()
   compareTimeEvent()
 }
