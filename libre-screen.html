@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Libre Screen</title>
+    <link rel="stylesheet" href="./styles/base.css"/>
+    <link rel="stylesheet" href="./styles/libre-screen.css"/>
+    <link rel="stylesheet" href="./styles/swiper-bundle.min.css"
+    />
+</head>
+<body>
+<div id="page-libre" class="container page-libre " style="background-image:url(./images/room3-bg.jpg)">
+    <div class="page-libre__wrap">
+
+        <!-- Begin button click event -->
+        <a href="#event-libre-left" data-toggle="event-libre-left" class="page-libre__btn-left"></a>
+        <a href="#event-libre-center" data-toggle="event-libre-center" class="page-libre__btn-center"></a>
+        <a href="#event-libre-right" data-toggle="event-libre-right" class="page-libre__btn-right"></a>
+        <!-- End button click event -->
+
+        <!-- Begin popup event left -->
+        <div id="event-libre-left" class="popup page-libre__popup-left ">
+            <!--            <video width="600" controls>-->
+            <!--                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">-->
+            <!--                &lt;!&ndash;Browser does not support <video> tag &ndash;&gt;-->
+            <!--            </video>-->
+            <div class="popup-wrap popup-slide">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)" ></div>
+                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)" ></div>
+                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)" ></div>
+                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)" ></div>
+                        ...
+                    </div>
+                    <!-- If we need pagination -->
+<!--                    <div class="swiper-pagination"></div>-->
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- End popup event left -->
+
+        <!-- Begin popup event center -->
+        <div id="event-libre-center" class="popup page-libre__popup-center ">
+            <div class="popup-wrap popup-video">
+                <video width="600" controls>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <!-- End popup event end -->
+
+        <!-- Begin popup event right -->
+        <div id="event-libre-right" class="popup page-libre__popup-right">
+            <!-- <video width="600" poster="./images/frame-bg.png" controls loop>
+                 <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+             </video>-->
+            <div class="popup-wrap popup-video">
+                <video width="600" controls loop>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+        <!-- End popup event right -->
+    </div>
+
+    <a href="#" class="btn-back-home"></a>
+</div>
+
+<script src="./scripts/swiper-bundle.min.js"></script>
+<script src="./scripts/libre-screen.js"></script>
+</body>
+</html>
