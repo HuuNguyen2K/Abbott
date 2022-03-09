@@ -101,6 +101,7 @@
 .popup-slide .swiper {
     width: 600px;
     height: 340px;
+    border-radius: 20px;
 }
 
 .popup-slide .swiper-slide {
