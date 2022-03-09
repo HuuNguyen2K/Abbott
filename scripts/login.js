@@ -57,26 +57,27 @@ function Login() {
       const idValue = id.value
       const passwordValue = password.value
 
-      // if (!idValue || !passwordValue) return
+      if (!idValue || !passwordValue) return
 
       const url = `sign_in?uid=${idValue}&password=${passwordValue}`
-      setMode(MODE.AVT)
-      // await fetchData(url, 'POST').then((rs) => {
-      //   if (rs.success === true) {
-      //     const { data } = rs
-      //     setUser(data)
-      //     localStorage.setItem('user', JSON.stringify(data))
-      //     window.location.href = 'lobby.html?firstTime=true'
-      //   } else {
-      //     const errLoginContainer = document.querySelector('.err-login-container')
-      //     const closeBtn = document.querySelector('.time')
-      //     errLoginContainer && errLoginContainer.classList.add('active')
-      //     closeBtn &&
-      //       closeBtn.addEventListener('click', () => {
-      //         errLoginContainer.classList.remove('active')
-      //       })
-      //   }
-      // })
+      await fetchData(url, 'POST').then((rs) => {
+        if (rs.success === true) {
+          const { data } = rs
+          setUser(data)
+          localStorage.setItem('user', JSON.stringify(data))
+          setMode(MODE.AVT)
+        } else {
+          const errLoginContainer = document.querySelector(
+            '.err-login-container'
+          )
+          const closeBtn = document.querySelector('.time')
+          errLoginContainer && errLoginContainer.classList.add('active')
+          closeBtn &&
+            closeBtn.addEventListener('click', () => {
+              errLoginContainer.classList.remove('active')
+            })
+        }
+      })
     })
   }
 
