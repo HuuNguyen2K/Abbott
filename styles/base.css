@@ -41,4 +41,7 @@ img {
 
 :root {
   --main-color: #9e0966;
+  --secondary-color: #f5e9a8;
+  --info-ipad: 768px;
+  --info-phone-normal: 576px;
 }

@@ -7,6 +7,7 @@
     <title>Lobby</title>
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/menu.css" />
+    <link rel="stylesheet" href="styles/leaderboard.css" />
     <link rel="stylesheet" href="styles/lobby.css" />
   </head>
   <body>
@@ -41,11 +42,112 @@
 
     <div id="global-menu"></div>
 
+    <div id="global-leaderboard">
+      <div>
+        <div class="leaderboard">
+          <div class="leaderboard-container">
+            <h3 class="leaderboard-title">
+              <img src="images/leaderboard-title.png"
+                   alt="leaderboard-title" />
+            </h3>
+
+            <div class="leaderboard-content">
+              <div class="leaderboard-top">
+                <img src="images/background-top-rater.png"
+                     alt="leaderboard-title" />
+
+                <div class="top-content">
+                  <div class="medal-container">
+                    <!-- Top 2 -->
+                    <div class="medal-item">
+                      <div class="user-avatar"
+                           style="background-image: url('./images/avatar-frame.png')"></div>
+                      <img class="medal-img"
+                           src="images/silver-medal.png"
+                           alt="silver-medal" />
+                      <p class="user-name">Nguyen van a</p>
+                      <strong class="item-score">400</strong>
+                    </div>
+                    <!-- Top 1 -->
+                    <div class="medal-item">
+                      <div class="user-avatar"
+                           style="background-image: url('./images/avatar-frame.png')"></div>
+                      <img class="medal-img"
+                           src="images/gold-medal.png"
+                           alt="gold-medal" />
+                      <p class="user-name">Nguyen van a</p>
+                      <strong class="item-score">400</strong>
+                    </div>
+                    <!-- Top 3 -->
+                    <div class="medal-item">
+                      <div class="user-avatar"
+                           style="background-image: url('./images/avatar-frame.png')"></div>
+                      <img class="medal-img"
+                           src="images/bronze-medal.png"
+                           alt="bronze-medal" />
+                      <p class="user-name">Nguyen van a</p>
+                      <strong class="item-score">400</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="leaderboard-list">
+                <div class="leaderboard-list__item">
+                  <img class="background-member"
+                       src="images/background-rater.png"
+                       alt="background-purple" />
+
+                  <div class="item-content">
+                    <span class="item-rate">4</span>
+
+                    <div class="item-user">
+                      <div class="user-avatar"
+                           style="background-image: url('./images/avatar-frame.png')"></div>
+                      <p class="user-name">Nguyen van a</p>
+                    </div>
+
+                    <strong class="item-score">400 điểm</strong>
+                  </div>
+                </div>
+                <div class="leaderboard-list__item current-user">
+                  <img class="background-member"
+                       src="images/background-rater.png"
+                       alt="background-purple" />
+                  <img class="background-member bg-gold"
+                       src="images/background-current-user.png"
+                       alt="background-gold" />
+
+                  <div class="item-content">
+                    <span class="item-rate">5</span>
+
+                    <div class="item-user">
+                      <div class="user-avatar"
+                           style="background-image: url('./images/avatar-frame.png')"></div>
+                      <p class="user-name">Nguyen van a</p>
+                    </div>
+
+                    <strong class="item-score">450 điểm</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <img class="close-leaderboard"
+               data-control-leaderboard="close"
+               src="images/close_icon_2.png"
+               alt="close_icon" />
+        </div>
+      </div>
+    </div>
+
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
     <script src="./scripts/menu.js" type="text/babel"></script>
+    <script src="./scripts/leaderboard.js" type="text/babel"></script>
 
     <script src="./scripts/lobby.js"></script>
   </body>

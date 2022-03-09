@@ -87,7 +87,10 @@ const Menu = () => {
                         </ul>
                     </li>
                     <li className="menu-item">
-                        <a href="javascript:void(0)">bảng xếp hạng</a>
+                        <a href="javascript:void(0)"
+                           data-control-leaderboard="open">
+                            bảng xếp hạng
+                        </a>
                     </li>
                 </ul>
 
