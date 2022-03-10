@@ -9,10 +9,9 @@ const initVideo = () => {
     const video = document.createElement('video')
     const source = document.createElement('source')
     const container = document.querySelector('.container')
-
     source.setAttribute(
       'src',
-      'https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4'
+      'http://hoithaodaithaoduong.com/video/tearsing-clip-06-03.mp4'
     )
 
     source.setAttribute('type', 'video/mp4')
@@ -37,6 +36,7 @@ const initVideo = () => {
 const MODE = {
   SIGN_IN: 'SIGN_IN',
   AVT: 'AVT',
+  SIGN_UP: 'SIGN_UP',
 }
 
 function Login() {
@@ -112,76 +112,169 @@ function Login() {
       style={{ backgroundImage: `url("../images/login.png")` }}
       className='container'
     >
-      <div className='content'>
-        {mode === MODE.SIGN_IN && (
-          <form id='login-form'>
-            <div className='group'>
-              <span>Username</span>
-              <input
-                placeholder='Nhập số điện thoại đã đăng ký'
-                className='in'
-                id='id'
-                name='ID'
-                type='text'
-              />
-            </div>
-            <div className='group'>
-              <span>Password</span>
-              <input
-                placeholder='Nhập họ và tên đã đăng ký (viết liền, không dấu)'
-                className='in'
-                id='password'
-                name='Password'
-                type={isTypePassword ? 'password' : 'text'}
-              />
-            </div>
-            <div className='show-password'>
-              <input
-                className='checkbox'
-                onChange={() => setIsTypePassword((prev) => !prev)}
-                checked={!isTypePassword}
-                type='checkbox'
-              />
-              <span>Hiện mật khẩu</span>
-            </div>
-            <div className='action'>
-              <button>
-                <a href='sign-in.html'>ĐĂNG KÝ</a>
-              </button>
-              <button type='submit'>ĐĂNG NHẬP</button>
-            </div>
-          </form>
-        )}
-        {mode === MODE.AVT && (
-          <div className='avt'>
-            {preview ? (
-              <img src={preview} alt='' />
-            ) : (
-              <img src='../images/avt-up.png' alt='' />
-            )}
-            <input
-              onChange={onSelect}
-              className='d-none'
-              id='avt-up'
-              type='file'
-            />
-            <div className='action'>
-              <label className='d-none' ref={labelRef} htmlFor='avt-up'></label>
-              <button onClick={() => labelRef.current.click()}>
-                CHỌN ẢNH TỪ THIẾT BỊ
-              </button>
-              <button>
-                <a href='#'>BỎ QUA</a>
-              </button>
-            </div>
+      {mode === MODE.SIGN_UP ? (
+        <React.Fragment>
+          <div class='form-container'>
+            <h3>
+              ĐĂNG KÝ THAM GIA CHƯƠNG TRÌNH
+              <br />
+              HỘI THẢO ĐÀO TẠO CHUYÊN ĐỀ NGÀY 20/03/2022
+            </h3>
+            <form>
+              <div class='form-group'>
+                <label for='invite_number'>
+                  Mã số thư mời*
+                  <span>*Mã số thư mời nhận được từ nhân viên Abbott</span>
+                </label>
+                <input
+                  type='text'
+                  class='form-control'
+                  name='invite_number'
+                  id='invite_number'
+                  placeholder='Mã số với cú pháp CMExxxxxx'
+                />
+              </div>
+              <div class='form-group'>
+                <label for='name'>Họ và tên*</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  name='name'
+                  id='name'
+                  placeholder='Vui lòng nhập họ và tên có dấu'
+                />
+              </div>
+              <div class='form-group'>
+                <label for='company'>
+                  Nơi công tác*
+                  <span>*Ví dụ: Bệnh viện Đại học Y dược TP.HCM</span>
+                </label>
+                <input
+                  type='text'
+                  class='form-control'
+                  name='company'
+                  id='company'
+                  placeholder='Cú pháp: Tên bệnh viện + Tỉnh/Thành phố'
+                />
+              </div>
+              <div class='form-group'>
+                <label for='phone'>Số điện thoại*</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  name='phone'
+                  id='phone'
+                  placeholder='Vui lòng nhập số điện thoại'
+                />
+              </div>
+              <div class='form-group'>
+                <label for='name'>Email*</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  name='email'
+                  id='email'
+                  placeholder='Vui lòng nhập email'
+                />
+              </div>
+              <div class='checked-rule text-center'>
+                <input type='checkbox' id='termOK' />
+                <p>
+                  Tôi đồng ý với các điều khoản của chương trình
+                  <a href='#' id='btn-modal-detail'>
+                    (Chi tiết điều khoản)
+                  </a>
+                </p>
+              </div>
+              <div class='text-center'>
+                <button
+                  id='btn-submit'
+                  type='button'
+                  class='btn btn-primary'
+                  disabled=''
+                >
+                  GỬI THÔNG TIN
+                </button>
+              </div>
+            </form>
           </div>
-        )}
+        </React.Fragment>
+      ) : (
+        <div className='content'>
+          {mode === MODE.SIGN_IN && (
+            <form id='login-form'>
+              <div className='group'>
+                <span>Username</span>
+                <input
+                  placeholder='Nhập số điện thoại đã đăng ký'
+                  className='in'
+                  id='id'
+                  name='ID'
+                  type='text'
+                />
+              </div>
+              <div className='group'>
+                <span>Password</span>
+                <input
+                  placeholder='Nhập họ và tên đã đăng ký (viết liền, không dấu)'
+                  className='in'
+                  id='password'
+                  name='Password'
+                  type={isTypePassword ? 'password' : 'text'}
+                />
+              </div>
+              <div className='show-password'>
+                <input
+                  className='checkbox'
+                  onChange={() => setIsTypePassword((prev) => !prev)}
+                  checked={!isTypePassword}
+                  type='checkbox'
+                />
+                <span>Hiện mật khẩu</span>
+              </div>
+              <div className='action'>
+                <button onClick={() => setMode(MODE.SIGN_UP)}>ĐĂNG KÝ</button>
+                <button type='submit'>ĐĂNG NHẬP</button>
+              </div>
+            </form>
+          )}
+          {mode === MODE.AVT && (
+            <div className='avt'>
+              {preview ? (
+                <img src={preview} alt='' />
+              ) : (
+                <img src='../images/avt-up.png' alt='' />
+              )}
+              <input
+                onChange={onSelect}
+                className='d-none'
+                id='avt-up'
+                type='file'
+              />
+              <div className='action'>
+                <label
+                  className='d-none'
+                  ref={labelRef}
+                  htmlFor='avt-up'
+                ></label>
+                <button onClick={() => labelRef.current.click()}>
+                  CHỌN ẢNH TỪ THIẾT BỊ
+                </button>
+                <button>
+                  <a href='#'>BỎ QUA</a>
+                </button>
+              </div>
+            </div>
+          )}
 
-        <div className='err-login-container'>
-          <div className='time'>X</div>
-          <img className='err-login' src='../images/err-login.png' alt='' />
+          {mode === MODE.SIGN_UP && <h1>Huu</h1>}
+
+          <div className='err-login-container'>
+            <div className='time'>X</div>
+            <img className='err-login' src='../images/err-login.png' alt='' />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
