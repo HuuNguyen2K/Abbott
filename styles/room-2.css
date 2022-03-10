@@ -1,0 +1,148 @@
+.container {
+    height: 100vh;
+    width: 100%;
+}
+
+.room-2 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.room-2__wrap {
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.room-2__btn-left {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    left: 16%;
+    top: 35%;
+    width: 300px;
+    height: 200px;
+    transition: all .3s ease-in-out;
+
+}
+
+@media only screen and (max-width: 1400px) {
+    .room-2__btn-left {
+        left: 6%;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .room-2__btn-left {
+        left: 8%;
+        top: 32%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .room-2__btn-left {
+        background-size: 85%;
+        top:calc(36% - 5px);
+        left: 2%;
+    }
+}
+
+.room-2__btn-right {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    right: 14%;
+    top: 35%;
+    width: 300px;
+    height: 200px;
+    transition: all .3s ease-in-out;
+}
+
+@media only screen and (max-width: 1400px) {
+    .room-2__btn-right {
+        right: 3%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .room-2__btn-right {
+        right: 3%;
+        top: 26%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .room-2__btn-right {
+        background-size: 85%;
+        right: 1%;
+        top:calc(28% - 5px);
+    }
+}
+
+/* Popup event css*/
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: opacity 200ms;
+    z-index: 6;
+}
+
+.popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out;
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-wrap {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.popup-info {
+    object-fit: cover;
+    width: 624px;
+    height: 365px;
+    overflow: hidden;
+}
+
+.btn-back-home {
+    background-image: url(../images/btn-back-home.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    width: 210px;
+    height: 55px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 3;
+}

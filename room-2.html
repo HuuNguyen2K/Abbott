@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Room 2</title>
+    <link rel="stylesheet" href="./styles/base.css"/>
+    <link rel="stylesheet" href="./styles/room-2.css"/>
+    <!-- TODO -->
+    <link rel="stylesheet" href="styles/menu.css"/>
+</head>
+<body>
+<div id="room-2" class="container room-2" style="background-image:url(./images/room-2-bg.jpg)">
+    <div class="room-2__wrap">
+
+        <!-- Begin button click event -->
+        <a href="#event-room-2-left" data-toggle="event-room-2-left" class="room-2__btn-left"
+           style="background-image:url(images/room-2-btn-left.png)"></a>
+        <a href="https://google.com" target="_blank" data-toggle="event-room-2-right" class="room-2__btn-right"
+           style="background-image:url(images/room-2-btn-right.png)"></a>
+        <!-- End button click event -->
+
+        <!-- Begin popup event left -->
+        <div id="event-room-2-left" class="popup room2__popup-left ">
+            <div class="popup-wrap popup-info">
+                <img src="./images/room-2-popup-tdna.png" alt="image">
+            </div>
+        </div>
+        <!-- End popup event left -->
+
+        <!-- Begin popup event right -->
+        <!--        <div id="event-room-2-right" class="popup room2__popup-right">-->
+        <!--        </div>-->
+        <!-- End popup event right -->
+    </div>
+
+    <a href="#" class="btn-back-home"></a>
+</div>
+
+<div id="global-menu"></div>
+<div id="welcome-video-render"></div>
+
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<!--<script src="./scripts/menu.js" type="text/babel"></script>-->
+<script src="./scripts/welcome.js" type="text/babel"></script>
+
+<script type="text/babel">
+    const search = window.location.search.substring(1)
+    const params = new URLSearchParams(search)
+    const welcome = params.get('welcome');
+    if (welcome === 'true') {
+        const domContainer = document.querySelector('#welcome-video-render');
+        ReactDOM.render(
+            <WellComeVideo
+                src="https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4"/>,
+            domContainer
+        );
+    }
+</script>
+
+<script src="./scripts/room-2.js"></script>
+</body>
+</html>
