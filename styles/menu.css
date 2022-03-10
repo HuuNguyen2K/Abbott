@@ -146,7 +146,7 @@
 }
 
 /* ===== Responsive ===== */
-@media only screen and (max-width: var(--info-ipad)) {
+@media only screen and (max-width: 768px) {
 
 }
 /* ===== Responsive - END ===== */

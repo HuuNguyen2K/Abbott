@@ -27,12 +27,33 @@ video {
   display: block;
   cursor: pointer;
   position: absolute;
-  left: 47.5%;
-  top: 44%;
-  width: 35vh;
-  height: 44vh;
+  left: 48%;
+  top: 42%;
+  width: 20vw;
+  height: 24vw;
   background-color: transparent;
   transform: translate(-50%, -50%);
+}
+
+.touch-shield {
+  position: fixed;
+  top: 15.8vw;
+  left: 56.8vw;
+  width: 25vw;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  transform: translateY(40px);
+  -webkit-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+.touch-shield.fadeIn {
+  opacity: 1;
+  pointer-events: unset;
+  transform: none;
 }
 
 /* --- Paint curtain block action without shield element --- */
@@ -71,3 +92,129 @@ video {
   transform: rotateZ(-54deg) translate(63px, 27px);
 }
 /* --- Paint curtain block action without shield element - ENd --- */
+
+/* ===== Responsive ===== */
+@media only screen and (max-width: 1700px) {
+  .shield {
+    left: 48%;
+    top: 44%;
+    width: 22vw;
+    height: 27vw;
+  }
+
+  .touch-shield {
+    top: 18.8vw;
+    left: 56.8vw;
+    width: 28vw;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .touch-shield {
+    top: 20vw;
+    left: 57.3vw;
+    width: 29vw;
+  }
+}
+
+@media only screen and (max-width: 1550px) {
+  .touch-shield {
+    top: 15.5vw;
+    left: 56.8vw;
+    width: 29vw;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .shield {
+    left: 47.5%;
+    width: 25vw;
+    height: 29vw;
+  }
+
+  .touch-shield {
+    top: 21.9vw;
+    left: 57.8vw;
+    width: 31vw;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .touch-shield {
+    top: 22.9vw;
+    left: 58.12vw;
+    width: 33vw;
+  }
+}
+
+@media only screen and (max-width: 1370px) {
+  .touch-shield {
+    top: 15.5vw;
+    left: 56.8vw;
+    width: 29vw;
+
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .shield {
+    width: 28vw;
+    height: 33vw;
+  }
+
+  .touch-shield {
+    top: 24.9vw;
+    left: 59.12vw;
+    width: 36vw;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .touch-shield {
+    top: 26.9vw;
+    left: 60.12vw;
+    width: 37vw;
+  }
+}
+
+@media only screen and (max-width: 1026px) {
+  .shield {
+    left: 47.5%;
+    width: 29vw;
+    height: 34vw;
+  }
+
+  .touch-shield {
+    top: 25.9vw;
+    left: 59.12vw;
+    width: 35vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .shield {
+    top: 20vw;
+    left: 48.2%;
+    width: 21vw;
+    height: 23vw;
+  }
+
+  .touch-shield {
+    top: 13.9vw;
+    left: 56.9vw;
+    width: 28vw;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .shield {
+    top: 24vw;
+  }
+
+  .touch-shield {
+    top: 18.9vw;
+    left: 56.8vw;
+    width: 29vw;
+  }
+}
+/* ===== Responsive - END ===== */
