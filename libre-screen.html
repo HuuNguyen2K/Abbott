@@ -87,12 +87,27 @@
 </div>
 
 <div id="global-menu"></div>
+<div id="welcome-video-render"></div>
 
 <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-<script src="./scripts/menu.js" type="text/babel"></script>
+<!--<script src="./scripts/menu.js" type="text/babel"></script>-->
+<script src="./scripts/welcome.js" type="text/babel"></script>
+
+<script type="text/babel">
+    const search = window.location.search.substring(1)
+    const params = new URLSearchParams(search)
+    const welcome = params.get('welcome');
+    if (welcome === 'true') {
+        const domContainer = document.querySelector('#welcome-video-render');
+        ReactDOM.render(
+            <WellComeVideo src="https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4" />,
+            domContainer
+        );
+    }
+</script>
 
 <script src="./scripts/swiper-bundle.min.js"></script>
 <script src="./scripts/libre-screen.js"></script>
