@@ -83,7 +83,6 @@ const initVideo = () => {
 //     })
 //   })
 // }
-
 // const handleToggleSubMenu = () => {
 //   const subMenu = document.querySelectorAll('#menu .menu-submenu')
 //
