@@ -1,4 +1,5 @@
-const URL_API_PREFIX = 'http://hoithaodaithaoduong.com/api/'
+// const URL_API_PREFIX = 'http://hoithaodaithaoduong.com/api/'
+const URL_API_PREFIX = 'http://127.0.0.1:8000/api/'
 const fetchData = async (url, _method = 'GET', data = {}) => {
   const headers = {
     'Content-Type': 'application/json',
