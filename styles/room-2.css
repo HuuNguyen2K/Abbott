@@ -1,7 +1,7 @@
 .container {
     height: 100vh;
     width: 100%;
-    overflow:auto;
+    overflow: auto;
 }
 
 .room-2 {
@@ -26,8 +26,8 @@
     position: absolute;
     left: 0;
     top: 40%;
-    width:29%;
-    height:17%;
+    width: 29%;
+    height: 17%;
     transition: all .3s ease-in-out;
 
 }
@@ -35,10 +35,10 @@
 .room-2__btn-right {
     background: transparent;
     position: absolute;
-    right:0;
+    right: 0;
     top: 40%;
-    width:28%;
-    height:17%;
+    width: 28%;
+    height: 17%;
     transition: all .3s ease-in-out;
 }
 
@@ -67,6 +67,11 @@
     visibility: visible;
 }
 
+.popup.open .popup-info {
+    display: flex;
+}
+
+
 .popup-wrap {
     position: relative;
     top: 50%;
@@ -75,14 +80,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    z-index: 9;
 }
 
 .popup-info {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
     object-fit: cover;
     width: 624px;
     height: 365px;
     overflow: hidden;
+    display: none;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.btn-download {
+    width: 210px;
+    height: 70px;
+    margin: 0 10px 20px;
+    background: transparent;
+    display: inline-block;
+}
+
+.room2__popup-left {
+    /*position: relative;*/
 }
 
 .btn-back-home {
