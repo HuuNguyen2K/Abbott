@@ -7,18 +7,19 @@ const WellComeVideo = (props) => {
   const [mute, setMute] = useState(true)
 
   const addQueryParam = (key, value) => {
-    const url = new URL(window.location.href);
-    url.searchParams.set(key, value);
-    window.history.pushState({}, '', url.toString());
-  };
-  
+    const url = new URL(window.location.href)
+    url.searchParams.set(key, value)
+    window.history.pushState({}, '', url.toString())
+  }
 
   useEffect(() => {
     const videoEle = document.querySelector('#welcome-video')
     const video = document.createElement('video')
     const source = document.createElement('source')
     const container = document.querySelector('.container')
+    const modal = document.querySelector('.modal-video')
 
+    modal.style.display = 'block'
     source.setAttribute('src', src)
     source.setAttribute('type', 'video/mp4')
     video.setAttribute('width', '100%')
@@ -30,6 +31,7 @@ const WellComeVideo = (props) => {
     video.play()
     container.style.display = 'none'
     video.addEventListener('ended', () => {
+      modal.style.display = 'none'
       container.style.display = 'block'
       video.remove()
       videoEle.remove()
@@ -46,6 +48,7 @@ const WellComeVideo = (props) => {
         right: '0',
         bottom: '0',
       }}
+      className='modal-video'
     >
       <div id='welcome-video'>
         <button
