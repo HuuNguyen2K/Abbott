@@ -16,6 +16,8 @@ body {
   background-size: cover;
   background-position: center 30%;
   position: relative;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .content {
@@ -318,6 +320,118 @@ label {
   cursor: pointer;
 }
 
+.policy .detail-title {
+  margin-bottom: 30px;
+}
+
+.policy .detail-title p {
+  color: #333333;
+  text-align: center;
+  color: #333333;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.policy .detail-title h3,
+.otp h3 {
+  font-weight: 600;
+  color: #8d246f;
+  font-size: 22px;
+}
+
+.policy .detail-block h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #8d246f;
+  margin-bottom: 0;
+}
+
+.policy .detail-block p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.policy .text-mb a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.otp .input-gr {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.otp .input-gr input {
+  width: 40px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.otp .input-gr input:focus {
+  outline: 2px solid #8d246f;
+}
+
+.otp > p {
+  text-align: center;
+  white-space: nowrap;
+  color: #000000;
+}
+
+.otp .phone {
+  color: #d8b600;
+}
+
+.otp .noti {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.otp .noti span {
+  font-size: 14px;
+  color: #701540;
+}
+
+/* .no-wrap {
+  white-space: nowrap;
+} */
+
+.swal2-validation-message::before {
+  content: '!';
+  display: inline-block;
+  width: 1.5em;
+  min-width: 1.5em;
+  height: 1.5em;
+  margin: 0 0.625em;
+  border-radius: 50%;
+  background-color: #f27474;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.swal2-validation-message {
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0 0;
+  padding: 0.625em;
+  overflow: hidden;
+  background: #f0f0f0;
+  color: #666;
+  font-size: 14px;
+  font-weight: 300;
+  display: flex;
+}
+
 @media screen and (max-width: 1023px) {
   .form-sign-up {
     width: 90%;
@@ -327,6 +441,10 @@ label {
 @media screen and (max-width: 767px) {
   .toast-err {
     padding: 15px 65px !important;
+  }
+
+  .policy-container {
+    padding: 20px 25px !important;
   }
 
   .form-sign-up {
@@ -384,9 +502,22 @@ label {
     height: 35px;
     font-size: 15px;
   }
+
+  .time {
+    top: 0px;
+    right: 0px;
+  }
 }
 
 @media screen and (max-width: 520px) {
+  .avt img {
+    width: 100px;
+    height: 100px;
+  }
+  .avt .btn {
+    height: 40px;
+  }
+
   .content {
     width: 95%;
     padding: 15px 10px;
