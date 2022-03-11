@@ -661,36 +661,31 @@ function Login() {
   const [selectedFile, setSelectedFile] = React.useState(null)
   const [preview, setPreview] = React.useState()
 
-  const login = () => {
-    const form = document.querySelector('#login-form')
+  const login = async () => {
     const idEle = document.querySelector('#id')
     const passwordEle = document.querySelector('#password')
 
-    form.addEventListener('click', async () => {
-      const uid = idEle.value
-      const password = passwordEle.value
+    const uid = idEle.value
+    const password = passwordEle.value
 
-      if (!uid || !password) return
+    if (!uid || !password) return
 
-      const url = `/api/sign_in`
-      await fetchData(url, 'POST', { uid, password }).then((rs) => {
-        if (rs.success === true) {
-          const { data } = rs
-          setUser(data)
-          localStorage.setItem('user', JSON.stringify(data))
-          setMode(MODE.AVT)
-        } else {
-          const errLoginContainer = document.querySelector(
-            '.err-login-container'
-          )
-          const closeBtn = document.querySelector('.time')
-          errLoginContainer && errLoginContainer.classList.add('active')
-          closeBtn &&
-            closeBtn.addEventListener('click', () => {
-              errLoginContainer.classList.remove('active')
-            })
-        }
-      })
+    const url = `/api/sign_in`
+    await fetchData(url, 'POST', { uid, password }).then((rs) => {
+      if (rs.success === true) {
+        const { data } = rs
+        setUser(data)
+        localStorage.setItem('user', JSON.stringify(data))
+        setMode(MODE.AVT)
+      } else {
+        const errLoginContainer = document.querySelector('.err-login-container')
+        const closeBtn = document.querySelector('.time')
+        errLoginContainer && errLoginContainer.classList.add('active')
+        closeBtn &&
+          closeBtn.addEventListener('click', () => {
+            errLoginContainer.classList.remove('active')
+          })
+      }
     })
   }
 
@@ -724,7 +719,7 @@ function Login() {
     formData.append('access_token', access_token)
     formData.append('avatar', avatar)
 
-    fetch('http://127.0.0.1:8000/api/upload_avt', {
+    fetch(URL_API_PREFIX + '/api/upload_avt', {
       method: 'POST',
       body: formData,
     })
@@ -749,10 +744,6 @@ function Login() {
       avatar && setPreview(URL_API_PREFIX + avatar)
     }
   }, [mode])
-
-  React.useEffect(() => {
-    login()
-  }, [])
 
   return (
     <div
@@ -798,7 +789,7 @@ function Login() {
                 <button className='btn' onClick={() => setMode(MODE.SIGN_UP)}>
                   ĐĂNG KÝ
                 </button>
-                <button id='login-form' className='btn'>
+                <button id='login-form' onClick={login} className='btn'>
                   ĐĂNG NHẬP
                 </button>
               </div>
