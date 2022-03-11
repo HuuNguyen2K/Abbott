@@ -439,6 +439,15 @@ label {
 }
 
 @media screen and (max-width: 767px) {
+  .otp {
+    width: 100%;
+    padding: 10px !important; 
+  }
+
+  .otp > p {
+    white-space: normal;
+  }
+
   .toast-err {
     padding: 15px 65px !important;
   }
@@ -450,6 +459,7 @@ label {
   .form-sign-up {
     max-height: unset;
     padding: 15px 25px;
+    border-radius: 10px;
   }
 
   .form-sign-up h3 {

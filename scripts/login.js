@@ -235,7 +235,7 @@ const Policy = ({ show = false, setShow = () => {} }) => {
 }
 
 const OTP = ({
-  phone = '0379339693',
+  phone,
   errOTP = false,
   setShow = () => {},
   showToast = () => {},
@@ -666,8 +666,7 @@ function Login() {
     const idEle = document.querySelector('#id')
     const passwordEle = document.querySelector('#password')
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault()
+    form.addEventListener('click', async () => {
       const uid = idEle.value
       const password = passwordEle.value
 
@@ -765,7 +764,7 @@ function Login() {
       ) : (
         <div className='content'>
           {mode === MODE.SIGN_IN && (
-            <form id='login-form'>
+            <div>
               <div className='group'>
                 <span>Username</span>
                 <input
@@ -799,11 +798,11 @@ function Login() {
                 <button className='btn' onClick={() => setMode(MODE.SIGN_UP)}>
                   ĐĂNG KÝ
                 </button>
-                <button className='btn' type='submit'>
+                <button id='login-form' className='btn'>
                   ĐĂNG NHẬP
                 </button>
               </div>
-            </form>
+            </div>
           )}
           {mode === MODE.AVT && (
             <div className='avt'>
