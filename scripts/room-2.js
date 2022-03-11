@@ -4,14 +4,13 @@ const elEventRoom2PopupLeft = document.getElementById('event-room-2-left')
 const elEventRoom2PopupRight = document.getElementById('event-room-2-right')
 
 const showPopup = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     let showEventPopup = event.target.getAttribute('data-toggle');
     let elEventLibrePopup = document.getElementById(showEventPopup)
     elEventLibrePopup.classList.add('open', 'overlay')
 }
 
 const hidePopup = (event) => {
-    event.preventDefault();
     event.target.classList.remove('open', 'overlay')
 }
 
