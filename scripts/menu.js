@@ -1,6 +1,8 @@
 const { useEffect } = React;
 
 const Menu = () => {
+    const userName = localStorage.getItem('user') ?
+        JSON.parse(localStorage.getItem('user')).name : '-Tên khách tham dự-'
 
     const handleToggleMenu = () => {
         const _menu = document.querySelector('#menu')
@@ -46,13 +48,12 @@ const Menu = () => {
                      data-control-menu="open"
                 />
             </div>
-            <img src="./images/background-menu.png" alt="" />
             <div id="menu">
             <div data-control-menu="close" className="menu-overlay"></div>
             <div className="menu-container">
                 <h5 className="menu-greeting">
                     Kính chào Quý Chuyên viên Y tế
-                    <span id="user_name" className="d-block">-Tên khách tham dự-</span>
+                    <span id="user_name" className="d-block">{ userName }</span>
                 </h5>
                 <ul className="menu-root">
                     <li className="menu-item">
