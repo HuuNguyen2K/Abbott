@@ -157,3 +157,11 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+@media only screen and (max-height: 500px) {
+  .close-popup {
+    top: 2.5vw;
+    right: 2vw;
+    width: 1.5vw;
+  }
+}

@@ -238,7 +238,7 @@
 /* ===== Responsive ===== */
 @media only screen and (max-width: 1700px) {
   .leaderboard .leaderboard-top .top-content {
-    padding: 5vw;
+    padding: 2vw 5vw;
   }
 
   .leaderboard .medal-item .medal-img {
@@ -262,6 +262,54 @@
 
   .leaderboard .medal-item .user-score {
     font-size: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+
+}
+
+@media only screen and (max-height: 600px) {
+  .leaderboard .leaderboard-title {
+    max-width: 45.5vw;
+  }
+
+  .leaderboard .leaderboard-top .top-content {
+    padding: 2vw 5vw;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  .leaderboard .leaderboard-title {
+    max-width: 42.5vw;
+  }
+
+  .leaderboard .leaderboard-top .top-content {
+    padding: 3vw 6.5vw;
+  }
+
+  .leaderboard .medal-item .user-avatar {
+    width: 8.5vw;
+    height: 8.5vw;
+    margin: 0 auto 1.4vw;
+  }
+
+  .leaderboard .leaderboard-top .gold-medal .user-avatar {
+    width: 10.5vw;
+    height: 10.5vw;
+  }
+
+  .leaderboard .leaderboard-top .silver-medal,
+  .leaderboard .leaderboard-top .bronze-medal {
+    padding-top: 4vw;
+  }
+
+  .leaderboard .medal-item .medal-img {
+    height: 5.544vw;
+  }
+
+  .leaderboard .medal-item .user-name {
+    font-size: 1.2vw;
   }
 }
 /* ===== Responsive - END ===== */
