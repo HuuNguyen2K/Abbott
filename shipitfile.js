@@ -4,10 +4,10 @@ module.exports = function (shipit) {
 
   shipit.initConfig({
     "solution-abbott-development": {
-      servers: ["binami@54.251.217.230"],
-      deployUser: 'binami',
-      deployTo: "/home/bitnami/htdocs/solution-abbott-event",
-      key: "doc/aws/gms-abbott-production.pem",
+      servers: ["bitnami@54.251.217.230"],
+      deployUser: 'bitnami',
+      deployTo: "/home/bitnami/htdocs/solution-abbott-event/",
+      key: "docs/aws/gms-abbott-production.pem",
     }
   });
 
@@ -20,14 +20,14 @@ module.exports = function (shipit) {
       `sudo mkdir -p ${shipit.config.deployTo} && sudo chown -R ${shipit.config.deployUser}: ${shipit.config.deployTo}`
     );
 
+    // // remove old frontend files
+    await shipit.remote(`rm -rf ${shipit.config.deployTo}/*`);
+
     // // Copy dist.zip to servers
     await shipit.copyToRemote("dist.zip", shipit.config.deployTo);
 
     // // Remove the dist.zip
     await shipit.local("rm dist.zip");
-
-    // // remove old frontend files
-    await shipit.remote(`rm -rf ${shipit.config.deployTo}/*`);
 
     // // On server, unzip the dist.zip file then remove the zip package
     await shipit.remote(
