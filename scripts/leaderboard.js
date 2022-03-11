@@ -36,7 +36,7 @@ const Leaderboard = () => {
 
                   <div className="medal-item silver-medal">
                     <div style={{ backgroundImage: `url("../images/avatar-frame.png")` }}
-                         className="user-avatar"/>
+                         className="user-avatar slide-shine"/>
                     <img className="medal-img"
                          src="./images/silver-medal.png"
                          alt="silver-medal"/>
@@ -46,7 +46,7 @@ const Leaderboard = () => {
 
                   <div className="medal-item gold-medal">
                     <div style={{ backgroundImage: `url("../images/avatar-frame.png")` }}
-                         className="user-avatar"/>
+                         className="user-avatar slide-shine"/>
                     <img className="medal-img"
                          src="./images/gold-medal.png"
                          alt="gold-medal"/>
@@ -56,7 +56,7 @@ const Leaderboard = () => {
 
                   <div className="medal-item bronze-medal">
                     <div style={{ backgroundImage: `url("../images/avatar-frame.png")` }}
-                         className="user-avatar"/>
+                         className="user-avatar slide-shine"/>
                     <img className="medal-img"
                          src="./images/bronze-medal.png"
                          alt="bronze-medal"/>
@@ -92,7 +92,7 @@ const Leaderboard = () => {
                        src="./images/background-current-user.png"
                        alt="background-gold"/>
 
-                  <div className="item-content">
+                  <div className="item-content slide-shine">
                     <span className="item-rate">5</span>
 
                     <div className="item-user">
@@ -108,7 +108,7 @@ const Leaderboard = () => {
             </div>
           </div>
 
-          <img className="close-leaderboard"
+          <img className="close-popup"
                data-control-leaderboard="close"
                src="./images/close_icon_2.png"
                alt="close_icon"/>

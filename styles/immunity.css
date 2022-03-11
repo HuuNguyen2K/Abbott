@@ -91,7 +91,7 @@ video {
   right: 0;
   transform: rotateZ(-54deg) translate(63px, 27px);
 }
-/* --- Paint curtain block action without shield element - ENd --- */
+/* --- Paint curtain block action without shield element - END --- */
 
 /* ===== Responsive ===== */
 @media only screen and (max-width: 1700px) {
@@ -163,9 +163,9 @@ video {
   }
 
   .touch-shield {
-    top: 24.9vw;
-    left: 59.12vw;
-    width: 36vw;
+    top: 17.5vw;
+    left: 57vw;
+    width: 32vw;
   }
 }
 
@@ -192,6 +192,11 @@ video {
 }
 
 @media only screen and (max-width: 900px) {
+  .back-home {
+    width: 120px;
+    height: auto;
+  }
+
   .shield {
     top: 20vw;
     left: 48.2%;

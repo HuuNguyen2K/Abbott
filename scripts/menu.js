@@ -103,7 +103,7 @@ const Menu = () => {
                 </div>
             </div>
 
-            <img className="close-menu"
+            <img className="close-popup"
                  data-control-menu="close"
                  src="./images/close_icon.png"
                  alt="close_icon" />

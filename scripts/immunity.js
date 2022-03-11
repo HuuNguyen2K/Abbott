@@ -38,17 +38,31 @@ const openModalRemindGame = () => {
 
 const openGameRoom = () => {
   const element = document.querySelector('.shield')
-  const iframeGame = document.querySelector('.iframe-game')
+  const iframeGame = document.querySelector('.sec-iframe')
 
   element && element.addEventListener('click', (evt) => {
     // BLock action user click without shield element
     if (evt.target.localName === 'span') return
-    iframeGame.classList.toggle('join-game')
+    iframeGame.classList.toggle('open-iframe')
   })
 }
+
+const handleToggleIframe = () => {
+  const _menu = document.querySelector('.sec-iframe')
+  const element = document.querySelectorAll('[data-control-iframe-game]')
+
+  element.length && element.forEach(ele => {
+    ele.addEventListener('click', (evt) => {
+      const command = evt.target.dataset['controlIframeGame']
+      // Force check class exists
+      _menu.classList.toggle('open-iframe', command === 'open')
+    })
+  })
+};
 
 window.onload = () => {
   initVideo()
   openModalRemindGame()
   openGameRoom()
+  handleToggleIframe()
 }

@@ -32,9 +32,18 @@
 
     <div id="global-leaderboard"></div>
 
-    <iframe class="iframe-game"
-            src="http://hoithaodaithaoduong.com/game/find-object"
-            title="game-1"></iframe>
+    <!-- Iframe show game -->
+    <div class="sec-iframe">
+      <div data-control-iframe-game="close" class="iframe-overlay"></div>
+      <iframe class="iframe-game"
+              src="http://hoithaodaithaoduong.com/game/find-object"
+              title="game-1"></iframe>
+      <img class="close-popup"
+           data-control-iframe-game="close"
+           src="./images/close_icon.png"
+           alt="close_icon" />
+    </div>
+    <!-- Iframe show game - END -->
 
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
