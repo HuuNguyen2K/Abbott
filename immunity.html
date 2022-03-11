@@ -22,28 +22,14 @@
      </div>
     </div>
 
-     <a class="back-home" href="./lobby.html">
+     <a class="back-home" href="./lobby.html?welcome=false">
        <img src="./images/btn-back-home.png" alt="btn-back-home">
      </a>
 
-<!--    <div style="height: 100vh" id="video"></div>-->
-
     <div id="global-menu"></div>
-
+    <div id="welcome-video-render"></div>
     <div id="global-leaderboard"></div>
-
-    <!-- Iframe show game -->
-    <div class="sec-iframe">
-      <div data-control-iframe-game="close" class="iframe-overlay"></div>
-      <iframe class="iframe-game"
-              src="http://hoithaodaithaoduong.com/game/find-object"
-              title="game-1"></iframe>
-      <img class="close-popup"
-           data-control-iframe-game="close"
-           src="./images/close_icon.png"
-           alt="close_icon" />
-    </div>
-    <!-- Iframe show game - END -->
+    <div id="iframe-game-render"></div>
 
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
@@ -51,6 +37,29 @@
 
     <script src="./scripts/menu.js" type="text/babel"></script>
     <script src="./scripts/leaderboard.js" type="text/babel"></script>
+    <script src="./scripts/iframe-game.js" type="text/babel"></script>
+    <script src="./scripts/welcome.js" type="text/babel"></script>
+
+    <script type="text/babel">
+      const search = window.location.search.substring(1)
+      const params = new URLSearchParams(search)
+      const welcome = params.get('welcome');
+      if (welcome === 'true') {
+        const domContainer = document.querySelector('#welcome-video-render');
+        ReactDOM.render(
+                <WellComeVideo src="https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4" />,
+                domContainer
+        );
+      }
+
+      const domIframeContainer = document.querySelector('#iframe-game-render');
+      ReactDOM.render(
+              <IframeGame src="http://hoithaodaithaoduong.com/game/find-object" />,
+              domIframeContainer
+      );
+    </script>
+
     <script src="./scripts/immunity.js"></script>
+    <script src="./scripts/common.js"></script>
   </body>
 </html>

@@ -1,21 +1,7 @@
 const { useEffect } = React;
 
 const Leaderboard = () => {
-  const handleToggleLeaderBoard = () => {
-    const _leaderboard = document.querySelector('#global-leaderboard .leaderboard')
-    const element = document.querySelectorAll('[data-control-leaderboard]')
-
-    element.length && element.forEach(ele => {
-      ele.addEventListener('click', (evt) => {
-        const command = evt.target.dataset['controlLeaderboard']
-        // Force check class exists
-        _leaderboard.classList.toggle('leaderboard-visible', command === 'open')
-      })
-    })
-  };
-
   useEffect(() => {
-    handleToggleLeaderBoard();
   }, []);
 
   return (
@@ -109,7 +95,12 @@ const Leaderboard = () => {
           </div>
 
           <img className="close-popup"
-               data-control-leaderboard="close"
+               data-control={ JSON.stringify({
+                 render_name: '#global-leaderboard .leaderboard',
+                 command: 'close',
+                 active_class: 'leaderboard-visible',
+                 without_ele: null
+               }) }
                src="./images/close_icon_2.png"
                alt="close_icon"/>
         </div>
