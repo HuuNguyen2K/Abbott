@@ -486,7 +486,7 @@ const SignUp = ({ setMode }) => {
           },
           body: JSON.stringify({
             brandname: 'Glucerna',
-            idrequest: 385299138,
+            idrequest: Math.floor(Math.random() * 1000000000),
             message: `Cam on Quy Chuyen vien Y Te da dang ky tham du hoi thao "VAI TRO CUA MIEN DICH VA DINH DUONG DOI VOI BENH NHAN DAI THAO DUONG TRONG GIAI DOAN BINH THUONG MOI". Ma xac nhan cua Quy vi la ${newOtp}. Vui long nhap ma xac nhan trong vong 1.5 phut de hoan tat dang ky.`,
             password: 'NonPO.GlucernaSymposium!@34',
             phone: phoneNumber,
@@ -502,16 +502,38 @@ const SignUp = ({ setMode }) => {
   const handleSubmitOTP = async (otpValue) => {
     if (otpValue == otp) {
       setErrOTP(false)
-      await fetchData('/api/user_register', 'POST', payload).then((rs) => {
-        const { success, error } = rs
-        if (success) {
-          setIsShowOTP(false)
-          setMode(MODE.SIGN_IN)
-        } else {
-          setIsShowOTP(false)
-          showToast(error.message)
+      await fetchData('/api/user_register', 'POST', payload).then(
+        async (rs) => {
+          const { success, error } = rs
+          if (success) {
+            setIsShowOTP(false)
+
+            fetch('https://kenhthanhtoan.net/apibrandname/SendOTP', {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                phone: rs.data.phone,
+                message: `Chuc mung Quy Chuyen vien Y Te da hoan tat dang ky tham du hoi thao "VAI TRO CUA MIEN DICH VA DINH DUONG DOI VOI BENH NHAN DAI THAO DUONG TRONG GIAI DOAN BINH THUONG MOI" vao luc 08 gio sang ngay 20/03/2022 tai website https://www.hoithaodaithaoduong.com
+Vui long su dung thong tin sau de dang nhap:
+Username: ${rs.data.phone}
+Password: ${rs.data.name.toLowerCase().replace(/\s/g, '')}`,
+                idrequest: Math.floor(Math.random() * 1000000000),
+                brandname: 'Glucerna',
+                username: 'NonPO.GlucernaSymposium',
+                password: 'NonPO.GlucernaSymposium!@34',
+              }),
+            }).then(function (data) {
+              setMode(MODE.SIGN_IN)
+            })
+          } else {
+            setIsShowOTP(false)
+            showToast(error.message)
+          }
         }
-      })
+      )
     } else {
       setErrOTP(true)
     }
@@ -716,6 +738,7 @@ function Login() {
             user.avatar = data.avatar
             setUser(user)
             localStorage.setItem('user', JSON.stringify(user))
+            window.location = 'lobby.html?welcome=true'
           }
         }
       })
@@ -808,7 +831,7 @@ function Login() {
                   CHỌN ẢNH TỪ THIẾT BỊ
                 </button>
                 <button style={{ margin: 0 }} className='btn'>
-                  <a href='#'>BỎ QUA</a>
+                  <a href='../lobby.html?welcome=true'>BỎ QUA</a>
                 </button>
               </div>
             </div>
