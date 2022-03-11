@@ -29,6 +29,18 @@ const initVideo = () => {
   }
 }
 
+const openGameRoom = () => {
+  const element = document.querySelector('.shield')
+
+  element && element.addEventListener('click', (evt) => {
+    // BLock action user click without shield element
+    if (evt.target.localName === 'span') return
+    console.warn('link game 1')
+    // window.open('...', '_blank');
+  })
+}
+
 window.onload = () => {
   initVideo()
+  openGameRoom()
 }
