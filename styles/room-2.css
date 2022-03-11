@@ -1,0 +1,100 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    overflow:auto;
+}
+
+.room-2 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.room-2__wrap {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.room-2__btn-left {
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width:29%;
+    height:17%;
+    transition: all .3s ease-in-out;
+
+}
+
+.room-2__btn-right {
+    background: transparent;
+    position: absolute;
+    right:0;
+    top: 40%;
+    width:28%;
+    height:17%;
+    transition: all .3s ease-in-out;
+}
+
+
+/* Popup event css*/
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: opacity 200ms;
+    z-index: 6;
+}
+
+.popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out;
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-wrap {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.popup-info {
+    object-fit: cover;
+    width: 624px;
+    height: 365px;
+    overflow: hidden;
+}
+
+.btn-back-home {
+    background-image: url(../images/btn-back-home.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    width: 210px;
+    height: 55px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 3;
+}
