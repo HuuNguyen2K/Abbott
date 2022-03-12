@@ -107,17 +107,3 @@
 .room2__popup-left {
     /*position: relative;*/
 }
-
-.btn-back-home {
-    background-image: url(../images/btn-back-home.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: block;
-    width: 210px;
-    height: 55px;
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    z-index: 3;
-}

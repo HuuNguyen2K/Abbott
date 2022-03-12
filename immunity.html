@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/menu.css" />
     <link rel="stylesheet" href="./styles/leaderboard.css" />
     <link rel="stylesheet" href="./styles/immunity.css" />
+    <link rel="stylesheet" href="./styles/backHome.css" />
   </head>
   <body>
     <div class="container" style="background-image: url('./images/room-1.jpg')">
@@ -22,14 +23,11 @@
      </div>
     </div>
 
-     <a class="back-home" href="./lobby.html?welcome=false">
-       <img src="./images/btn-back-home.png" alt="btn-back-home">
-     </a>
-
     <div id="global-menu"></div>
     <div id="welcome-video-render"></div>
     <div id="global-leaderboard"></div>
     <div id="iframe-game-render"></div>
+    <div id="back-home"></div>
 
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
@@ -39,6 +37,7 @@
     <script src="./scripts/leaderboard.js" type="text/babel"></script>
     <script src="./scripts/iframe-game.js" type="text/babel"></script>
     <script src="./scripts/welcome.js" type="text/babel"></script>
+    <script src="./scripts/backHome.js" type="text/babel"></script>
 
     <script type="text/babel">
       const search = window.location.search.substring(1)
@@ -61,5 +60,6 @@
 
     <script src="./scripts/immunity.js"></script>
     <script src="./scripts/common.js"></script>
+
   </body>
 </html>
