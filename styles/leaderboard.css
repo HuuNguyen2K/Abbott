@@ -135,7 +135,7 @@
   width: 33.6vw;
   max-height: 72vh;
   overflow-y: scroll;
-  padding: 0.32vw 0;
+  padding: 0.32vw 0.2vw 0.32vw 0;
 }
 
 .leaderboard .leaderboard-list::-webkit-scrollbar {
@@ -148,7 +148,7 @@
 
 .leaderboard .leaderboard-list::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background-color: #CACACA;
+  background-color: var(--secondary-color);
 }
 
 /* --- Leaderboard list --- */
@@ -235,20 +235,10 @@
 }
 /* --- Leaderboard list - END --- */
 
-.leaderboard .close-leaderboard {
-  position: absolute;
-  top: 32.5px;
-  right: 30px;
-  width: 16px;
-  height: auto;
-  cursor: pointer;
-  z-index: 9;
-}
-
 /* ===== Responsive ===== */
 @media only screen and (max-width: 1700px) {
   .leaderboard .leaderboard-top .top-content {
-    padding: 5vw;
+    padding: 2vw 5vw;
   }
 
   .leaderboard .medal-item .medal-img {
@@ -272,6 +262,99 @@
 
   .leaderboard .medal-item .user-score {
     font-size: 2.5vw;
+  }
+}
+
+@media only screen and (max-height: 755px) {
+  .leaderboard .leaderboard-top {
+    height: 78vh;
+  }
+
+  .leaderboard .leaderboard-title {
+    max-width: 42.5vw;
+  }
+
+  .leaderboard .medal-item .user-avatar {
+    width: 11vw;
+    height: 11vw;
+    margin: 0 auto 1.2vw;
+  }
+
+  .leaderboard .leaderboard-top .gold-medal .user-avatar {
+    width: 12.5vw;
+    height: 12.5vw;
+  }
+
+  .leaderboard .medal-item .medal-img {
+    height: 6.544vw;
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  .leaderboard .leaderboard-top .top-content {
+    padding: 2vw 6vw;
+  }
+
+  .leaderboard .medal-item .user-avatar {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  .leaderboard .leaderboard-top .gold-medal .user-avatar {
+    width: 11.5vw;
+    height: 11.5vw;
+  }
+
+  .leaderboard .medal-item .medal-img {
+    height: 6.2vw;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .leaderboard .leaderboard-top {
+    height: 74vh;
+  }
+
+  .leaderboard .leaderboard-title {
+    max-width: 45.5vw;
+  }
+
+  .leaderboard .leaderboard-top .top-content {
+    padding: 2vw 5vw;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  .leaderboard .leaderboard-title {
+    max-width: 42.5vw;
+  }
+
+  .leaderboard .leaderboard-top .top-content {
+    padding: 3vw 6.5vw;
+  }
+
+  .leaderboard .medal-item .user-avatar {
+    width: 8.5vw;
+    height: 8.5vw;
+    margin: 0 auto 1.4vw;
+  }
+
+  .leaderboard .leaderboard-top .gold-medal .user-avatar {
+    width: 10.5vw;
+    height: 10.5vw;
+  }
+
+  .leaderboard .leaderboard-top .silver-medal,
+  .leaderboard .leaderboard-top .bronze-medal {
+    padding-top: 4vw;
+  }
+
+  .leaderboard .medal-item .medal-img {
+    height: 5.544vw;
+  }
+
+  .leaderboard .medal-item .user-name {
+    font-size: 1.2vw;
   }
 }
 /* ===== Responsive - END ===== */

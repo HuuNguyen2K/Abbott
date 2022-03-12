@@ -4,19 +4,6 @@ const Menu = () => {
     const userName = localStorage.getItem('user') ?
         JSON.parse(localStorage.getItem('user')).name : '-Tên khách tham dự-'
 
-    const handleToggleMenu = () => {
-        const _menu = document.querySelector('#menu')
-        const element = document.querySelectorAll('[data-control-menu]')
-
-        element.length && element.forEach(ele => {
-            ele.addEventListener('click', (evt) => {
-                const command = evt.target.dataset['controlMenu']
-                // Force check class exists
-                _menu.classList.toggle('menu-visible', command === 'open')
-            })
-        })
-    };
-
     const handleToggleSubMenu = () => {
         const subMenu = document.querySelectorAll('#menu .menu-submenu')
 
@@ -36,7 +23,6 @@ const Menu = () => {
     };
 
     useEffect(() => {
-        handleToggleMenu();
         handleToggleSubMenu();
     }, []);
 
@@ -45,11 +31,23 @@ const Menu = () => {
             <div id="menu-icon" className="menu-icon">
                 <img src="./images/menu.png"
                      alt="menu_icon"
-                     data-control-menu="open"
+                     data-control={ JSON.stringify({
+                         render_name: '#menu',
+                         command: 'open',
+                         active_class: 'menu-visible',
+                         without_ele: null
+                     }) }
                 />
             </div>
             <div id="menu">
-            <div data-control-menu="close" className="menu-overlay"></div>
+            <div data-control={ JSON.stringify({
+                    render_name: '#menu',
+                    command: 'close',
+                    active_class: 'menu-visible',
+                    without_ele: null
+                }) }
+                 className="menu-overlay">
+            </div>
             <div className="menu-container">
                 <h5 className="menu-greeting">
                     Kính chào Quý Chuyên viên Y tế
@@ -89,7 +87,13 @@ const Menu = () => {
                     </li>
                     <li className="menu-item">
                         <a href="javascript:void(0)"
-                           data-control-leaderboard="open">
+                           data-control={ JSON.stringify({
+                               render_name: '#global-leaderboard .leaderboard',
+                               command: 'open',
+                               active_class: 'leaderboard-visible',
+                               without_ele: null
+                           }) }
+                        >
                             bảng xếp hạng
                         </a>
                     </li>
@@ -103,8 +107,13 @@ const Menu = () => {
                 </div>
             </div>
 
-            <img className="close-menu"
-                 data-control-menu="close"
+            <img className="close-popup"
+                 data-control={ JSON.stringify({
+                     render_name: '#menu',
+                     command: 'close',
+                     active_class: 'menu-visible',
+                     without_ele: null
+                 }) }
                  src="./images/close_icon.png"
                  alt="close_icon" />
             </div>

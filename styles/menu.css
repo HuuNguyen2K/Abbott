@@ -135,18 +135,164 @@
   height: auto;
 }
 
-#menu .close-menu {
-  position: absolute;
-  top: 32.5px;
-  right: 30px;
-  width: 16px;
-  height: auto;
-  cursor: pointer;
-  z-index: 9;
+/* ===== Responsive ===== */
+@media only screen and (max-width: 1025px) {
+  #menu {
+    width: 48vw;
+  }
+
+  #menu .menu-container {
+    padding-bottom: 2vw;
+  }
+
+  #menu .menu-greeting {
+    font-size: 2vw;
+    margin: 15vw 0 4vw;
+  }
+
+  #menu .menu-root {
+    padding-left: 9vw;
+  }
+
+  #menu .menu-root .menu-item {
+    font-size: 2.1vw;
+  }
+
+  #menu .menu-root .menu-item:not(:last-child) {
+    margin-bottom: 2vw;
+  }
+
+  #menu .menu-item .menu-submenu {
+    padding-left: 2vw;
+  }
+
+  #menu .menu-item .menu-submenu .submenu-item:not(:last-child) {
+    margin-bottom: 1.5vw;
+  }
+
+  #menu .menu-item .menu-submenu .submenu-item:first-child {
+    margin-top: 0.7vw;
+  }
+
+  #menu .menu-root .menu-item .submenu-title i::before {
+    font-size: 2vw;
+    margin-left: 1vw;
+  }
+
+  #menu .menu-logo {
+    padding: 0 2.8vw 0 7.5vw;
+  }
+
+  #menu .menu-logo img {
+    width: 4.5vw;
+  }
 }
 
-/* ===== Responsive ===== */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
+  .menu-icon {
+    width: 40px;
+    height: auto;
+  }
+}
 
+@media only screen and (max-height: 600px) {
+  #menu .menu-greeting {
+    margin: 12vw 0 3vw;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  #menu {
+    width: 40vw;
+  }
+
+  #menu .menu-container {
+    padding-bottom: 2vw;
+  }
+
+  #menu .menu-greeting {
+    font-size: 1.5vw;
+    margin: 7vw 0 3vw;
+  }
+
+  #menu .menu-root {
+    padding-left: 7.5vw;
+  }
+
+  #menu .menu-root .menu-item {
+    font-size: 1.6vw;
+  }
+
+  #menu .menu-root .menu-item:not(:last-child) {
+    margin-bottom: 1.2vw;
+  }
+
+  #menu .menu-item .menu-submenu {
+    padding-left: 2vw;
+  }
+
+  #menu .menu-item .menu-submenu .submenu-item:not(:last-child) {
+    margin-bottom: 0.8vw;
+  }
+
+  #menu .menu-item .menu-submenu .submenu-item:first-child {
+    margin-top: 0.5vw;
+  }
+
+  #menu .menu-root .menu-item .submenu-title i::before {
+    font-size: 1.6vw;
+    margin-left: 0.7vw;
+  }
+
+  #menu .menu-logo {
+    padding: 0 2.5vw 0 6.5vw;
+  }
+
+  #menu .menu-logo img {
+    width: 3.2vw;
+  }
+}
+@media only screen and (max-height: 400px) {
+  #menu .menu-container {
+    padding-bottom: 1.5vw;
+  }
+
+  #menu .menu-greeting {
+    font-size: 1.7vw;
+    margin: 9vw 0 2.8vw;
+  }
+
+  #menu .menu-root {
+    padding-left: 7vw;
+  }
+
+  #menu .menu-root .menu-item {
+    font-size: 1.9vw;
+  }
+
+  #menu .menu-root .menu-item:not(:last-child) {
+    margin-bottom: 1.4vw;
+  }
+
+  #menu .menu-item .menu-submenu .submenu-item:not(:last-child) {
+    margin-bottom: 1vw;
+  }
+
+  #menu .menu-item .menu-submenu .submenu-item:first-child {
+    margin-top: 0.7vw;
+  }
+
+  #menu .menu-root .menu-item .submenu-title i::before {
+    font-size: 1.6vw;
+    margin-left: 0.7vw;
+  }
+
+  #menu .menu-logo {
+    padding: 0 2.5vw 0 5.5vw;
+  }
+
+  #menu .menu-logo img {
+    width: 3.2vw;
+  }
 }
 /* ===== Responsive - END ===== */

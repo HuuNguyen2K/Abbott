@@ -1,21 +1,7 @@
 const { useEffect } = React;
 
 const Leaderboard = () => {
-  const handleToggleLeaderBoard = () => {
-    const _leaderboard = document.querySelector('#global-leaderboard .leaderboard')
-    const element = document.querySelectorAll('[data-control-leaderboard]')
-
-    element.length && element.forEach(ele => {
-      ele.addEventListener('click', (evt) => {
-        const command = evt.target.dataset['controlLeaderboard']
-        // Force check class exists
-        _leaderboard.classList.toggle('leaderboard-visible', command === 'open')
-      })
-    })
-  };
-
   useEffect(() => {
-    handleToggleLeaderBoard();
   }, []);
 
   return (
@@ -36,7 +22,7 @@ const Leaderboard = () => {
 
                   <div className="medal-item silver-medal">
                     <div style={{ backgroundImage: `url("../images/avatar-frame.png")` }}
-                         className="user-avatar"/>
+                         className="user-avatar slide-shine"/>
                     <img className="medal-img"
                          src="./images/silver-medal.png"
                          alt="silver-medal"/>
@@ -46,7 +32,7 @@ const Leaderboard = () => {
 
                   <div className="medal-item gold-medal">
                     <div style={{ backgroundImage: `url("../images/avatar-frame.png")` }}
-                         className="user-avatar"/>
+                         className="user-avatar slide-shine"/>
                     <img className="medal-img"
                          src="./images/gold-medal.png"
                          alt="gold-medal"/>
@@ -56,7 +42,7 @@ const Leaderboard = () => {
 
                   <div className="medal-item bronze-medal">
                     <div style={{ backgroundImage: `url("../images/avatar-frame.png")` }}
-                         className="user-avatar"/>
+                         className="user-avatar slide-shine"/>
                     <img className="medal-img"
                          src="./images/bronze-medal.png"
                          alt="bronze-medal"/>
@@ -92,7 +78,7 @@ const Leaderboard = () => {
                        src="./images/background-current-user.png"
                        alt="background-gold"/>
 
-                  <div className="item-content">
+                  <div className="item-content slide-shine">
                     <span className="item-rate">5</span>
 
                     <div className="item-user">
@@ -108,8 +94,13 @@ const Leaderboard = () => {
             </div>
           </div>
 
-          <img className="close-leaderboard"
-               data-control-leaderboard="close"
+          <img className="close-popup"
+               data-control={ JSON.stringify({
+                 render_name: '#global-leaderboard .leaderboard',
+                 command: 'close',
+                 active_class: 'leaderboard-visible',
+                 without_ele: null
+               }) }
                src="./images/close_icon_2.png"
                alt="close_icon"/>
         </div>
