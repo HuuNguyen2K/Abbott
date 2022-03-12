@@ -10,17 +10,19 @@
     <link rel="stylesheet" href="./styles/room-2.css"/>
     <!-- TODO -->
     <link rel="stylesheet" href="styles/menu.css"/>
-    <link rel="stylesheet" href="styles/lobby.css"/>
     <link rel="stylesheet" href="styles/backHome.css"/>
 
 </head>
 <body>
-<div id="room-2" class="container room-2" style="background-image:url(./images/room-2-bg.jpg)">
-    <div class="room-2__wrap">
+<div id="room-2" class="container room-2" style="background-image:url(images/room-2-bg.jpg)">
+    <div class=" room-2__wrap">
 
         <!-- Begin button click event -->
-        <a href="#event-room-2-left" data-toggle="event-room-2-left" class="room-2__btn-left"></a>
-        <a href="https://google.com" target="_blank" data-toggle="event-room-2-right" class="room-2__btn-right"></a>
+        <a href="#event-room-2-left" data-toggle="event-room-2-left" class="room-2__btn-left"
+           style="background-image:url(images/room-2-btn-left.png)"></a>
+
+        <a href="#event-room-2-right" data-toggle="event-room-2-right" class="room-2__btn-right"
+           style="background-image:url(images/room-2-btn-right.png)"></a>
         <!-- End button click event -->
 
         <!-- Begin popup event left -->
@@ -31,7 +33,6 @@
                 <a href="https://www.youtube.com/" target="_blank" class="btn-download"></a>
             </div>
         </div>
-
         <!-- End popup event left -->
 
         <!-- Begin popup event right -->
@@ -49,22 +50,22 @@
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-<!--<script src="./scripts/menu.js" type="text/babel"></script>-->
-<!--<script src="./scripts/welcome.js" type="text/babel"></script>-->
+<script src="./scripts/menu.js" type="text/babel"></script>
+<script src="./scripts/welcome.js" type="text/babel"></script>
 
-<!--<script type="text/babel">-->
-<!--    const search = window.location.search.substring(1)-->
-<!--    const params = new URLSearchParams(search)-->
-<!--    const welcome = params.get('welcome');-->
-<!--    if (welcome === 'true') {-->
-<!--        const domContainer = document.querySelector('#welcome-video-render');-->
-<!--        ReactDOM.render(-->
-<!--            <WellComeVideo-->
-<!--                src="https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4"/>,-->
-<!--            domContainer-->
-<!--        );-->
-<!--    }-->
-<!--</script>-->
+<script type="text/babel">
+    const search = window.location.search.substring(1)
+    const params = new URLSearchParams(search)
+    const welcome = params.get('welcome');
+    if (welcome === 'true') {
+        const domContainer = document.querySelector('#welcome-video-render');
+        ReactDOM.render(
+            <WellComeVideo
+                src="https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4"/>,
+            domContainer
+        );
+    }
+</script>
 
 <script type="text/babel" src="./scripts/backHome.js"></script>
 <script src="./scripts/room-2.js"></script>
