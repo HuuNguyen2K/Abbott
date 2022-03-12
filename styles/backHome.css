@@ -5,3 +5,10 @@
     width: 210px;
     height: 55px;
 }
+
+@media only screen and (max-height: 768px) {
+    .back-home {
+        width: 16vw;
+        height: auto;
+    }
+}

@@ -1,0 +1,166 @@
+.modal-qr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-image: url('../images/...link background');*/
+  background-color: var(--secondary-color); /* TODO: Will be remove when have design */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: opacity 0.25s ease-out;
+  -o-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out;
+  z-index: 10;
+}
+
+.modal-qr.modal-qr-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-qr .qr-container {
+  text-align: center;
+}
+
+.modal-qr .qr-title {
+  font-size: 55px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #740e45;
+  margin-bottom: 20px;
+}
+
+.modal-qr .qr-desc {
+  font-size: 35px;
+  color: #740e45;
+  margin-bottom: 40px;
+}
+
+.modal-qr .direct-google {
+  display: inline-block;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #740e45;
+  padding: 8px;
+  width: 100%;
+  max-width: 480px;
+  /*background-image: url('../images/...link background');*/
+  background-color: #efd445; /* TODO: Will be remove when have design */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.modal-qr .qr-code {
+  width: 300px;
+  height: auto;
+  margin: 0 auto 40px;
+  background-color: #ffffff;
+}
+
+/* ===== Responsive ===== */
+@media only screen and (max-width: 1550px) {
+  .modal-qr .qr-title {
+    font-size: 46px;
+    margin-bottom: 15px;
+  }
+
+  .modal-qr .qr-desc {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .modal-qr .direct-google {
+    font-size: 16px;
+    padding: 8px;
+    max-width: 350px;
+  }
+
+  .modal-qr .qr-code {
+    width: 200px;
+    margin: 0 auto 20px;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .modal-qr .qr-code {
+    width: 240px;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .modal-qr .qr-title {
+    font-size: 4vw;
+    margin-bottom: 1vw;
+  }
+
+  .modal-qr .qr-desc {
+    font-size: 2.5vw;
+    margin-bottom: 3vw;
+  }
+
+  .modal-qr .direct-google {
+    font-size: 2vw;
+    padding: 1vw;
+    max-width: 36vw;
+  }
+
+  .modal-qr .qr-code {
+    width: 25vw;
+    margin: 0 auto 4vw;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  .modal-qr .qr-title {
+    font-size: 2.7vw;
+    margin-bottom: 1vw;
+  }
+
+  .modal-qr .qr-desc {
+    font-size: 1.7vw;
+    margin-bottom: 2vw;
+  }
+
+  .modal-qr .direct-google {
+    font-size: 1.2vw;
+    padding: 0.5vw;
+    max-width: 24vw;
+  }
+
+  .modal-qr .qr-code {
+    width: 15vw;
+    margin: 0 auto 2vw;
+  }
+}
+
+@media only screen and (max-height: 395px) {
+  .modal-qr .qr-title {
+    font-size: 3vw;
+  }
+
+  .modal-qr .qr-desc {
+    font-size: 2vw;
+  }
+
+  .modal-qr .direct-google {
+    font-size: 1.3vw;
+    max-width: 27vw;
+  }
+
+  .modal-qr .qr-code {
+    width: 18vw;
+  }
+}
+/* ===== Responsive - END ===== */
