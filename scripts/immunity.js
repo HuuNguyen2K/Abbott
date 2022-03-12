@@ -16,7 +16,7 @@ const openIframeGame = () => {
   })
 }
 
-window.onload = () => {
+window.addEventListener('load', () => {
   openModalRemindGame()
   openIframeGame()
-}
+});

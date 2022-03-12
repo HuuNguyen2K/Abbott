@@ -23,6 +23,6 @@ const handleToggleByIssue = () => {
   })
 };
 
-window.onload = () => {
+window.addEventListener('load', () => {
   handleToggleByIssue()
-}
+});
