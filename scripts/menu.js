@@ -55,7 +55,7 @@ const Menu = () => {
                 </h5>
                 <ul className="menu-root">
                     <li className="menu-item">
-                        <a href="javascript:void(0)">Hội thảo</a>
+                        <a href="javascript:void(0)">Chương trình hội thảo</a>
                     </li>
                     <li className="menu-item">
                         <p className="submenu-title">
@@ -64,10 +64,16 @@ const Menu = () => {
                         </p>
                         <ul className="menu-submenu">
                             <li className="menu-item submenu-item">
-                                <a href="javascript:void(0)">Trải ngiệm 2</a>
+                                <a href="./immunity.html?welcome=false">Miễn dịch</a>
                             </li>
                             <li className="menu-item submenu-item">
-                                <a href="javascript:void(0)">Trải ngiệm 3</a>
+                                <a href="./product.html">Dinh Dưỡng Và<br/>Giải Pháp Đột Phá</a>
+                            </li>
+                            <li className="menu-item submenu-item">
+                              <a href="./libre.html">theo dõi<br/>glucose liên tục</a>
+                            </li>
+                            <li className="menu-item submenu-item">
+                              <a href="./syposium.html">Hội Thảo Khoa Học</a>
                             </li>
                         </ul>
                     </li>
@@ -78,10 +84,10 @@ const Menu = () => {
                         </p>
                         <ul className="menu-submenu">
                             <li className="menu-item submenu-item">
-                                <a href="javascript:void(0)">Thử thách 2</a>
+                                <a href="javascript:void(0)">ổn định đường huyết - tăng cường miễn dịch</a>
                             </li>
                             <li className="menu-item submenu-item">
-                                <a href="javascript:void(0)">Thử thách 3</a>
+                                <a href="javascript:void(0)">dinh dưỡng tối ưu</a>
                             </li>
                         </ul>
                     </li>
@@ -100,10 +106,10 @@ const Menu = () => {
                 </ul>
 
                 <div className="menu-logo">
-                    <img src="./images/logo-abbott.png"
-                         alt="logo_abbott" />
-                        <img src="./images/logo-vade.png"
-                             alt="logo_vade" />
+                  <img src="./images/logo-vade.png"
+                       alt="logo_vade" />
+                  <img src="./images/logo-abbott.png"
+                       alt="logo_abbott" />
                 </div>
             </div>
 

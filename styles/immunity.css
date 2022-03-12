@@ -29,9 +29,9 @@ video {
 
 .touch-shield {
   position: fixed;
-  top: 15.8vw;
+  top: 18.8vw;
   left: 56.8vw;
-  width: 25vw;
+  width: 28vw;
   opacity: 0;
   pointer-events: none;
   -webkit-transform: translateY(40px);
@@ -212,6 +212,43 @@ video {
     top: 18.9vw;
     left: 56.8vw;
     width: 29vw;
+  }
+}
+
+@media only screen and (max-height: 920px) {
+  .touch-shield {
+    top: 21.9vw;
+    left: 58.2vw;
+    width: 34vw;
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  .touch-shield {
+    top: 14.5vw;
+    left: 56.8vw;
+    width: 27vw;
+  }
+}
+
+@media only screen and (max-height: 420px) {
+  .touch-shield {
+    top: 12.9vw;
+    left: 56.8vw;
+    width: 29vw;
+  }
+}
+
+@media only screen and (max-height: 376px) {
+  .touch-shield {
+    top: 18.5vw;
+  }
+}
+
+@media only screen and (max-height: 300px) {
+  .touch-shield {
+    top: 12.5vw;
+    width: 27vw;
   }
 }
 /* ===== Responsive - END ===== */

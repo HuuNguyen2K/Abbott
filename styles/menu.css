@@ -195,6 +195,12 @@
   }
 }
 
+@media only screen and (max-height: 720px) {
+  #menu .menu-greeting {
+    margin: 120px 0 56px;
+  }
+}
+
 @media only screen and (max-height: 600px) {
   #menu .menu-greeting {
     margin: 12vw 0 3vw;
@@ -252,6 +258,7 @@
     width: 3.2vw;
   }
 }
+
 @media only screen and (max-height: 400px) {
   #menu .menu-container {
     padding-bottom: 1.5vw;

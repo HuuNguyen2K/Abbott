@@ -18,6 +18,9 @@ const WellComeVideo = (props) => {
     const source = document.createElement('source')
     const container = document.querySelector('.container')
     const modal = document.querySelector('.modal-video')
+    // Custom for immunity page
+    const touchShield = document.querySelector('.touch-shield')
+    // Custom for immunity page - END
 
     modal.style.display = 'block'
     source.setAttribute('src', src)
@@ -36,6 +39,12 @@ const WellComeVideo = (props) => {
       video.remove()
       videoEle.remove()
       addQueryParam('welcome', 'false')
+      // Custom for immunity page
+      touchShield && touchShield.classList.remove('fadeIn')
+      touchShield && setTimeout(() => {
+        touchShield.classList.add('fadeIn')
+      }, 1500) // 1.5s
+      // Custom for immunity page - END
     })
   }, [])
 
@@ -47,6 +56,7 @@ const WellComeVideo = (props) => {
         left: '0',
         right: '0',
         bottom: '0',
+        zIndex: '1'
       }}
       className='modal-video'
     >
