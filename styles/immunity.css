@@ -15,14 +15,6 @@ video {
   position: relative;
 }
 
-.back-home {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  width: 210px;
-  height: 55px;
-}
-
 .shield {
   display: block;
   cursor: pointer;

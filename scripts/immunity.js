@@ -12,11 +12,11 @@ const openIframeGame = () => {
   element && element.addEventListener('click', (evt) => {
     // BLock action user click without shield element
     if (evt.target.localName === 'span') return
-    iframeGame.classList.toggle('open-iframe')
+    iframeGame?.classList?.toggle('open-iframe')
   })
 }
 
-window.onload = () => {
+window.addEventListener('load', () => {
   openModalRemindGame()
   openIframeGame()
-}
+});
