@@ -15,11 +15,6 @@
         min-width: 1350px;
         overflow-y: hidden;
     }
-    dd{
-        top: 38%;
-        width: 32%;
-        height: 38%;
-    }
 }
 
 .room-2 {}
