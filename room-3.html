@@ -12,6 +12,8 @@
     <!-- TODO -->
     <link rel="stylesheet" href="styles/menu.css" />
     <link rel="stylesheet" href="./styles/backHome.css" />
+    <link rel="stylesheet" href="styles/leaderboard.css" />
+    <link rel="stylesheet" href="./styles/backHome.css" />
 </head>
 <body>
 <div id="page-libre" class="container page-libre " style="background-image:url(./images/room3-bg.jpg)">
@@ -88,17 +90,19 @@
 <div id="welcome-video-render"></div>
 <div id="global-leaderboard"></div>
 <div id="back-home"></div>
+<div id="warning-time-out"></div>
 
 <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
 <script src="./scripts/menu.js" type="text/babel"></script>
 <script src="./scripts/backHome.js" type="text/babel"></script>
 <script src="./scripts/swiper-bundle.min.js"></script>
 <script src="./scripts/libre-screen.js"></script>
 <script src="./scripts/welcome.js" type="text/babel"></script>
+<script src="./scripts/warningTime.js" type="text/babel"></script>
 
 <script type="text/babel">
     const search = window.location.search.substring(1)

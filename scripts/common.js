@@ -1,11 +1,11 @@
-/**
- * Expect object: {
- *                  render_name: '...selected wanna render',
- *                  command: 'open' || 'close',
- *                  active_class: '...class name',
- *                  without_ele: '...tag name' || null
- *                 }
- */
+// /**
+//  * Expect object: {
+//  *                  render_name: '...selected wanna render',
+//  *                  command: 'open' || 'close',
+//  *                  active_class: '...class name',
+//  *                  without_ele: '...tag name' || null
+//  *                 }
+//  */
 const handleToggleByIssue = () => {
   const elementControl = document.querySelectorAll('[data-control]')
 
