@@ -143,8 +143,8 @@
 }
 
 #menu .menu-logo img {
-  width: 62.5px;
-  height: auto;
+  width: auto;
+  height: 62.5px;
 }
 
 /* ===== Responsive ===== */
@@ -202,7 +202,7 @@
   }
 
   #menu .menu-logo img {
-    width: 4.5vw;
+    height: 4.5vw;
   }
 }
 
@@ -253,6 +253,7 @@
 
 @media only screen and (max-height: 500px) {
   .menu-icon {
+    position: absolute;
     height: 5vw;
     width: 5vw;
   }
@@ -311,7 +312,7 @@
   }
 
   #menu .menu-logo img {
-    width: 3.2vw;
+    height: 3.2vw;
   }
 }
 
@@ -363,7 +364,7 @@
   }
 
   #menu .menu-logo img {
-    width: 3.2vw;
+    height: 3.2vw;
   }
 }
 

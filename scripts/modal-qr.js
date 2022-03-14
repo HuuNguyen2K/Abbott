@@ -7,7 +7,7 @@ const ModalQR = (props) => {
   }, []);
 
   return (
-      <div className="modal-qr modal-qr-visible">
+      <div className="modal-qr">
         <div className="qr-container">
           <h3 className="qr-title">Bài lượng giá CME và khỏa sát ý kiến</h3>
           <p className="qr-desc">Mời Quý Chuyên viên y tế quét mã QR<br/>hoặc bấm vào ô bài lượng giá CME bên dưới.</p>
