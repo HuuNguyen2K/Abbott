@@ -65,13 +65,13 @@ const Menu = () => {
                         </p>
                         <ul className="menu-submenu">
                             <li className="menu-item submenu-item">
-                                <a href="event/immunity.html?welcome=false">Miễn dịch</a>
+                                <a href="./immunity.html?welcome=false">Miễn dịch</a>
                             </li>
                             <li className="menu-item submenu-item">
-                                <a href="event/room-2.html">Dinh Dưỡng Và<br/>Giải Pháp Đột Phá</a>
+                                <a href="./room-2.html">Dinh Dưỡng Và<br/>Giải Pháp Đột Phá</a>
                             </li>
                             <li className="menu-item submenu-item">
-                              <a href="event/room-3.html">theo dõi<br/>glucose liên tục</a>
+                              <a href="./room-3.html">theo dõi<br/>glucose liên tục</a>
                             </li>
                             <li className="menu-item submenu-item">
                               <a href="#">Hội Thảo Khoa Học</a>

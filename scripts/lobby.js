@@ -8,7 +8,7 @@ const Lobby = () => {
       topic_number: 1,
     }
     await fetchData(url, 'POST', payload).then(
-      () => (location.href = 'event/immunity.html')
+      () => (location.href = './immunity.html')
     )
   }
   const handleRoom2Click = async () => {
@@ -20,7 +20,7 @@ const Lobby = () => {
       topic_number: 2,
     }
     await fetchData(url, 'POST', payload).then(
-      () => (location.href = 'event/room-2.html')
+      () => (location.href = './room-2.html')
     )
   }
   const handleRoom3Click = async () => {
@@ -32,7 +32,7 @@ const Lobby = () => {
       topic_number: 3,
     }
     await fetchData(url, 'POST', payload).then(
-      () => (location.href = 'event/room-3.html')
+      () => (location.href = './room-3.html')
     )
   }
   const handleRoom4Click = async () => {
@@ -45,7 +45,7 @@ const Lobby = () => {
     }
     await fetchData(url, 'POST', payload)
       .then
-      // () => (location.href = 'event/immunity.html')
+      // () => (location.href = './immunity.html')
       ()
   }
   return (
