@@ -7,45 +7,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Libre Screen</title>
     <link rel="stylesheet" href="./styles/base.css"/>
-    <link rel="stylesheet" href="./styles/libre-screen.css"/>
+    <link rel="stylesheet" href="./styles/room-3.css"/>
     <link rel="stylesheet" href="./styles/swiper-bundle.min.css"/>
     <!-- TODO -->
-    <link rel="stylesheet" href="styles/lobby.css" />
-    <link rel="stylesheet" href="styles/menu.css" />
-    <link rel="stylesheet" href="styles/leaderboard.css" />
-    <link rel="stylesheet" href="./styles/backHome.css" />
-    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/menu.css"/>
+    <link rel="stylesheet" href="./styles/backHome.css"/>
+    <link rel="stylesheet" href="styles/leaderboard.css"/>
+    <link rel="stylesheet" href="./styles/backHome.css"/>
 </head>
 <body>
-<div id="page-libre" class="container page-libre " style="background-image:url(images/room-3-bg-full.jpg)">
-    <div class="page-libre__wrap">
+<div id="room-3" class="container room-3" style="background-image:url(images/room-3-bg.jpg)">
+    <div class="room-3__wrap">
 
         <!-- Begin button click event -->
-        <a href="#event-libre-left" data-toggle="event-libre-left" class="page-libre__btn-left"></a>
-        <a href="#event-libre-center" data-toggle="event-libre-center" class="page-libre__btn-center"></a>
-        <a href="#event-libre-right" data-toggle="event-libre-right" class="page-libre__btn-right"></a>
+        <div class="room-3__event">
+        <div class="room-3__event-left">
+            <div class="room-3__tutorial-text" style="background-image:url(./images/room-3-tutorial-text-left.png)"></div>
+            <a href="#event-libre-left" data-toggle="event-libre-left" class="room-3__btn-left" style="background-image:url(./images/room-3-event-left.png)"></a>
+        </div>
+        <div class="room-3__event-center">
+            <div class="room-3__tutorial-text" style="background-image:url(./images/room-3-tutorial-text-center.png)"></div>
+
+            <a href="#event-libre-center" data-toggle="event-libre-center" class="room-3__btn-center"></a>
+        </div>
+        <div class="room-3__event-right">
+            <div class="room-3__tutorial-text" style="background-image:url(./images/room-3-tutorial-text-right.png)"></div>
+
+            <a href="#event-libre-right" data-toggle="event-libre-right" class="room-3__btn-right"  style="background-image:url(./images/room-3-event-right.png)"></a>
+        </div>
+        </div>
         <!-- End button click event -->
 
         <!-- Begin popup event left -->
-        <div id="event-libre-left" class="popup page-libre__popup-left ">
-            <!--            <video width="600" controls>-->
-            <!--                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">-->
-            <!--                &lt;!&ndash;Browser does not support <video> tag &ndash;&gt;-->
-            <!--            </video>-->
+        <div id="event-libre-left" class="popup room-3__popup-left ">
             <div class="popup-wrap popup-slide">
                 <!-- Slider main container -->
                 <div class="swiper">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)" ></div>
-                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)" ></div>
-                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)" ></div>
-                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)" ></div>
+                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)"></div>
                         ...
                     </div>
                     <!-- If we need pagination -->
-<!--                    <div class="swiper-pagination"></div>-->
+                    <!--                    <div class="swiper-pagination"></div>-->
 
                     <!-- If we need navigation buttons -->
                     <div class="swiper-button-prev"></div>
@@ -61,7 +69,7 @@
         <!-- End popup event left -->
 
         <!-- Begin popup event center -->
-        <div id="event-libre-center" class="popup page-libre__popup-center ">
+        <div id="event-libre-center" class="popup room-3__popup-center ">
             <div class="popup-wrap popup-video">
                 <video width="600" controls>
                     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
@@ -71,7 +79,7 @@
         <!-- End popup event end -->
 
         <!-- Begin popup event right -->
-        <div id="event-libre-right" class="popup page-libre__popup-right">
+        <div id="event-libre-right" class="popup room-3__popup-right">
             <!-- <video width="600" poster="./images/frame-bg.png" controls loop>
                  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
              </video>-->
@@ -97,14 +105,11 @@
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-<script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
 
 <script src="./scripts/menu.js" type="text/babel"></script>
 <script src="./scripts/backHome.js" type="text/babel"></script>
 <script src="./scripts/swiper-bundle.min.js"></script>
-<script src="./scripts/libre-screen.js"></script>
-<script src="./scripts/leaderboard.js" type="text/babel"></script>
-<script src="./scripts/videoJS.js" type="text/babel"></script>
+<script src="./scripts/room-3.js"></script>
 <script src="./scripts/welcome.js" type="text/babel"></script>
 <script src="./scripts/warningTime.js" type="text/babel"></script>
 
@@ -115,14 +120,15 @@
     if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
         ReactDOM.render(
-            <WellComeVideo src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8" />,
+            <WellComeVideo
+                src="https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4"/>,
             domContainer
         );
     }
 
     const domIframeContainer = document.querySelector('#iframe-game-render');
     ReactDOM.render(
-        <IframeGame src="http://hoithaodaithaoduong.com/game/find-object" />,
+        <IframeGame src="http://hoithaodaithaoduong.com/game/find-object"/>,
         domIframeContainer
     );
 </script>

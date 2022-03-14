@@ -32,6 +32,7 @@ elEventLibrePopupRight.addEventListener('click', hidePopup)
 // Slider
 const swiper = new Swiper('.swiper', {
     centeredSlides: true,
+    spaceBetween: 120,
     // autoplay: {
     //     delay: 2500
     // },
