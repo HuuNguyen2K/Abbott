@@ -68,7 +68,8 @@
     background-size: contain;
     background-position: left center;
     position: absolute;
-    top: calc(50% - 208px);
+    /*top: calc(50% - 208px);*/
+    top: calc(50% - 224px);
     left: 50%;
     width: 318px;
     height: 185px;
@@ -80,7 +81,7 @@
     animation-delay: 3s;
 
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1700px) {
     .room-3__event-left .room-3__tutorial-text {
         top: calc(50% - 192px);
     }
@@ -155,7 +156,7 @@
     animation-delay: 3s;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1700px) {
     .room-3__event-right .room-3__tutorial-text {
         top: calc(50% - 188px);
     }
