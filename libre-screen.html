@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="styles/lobby.css" />
     <link rel="stylesheet" href="styles/menu.css" />
     <link rel="stylesheet" href="styles/leaderboard.css" />
+    <link rel="stylesheet" href="./styles/backHome.css" />
     <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
 </head>
 <body>
-<div id="page-libre" class="container page-libre " style="background-image:url(./images/room3-bg.jpg)">
+<div id="page-libre" class="container page-libre " style="background-image:url(images/room-3-bg-full.jpg)">
     <div class="page-libre__wrap">
 
         <!-- Begin button click event -->
@@ -76,12 +77,12 @@
         <!-- End popup event right -->
     </div>
 
-    <a href="#" class="btn-back-home"></a>
 </div>
 
 <div id="global-menu"></div>
 <div id="welcome-video-render"></div>
 <div id="global-leaderboard"></div>
+<div id="back-home"></div>
 <div id="warning-time-out"></div>
 
 <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
@@ -91,6 +92,9 @@
 <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
 
 <script src="./scripts/menu.js" type="text/babel"></script>
+<script src="./scripts/backHome.js" type="text/babel"></script>
+<script src="./scripts/swiper-bundle.min.js"></script>
+<script src="./scripts/libre-screen.js"></script>
 <script src="./scripts/leaderboard.js" type="text/babel"></script>
 <script src="./scripts/videoJS.js" type="text/babel"></script>
 <script src="./scripts/welcome.js" type="text/babel"></script>
@@ -107,6 +111,12 @@
             domContainer
         );
     }
+
+    const domIframeContainer = document.querySelector('#iframe-game-render');
+    ReactDOM.render(
+        <IframeGame src="http://hoithaodaithaoduong.com/game/find-object" />,
+        domIframeContainer
+    );
 </script>
 
 <script type="text/babel">
