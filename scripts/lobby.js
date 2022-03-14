@@ -7,9 +7,10 @@ const Lobby = () => {
       user_id: user.id,
       topic_number: 1,
     }
-    await fetchData(url, 'POST', payload).then(
-      () => (location.href = './immunity.html')
-    )
+    try {
+      await fetchData(url, 'POST', payload)
+    } catch (error) {}
+    location.href = './immunity.html'
   }
   const handleRoom2Click = async () => {
     const url = '/api/user_click_topic'
@@ -19,9 +20,10 @@ const Lobby = () => {
       user_id: user.id,
       topic_number: 2,
     }
-    await fetchData(url, 'POST', payload).then(
-      () => (location.href = './room-2.html')
-    )
+    try {
+      await fetchData(url, 'POST', payload)
+    } catch (error) {}
+    location.href = './room-2.html'
   }
   const handleRoom3Click = async () => {
     const url = '/api/user_click_topic'
@@ -31,9 +33,11 @@ const Lobby = () => {
       user_id: user.id,
       topic_number: 3,
     }
-    await fetchData(url, 'POST', payload).then(
-      () => (location.href = './room-3.html')
-    )
+
+    try {
+      await fetchData(url, 'POST', payload)
+    } catch (error) {}
+    location.href = './room-3.html'
   }
   const handleRoom4Click = async () => {
     const url = '/api/user_click_topic'
@@ -43,10 +47,10 @@ const Lobby = () => {
       user_id: user.id,
       topic_number: 4,
     }
-    await fetchData(url, 'POST', payload)
-      .then
-      // () => (location.href = './immunity.html')
-      ()
+     try {
+      await fetchData(url, 'POST', payload)
+    } catch (error) {}
+    // location.href = './room-3.html'
   }
   return (
     <div
