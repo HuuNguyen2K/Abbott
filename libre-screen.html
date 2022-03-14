@@ -62,24 +62,16 @@
         <!-- Begin popup event center -->
         <div id="event-libre-center" class="popup page-libre__popup-center ">
             <div class="popup-wrap popup-video">
-                <video width="600" controls>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                </video>
+                <div id='video-js-center' style="width: 600px"></div>
             </div>
         </div>
         <!-- End popup event end -->
 
         <!-- Begin popup event right -->
         <div id="event-libre-right" class="popup page-libre__popup-right">
-            <!-- <video width="600" poster="./images/frame-bg.png" controls loop>
-                 <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-             </video>-->
             <div class="popup-wrap popup-video">
-                <video width="600" controls loop>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                </video>
+                <div id='video-js-right' style="width: 600px"></div>
             </div>
-
         </div>
         <!-- End popup event right -->
     </div>
@@ -115,6 +107,16 @@
             domContainer
         );
     }
+</script>
+
+<script type="text/babel">
+    const domContainer = document.querySelector("#video-js-right");
+    ReactDOM.render(<VideoJS src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"/>, domContainer);
+</script>
+
+<script type="text/babel">
+    const domContainer = document.querySelector("#video-js-center");
+    ReactDOM.render(<VideoJS src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"/>, domContainer);
 </script>
 
 <script src="./scripts/swiper-bundle.min.js"></script>

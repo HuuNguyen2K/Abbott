@@ -6,11 +6,11 @@ const VideoJS = ( props ) => {
     const { src, options, onReady, onEnded } = props;
 
     const defaultOptions = {
-        autoplay: true,
+        autoplay: false,
         controls: true,
         responsive: true,
         fluid: true,
-        muted: true,
+        muted: false,
         sources: [{
             src,
             type: 'application/x-mpegURL'
@@ -54,7 +54,7 @@ const VideoJS = ( props ) => {
 
     return (
         <div data-vjs-player>
-            <video ref={videoRef} className="video-js vjs-big-play-centered" />
+            <video ref={videoRef} className="video-js vjs-big-play-centered"/>
         </div>
     );
 }

@@ -73,7 +73,7 @@ const WellComeVideo = (props) => {
       className='modal-video'
     >
       <div id='welcome-video'>
-          <VideoJS src={src} options={{ muted }} onEnded={handleEnded} />
+          <VideoJS src={src} options={{ muted, autoplay: true }} onEnded={handleEnded} />
         <button
           style={{
             position: 'absolute',
