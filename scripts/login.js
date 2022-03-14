@@ -732,7 +732,7 @@ function Login() {
             user.avatar = data.avatar
             setUser(user)
             localStorage.setItem('user', JSON.stringify(user))
-            window.location = 'lobby.html?welcome=true'
+            window.location = 'event/lobby.html?welcome=true'
           }
         }
       })
@@ -821,7 +821,7 @@ function Login() {
                   CHỌN ẢNH TỪ THIẾT BỊ
                 </button>
                 <button style={{ margin: 0 }} className='btn'>
-                  <a href='../lobby.html?welcome=true'>BỎ QUA</a>
+                  <a href='event/lobby.html?welcome=true'>BỎ QUA</a>
                 </button>
               </div>
             </div>

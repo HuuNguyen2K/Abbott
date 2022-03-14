@@ -13,33 +13,8 @@
     <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
   </head>
   <body>
-    <div
-      id="container"
-      class="container"
-      style="background-image: url('./images/lobby-background-2.png')"
-    >
-      <a class="room r-a room-1" href="./immunity.html?welcome=true">
-        Miễn Dịch
-      </a>
-      <a class="room r-a room-2" href="./product.html">
-        Dinh Dưỡng Và Giải <br />
-        Pháp Đột Phá Mới
-      </a>
-      <a class="room r-a room-3" href="./libre.html"> FreeStyle Libre </a>
-      <a class="room room-4" href="./syposium.html"> Hội Thảo Khoa Học </a>
-      <div class="invite-choice">
-        <img
-          src="./images/lobby-moi.png"
-          alt="Mời Qúy chuyên viên Y Tế chọn khu vực trải nghiệm"
-        />
-      </div>
-      <div class="text">
-        <span>
-          VAI TRÒ CỦA MIỄN DỊCH VÀ DINH DƯỠNG ĐỐI VỚI BỆNH NHÂN ĐÁI THÁO ĐƯỜNG
-          TRONG GIAI ĐOẠN BÌNH THƯỜNG MỚI
-        </span>
-      </div>
-    </div>
+    <div id="root"></div>
+
     <div id="video"></div>
 
     <div id="global-menu"></div>
@@ -47,12 +22,19 @@
     <div id="global-leaderboard"></div>
     <div id="warning-time-out"></div>
 
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
 
+    <script src="./scripts/fetch.js" type="text/babel"></script>
     <script src="./scripts/menu.js" type="text/babel"></script>
     <script src="./scripts/leaderboard.js" type="text/babel"></script>
     <script src="./scripts/videoJS.js" type="text/babel"></script>
@@ -62,17 +44,17 @@
     <script type="text/babel">
       const search = window.location.search.substring(1)
       const params = new URLSearchParams(search)
-      const welcome = params.get('welcome');
+      const welcome = params.get('welcome')
       if (welcome === 'true') {
-        const domContainer = document.querySelector('#welcome-video-render');
+        const domContainer = document.querySelector('#welcome-video-render')
         ReactDOM.render(
-                <WellComeVideo src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8" />,
-                domContainer
-        );
+          <WellComeVideo src='https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8' />,
+          domContainer
+        )
       }
     </script>
 
-    <script src="./scripts/lobby.js"></script>
+    <script type="text/babel" src="./scripts/lobby.js"></script>
     <script src="./scripts/common.js"></script>
   </body>
 </html>

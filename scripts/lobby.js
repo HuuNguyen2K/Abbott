@@ -1,73 +1,86 @@
-const compareTimeEvent = () => {
-  fetch('../time.txt')
-    .then((response) => response.text())
-    .then((text) => {
-      const eventTime = Date.parse(new Date(text))
-
-      setInterval(() => {
-        const currentTime = Date.parse(new Date())
-        if (eventTime === currentTime) console.log(eventTime)
-      }, 1000)
-    })
-}
-
-const timerColorChange = () => {
-  const TIME_WAIT = 3
-  const TIME_BLINK = 0.5
-  let count = 0
-  const text = document.querySelectorAll('.r-a')
-  setInterval(() => {
-    count += 0.1
-    if (count >= TIME_WAIT + TIME_BLINK) count = 0
-    if (count >= TIME_WAIT) {
-      text.forEach((i) => {
-        if (!i.classList.contains('active')) i.classList.add('active')
-      })
-    } else {
-      text.forEach((i) => {
-        if (i.classList.contains('active')) i.classList.remove('active')
-      })
+const Lobby = () => {
+  const handleRoom1Click = async () => {
+    const url = '/api/user_click_topic'
+    const user = JSON.parse(localStorage.getItem('user'))
+    const payload = {
+      access_token: user.access_token,
+      user_id: user.id,
+      topic_number: 1,
     }
-  }, 100)
-}
-
-const initVideo = () => {
-  const videoEle = document.querySelector('#video')
-
-  const search = window.location.search.substring(1)
-  const params = new URLSearchParams(search)
-  const firstTime = params.get('firstTime')
-
-  if (firstTime === 'true') {
-    const video = document.createElement('video')
-    const source = document.createElement('source')
-    const container = document.querySelector('.container')
-
-    source.setAttribute(
-      'src',
-      'https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4'
+    await fetchData(url, 'POST', payload).then(
+      () => (location.href = 'event/immunity.html')
     )
-    source.setAttribute('type', 'video/mp4')
-    video.setAttribute('width', '100%')
-    video.appendChild(source)
-    videoEle.appendChild(video)
-    video.play()
-    container.style.display = 'none'
-    video.addEventListener('ended', () => {
-      container.style.display = 'block'
-      video.remove()
-      videoEle.remove()
-      window.location.href = 'lobby.html'
-    })
-
-    return
   }
-
-  videoEle.remove()
+  const handleRoom2Click = async () => {
+    const url = '/api/user_click_topic'
+    const user = JSON.parse(localStorage.getItem('user'))
+    const payload = {
+      access_token: user.access_token,
+      user_id: user.id,
+      topic_number: 2,
+    }
+    await fetchData(url, 'POST', payload).then(
+      () => (location.href = 'event/room-2.html')
+    )
+  }
+  const handleRoom3Click = async () => {
+    const url = '/api/user_click_topic'
+    const user = JSON.parse(localStorage.getItem('user'))
+    const payload = {
+      access_token: user.access_token,
+      user_id: user.id,
+      topic_number: 3,
+    }
+    await fetchData(url, 'POST', payload).then(
+      () => (location.href = 'event/room-3.html')
+    )
+  }
+  const handleRoom4Click = async () => {
+    const url = '/api/user_click_topic'
+    const user = JSON.parse(localStorage.getItem('user'))
+    const payload = {
+      access_token: user.access_token,
+      user_id: user.id,
+      topic_number: 4,
+    }
+    await fetchData(url, 'POST', payload)
+      .then
+      // () => (location.href = 'event/immunity.html')
+      ()
+  }
+  return (
+    <div
+      className='container'
+      style={{
+        backgroundImage: 'url(./images/lobby-background.png)',
+      }}
+    >
+      <div onClick={handleRoom1Click} className='room room-1 slide-shine'>
+        <img src='./images/room-1-icon.png' alt='' />
+      </div>
+      <div onClick={handleRoom2Click} className='room room-2 slide-shine'>
+        <img src='./images/room-2-icon.png' alt='' />
+      </div>
+      <div onClick={handleRoom3Click} className='room room-3 slide-shine'>
+        <img src='./images/room-3-icon.png' alt='' />
+      </div>
+      <div onClick={handleRoom4Click} className='room room-4 slide-shine'>
+        <img src='./images/room-4-icon.png' alt='' />
+      </div>
+      <div className='invite-choice'>
+        <img
+          src='./images/lobby-moi.png'
+          alt='Mời Qúy chuyên viên Y Tế chọn khu vực trải nghiệm'
+        />
+      </div>
+      <div className='text'>
+        <span>
+          VAI TRÒ CỦA MIỄN DỊCH VÀ DINH DƯỠNG ĐỐI VỚI BỆNH NHÂN ĐÁI THÁO ĐƯỜNG
+          TRONG GIAI ĐOẠN BÌNH THƯỜNG MỚI
+        </span>
+      </div>
+    </div>
+  )
 }
 
-window.onload = () => {
-  initVideo()
-  timerColorChange()
-  compareTimeEvent()
-}
+ReactDOM.render(<Lobby />, document.getElementById('root'))
