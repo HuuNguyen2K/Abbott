@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="./styles/backHome.css"/>
     <link rel="stylesheet" href="styles/leaderboard.css"/>
     <link rel="stylesheet" href="./styles/backHome.css"/>
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
+
 </head>
 <body>
 <div id="room-3" class="container room-3" style="background-image:url(images/room-3-bg.jpg)">
@@ -71,9 +73,7 @@
         <!-- Begin popup event center -->
         <div id="event-libre-center" class="popup room-3__popup-center ">
             <div class="popup-wrap popup-video">
-                <video width="600" controls>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                </video>
+                    <div id='video-js-center' style="width: 692px"></div>
             </div>
         </div>
         <!-- End popup event end -->
@@ -84,9 +84,7 @@
                  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
              </video>-->
             <div class="popup-wrap popup-video">
-                <video width="600" controls loop>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                </video>
+                <div id='video-js-right' style="width: 692px"></div>
             </div>
 
         </div>
@@ -105,13 +103,15 @@
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
 
 <script src="./scripts/menu.js" type="text/babel"></script>
 <script src="./scripts/backHome.js" type="text/babel"></script>
 <script src="./scripts/swiper-bundle.min.js"></script>
-<script src="./scripts/room-3.js"></script>
 <script src="./scripts/welcome.js" type="text/babel"></script>
 <script src="./scripts/warningTime.js" type="text/babel"></script>
+<script src="./scripts/videoJS.js" type="text/babel"></script>
+<script src="./scripts/leaderboard.js" type="text/babel"></script>
 
 <script type="text/babel">
     const search = window.location.search.substring(1)
@@ -133,6 +133,19 @@
     );
 </script>
 
+<script type="text/babel">
+    const domContainer = document.querySelector("#video-js-right");
+    ReactDOM.render(<VideoJS src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"/>, domContainer);
+
+</script>
+
+<script type="text/babel">
+    const domContainer = document.querySelector("#video-js-center");
+    ReactDOM.render(<VideoJS src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"/>, domContainer);
+</script>
+
 <script src="./scripts/common.js"></script>
+<script src="./scripts/room-3.js"></script>
+
 </body>
 </html>
