@@ -74,6 +74,11 @@
     height: 185px;
     transform: translate(-50%, -50%);
     z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    animation: tutorial-text-fadeInDown 3s forwards;
+    animation-delay: 3s;
+
 }
 @media screen and (max-width: 1600px) {
     .room-3__event-left .room-3__tutorial-text {
@@ -96,6 +101,10 @@
     height:170px;
     transform: translateX(-50%);
     z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    animation: tutorial-text-fadeInUp 3s forwards;
+    animation-delay: 3s;
 }
 
 @media screen and (max-height: 1368px) {
@@ -134,17 +143,21 @@
     background-size: contain;
     background-position: right center;
     position: absolute;
-    top: calc(50% - 208px);
+    top: calc(50% - 224px);
     right: 50%;
     width: 318px;
     height: 185px;
     transform: translate(50%, -50%);
     z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    animation: tutorial-text-fadeInDown 3s forwards;
+    animation-delay: 3s;
 }
 
 @media screen and (max-width: 1600px) {
     .room-3__event-right .room-3__tutorial-text {
-        top: calc(50% - 192px);
+        top: calc(50% - 188px);
     }
 }
 
@@ -277,3 +290,27 @@
 .popup-slide .swiper-button-next::after {
     display: none;
 }
+
+/*Animations*/
+@keyframes tutorial-text-fadeInDown{
+    0% {
+        top:-100% ;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes tutorial-text-fadeInUp{
+    0% {
+        bottom:-100% ;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
