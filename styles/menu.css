@@ -61,11 +61,12 @@
 /* --- List menu --- */
 #menu .menu-root {
   flex-basis: 80%;
-  padding-left: 132px;
+  padding: 0 5px 0 132px;
   list-style: none;
 }
 
 #menu .menu-root .menu-item {
+  position: relative;
   font-size: 27px;
   color: #ffffff;
   font-weight: bold;
@@ -82,32 +83,31 @@
 }
 
 #menu .menu-root .menu-item:not(:last-child) {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 #menu .menu-root .menu-item .submenu-title {
   position: relative;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
 }
 
-#menu .menu-root .menu-item .submenu-title i::before {
-  content: '▼';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  font-style: normal;
+#menu .menu-root .menu-item .submenu-title img {
+  transform: rotate(180deg);
+  width: 15px;
   margin-left: 12px;
-  color: #ffffff;
+  padding-bottom: 5px;
 }
 
-#menu .menu-root .menu-item.submenu-visible .submenu-title i::before {
-  content: '▲';
+#menu .menu-root .menu-item.submenu-visible .submenu-title img {
+  transform: rotate(0);
+  padding-bottom: 0;
 }
 
 #menu .menu-item .menu-submenu {
   display: none;
-  padding-left: 25px;
+  padding-left: 50px;
 }
 
 #menu .menu-item.submenu-visible .menu-submenu {
@@ -119,7 +119,19 @@
 }
 
 #menu .menu-item .menu-submenu .submenu-item:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+#menu .menu-item .menu-submenu .submenu-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -34px;
+  width: 5px;
+  height: 5px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: translateY(-50%);
 }
 /* --- List menu - END --- */
 
@@ -163,7 +175,7 @@
   }
 
   #menu .menu-item .menu-submenu {
-    padding-left: 2vw;
+    padding-left: 4vw;
   }
 
   #menu .menu-item .menu-submenu .submenu-item:not(:last-child) {
@@ -174,8 +186,14 @@
     margin-top: 0.7vw;
   }
 
-  #menu .menu-root .menu-item .submenu-title i::before {
-    font-size: 2vw;
+  #menu .menu-item .menu-submenu .submenu-item::before {
+    left: -2.8vw;
+    width: 0.5vw;
+    height: 0.5vw;
+  }
+
+  #menu .menu-root .menu-item .submenu-title img {
+    width: 1.2vw;
     margin-left: 1vw;
   }
 
@@ -213,12 +231,12 @@
   }
 
   #menu .menu-container {
-    padding-bottom: 2vw;
+    padding-bottom: 1vw;
   }
 
   #menu .menu-greeting {
     font-size: 1.5vw;
-    margin: 7vw 0 3vw;
+    margin: 5vw 0 2.5vw;
   }
 
   #menu .menu-root {
@@ -234,7 +252,7 @@
   }
 
   #menu .menu-item .menu-submenu {
-    padding-left: 2vw;
+    padding-left: 3.1vw;
   }
 
   #menu .menu-item .menu-submenu .submenu-item:not(:last-child) {
@@ -245,9 +263,16 @@
     margin-top: 0.5vw;
   }
 
-  #menu .menu-root .menu-item .submenu-title i::before {
-    font-size: 1.6vw;
+  #menu .menu-item .menu-submenu .submenu-item::before {
+    left: -2.4vw;
+    width: 0.4vw;
+    height: 0.4vw;
+  }
+
+  #menu .menu-root .menu-item .submenu-title img {
+    width: 1vw;
     margin-left: 0.7vw;
+    padding-bottom: 0.2vw;
   }
 
   #menu .menu-logo {
@@ -281,6 +306,10 @@
     margin-bottom: 1.4vw;
   }
 
+  #menu .menu-item .menu-submenu {
+    padding-left: 3.5vw;
+  }
+
   #menu .menu-item .menu-submenu .submenu-item:not(:last-child) {
     margin-bottom: 1vw;
   }
@@ -289,9 +318,13 @@
     margin-top: 0.7vw;
   }
 
-  #menu .menu-root .menu-item .submenu-title i::before {
-    font-size: 1.6vw;
-    margin-left: 0.7vw;
+  #menu .menu-item .menu-submenu .submenu-item::before {
+    width: 0.6vw;
+    height: 0.6vw;
+  }
+
+  #menu .menu-root .menu-item .submenu-title img {
+    width: 1.1vw;
   }
 
   #menu .menu-logo {

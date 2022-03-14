@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="styles/menu.css" />
     <link rel="stylesheet" href="styles/leaderboard.css" />
     <link rel="stylesheet" href="./styles/backHome.css" />
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
 </head>
 <body>
 <div id="page-libre" class="container page-libre " style="background-image:url(images/room-3-bg-full.jpg)">
@@ -96,12 +97,14 @@
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
+<script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
 
 <script src="./scripts/menu.js" type="text/babel"></script>
 <script src="./scripts/backHome.js" type="text/babel"></script>
 <script src="./scripts/swiper-bundle.min.js"></script>
 <script src="./scripts/libre-screen.js"></script>
+<script src="./scripts/leaderboard.js" type="text/babel"></script>
+<script src="./scripts/videoJS.js" type="text/babel"></script>
 <script src="./scripts/welcome.js" type="text/babel"></script>
 <script src="./scripts/warningTime.js" type="text/babel"></script>
 
@@ -112,7 +115,7 @@
     if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
         ReactDOM.render(
-            <WellComeVideo src="https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4" />,
+            <WellComeVideo src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8" />,
             domContainer
         );
     }

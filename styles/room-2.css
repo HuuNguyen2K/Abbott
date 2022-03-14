@@ -1,10 +1,4 @@
 .container {
-    height: 100vh;
-    width: 100%;
-    overflow: auto;
-}
-
-.room-2 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -13,35 +7,74 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    min-width: 1350px;
 }
+
+@media screen and (max-width: 1350px) {
+    .container {
+        min-width: 1350px;
+        overflow-y: hidden;
+    }
+}
+
+.room-2 {}
 
 .room-2__wrap {
     width: 100%;
     margin: 0 auto;
     height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .room-2__btn-left {
-    background: transparent;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center center;
     position: absolute;
     left: 0;
     top: 40%;
     width: 29%;
-    height: 17%;
+    height: 20%;
+    opacity: 0;
+    visibility: hidden;
     transition: all .3s ease-in-out;
-
+    animation: btn-slide-left 3s forwards;
+    animation-delay: 3s;
+}
+@media screen and (max-width:992px) {
+    .room-2__btn-left{
+        background-size: 70%;
+        top: 30%;
+        width: 32%;
+        height: 38%;
+    }
 }
 
 .room-2__btn-right {
-    background: transparent;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center center;
     position: absolute;
     right: 0;
     top: 40%;
     width: 28%;
-    height: 17%;
-    transition: all .3s ease-in-out;
+    height: 20%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease-in-out;
+    animation: btn-slide-right 3s forwards;
+    animation-delay: 3s;
 }
 
+@media screen and (max-width:992px) {
+    .room-2__btn-right{
+        background-size: 70%;
+        top: 30%;
+        width: 32%;
+        height: 38%;
+    }
+}
 
 /* Popup event css*/
 .overlay {
@@ -106,4 +139,29 @@
 
 .room2__popup-left {
     /*position: relative;*/
+}
+
+@keyframes btn-slide-left {
+    0% {
+        left:-100% ;
+        opacity: 0;
+    }
+    100% {
+        left:0;
+        opacity: 1;
+        visibility: visible;
+
+    }
+}
+
+@keyframes btn-slide-right{
+    0% {
+        right:-100% ;
+        opacity: 0;
+    }
+    100% {
+        right:0;
+        opacity: 1;
+        visibility: visible;
+    }
 }

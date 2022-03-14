@@ -1,10 +1,9 @@
-const { useRef, useEffect, useState } = React
+const { useState } = React
 
 const WellComeVideo = (props) => {
-  const { src } = props
-
-  const videoRef = useRef()
-  const [mute, setMute] = useState(true)
+  const { src } = props;
+  const [muted, setMuted] = useState(true);
+  const [ended, setEnded] = useState(false);
 
   const addQueryParam = (key, value) => {
     const url = new URL(window.location.href)
@@ -12,41 +11,54 @@ const WellComeVideo = (props) => {
     window.history.pushState({}, '', url.toString())
   }
 
-  useEffect(() => {
-    const videoEle = document.querySelector('#welcome-video')
-    const video = document.createElement('video')
-    const source = document.createElement('source')
-    const container = document.querySelector('.container')
-    const modal = document.querySelector('.modal-video')
-    // Custom for immunity page
-    const touchShield = document.querySelector('.touch-shield')
-    // Custom for immunity page - END
+  // useEffect(() => {
+  //   const videoEle = document.querySelector('#welcome-video')
+  //   const video = document.createElement('video')
+  //   const source = document.createElement('source')
+  //   const container = document.querySelector('.container')
+  //   const modal = document.querySelector('.modal-video')
+  //   // Custom for immunity page
+  //   const touchShield = document.querySelector('.touch-shield')
+  //   // Custom for immunity page - END
+  //
+  //   modal.style.display = 'block'
+  //   source.setAttribute('src', src)
+  //   source.setAttribute('type', 'video/mp4')
+  //   video.setAttribute('width', '100%');
+  //   video.muted = true
+  //   video.setAttribute('controls', 'true')
+  //   video.appendChild(source)
+  //   videoEle.appendChild(video)
+  //   videoRef.current = video
+  //   video.play()
+  //   container.style.display = 'none'
+  //   video.addEventListener('ended', () => {
+  //     modal.style.display = 'none'
+  //     container.style.display = 'block'
+  //     video.remove()
+  //     videoEle.remove()
+  //     addQueryParam('welcome', 'false')
+  //     // Custom for immunity page
+  //     touchShield && touchShield.classList.remove('fadeIn')
+  //     touchShield && setTimeout(() => {
+  //       touchShield.classList.add('fadeIn')
+  //     }, 1500) // 1.5s
+  //     // Custom for immunity page - END
+  //   })
+  // }, []);
 
-    modal.style.display = 'block'
-    source.setAttribute('src', src)
-    source.setAttribute('type', 'video/mp4')
-    video.setAttribute('width', '100%')
-    video.muted = true
-    video.setAttribute('controls', 'true')
-    video.appendChild(source)
-    videoEle.appendChild(video)
-    videoRef.current = video
-    video.play()
-    container.style.display = 'none'
-    video.addEventListener('ended', () => {
-      modal.style.display = 'none'
-      container.style.display = 'block'
-      video.remove()
-      videoEle.remove()
-      addQueryParam('welcome', 'false')
+  const handleEnded = () => {
+      setEnded(true);
+      addQueryParam('welcome', 'false');
       // Custom for immunity page
+      const touchShield = document.querySelector('.touch-shield');
       touchShield && touchShield.classList.remove('fadeIn')
       touchShield && setTimeout(() => {
-        touchShield.classList.add('fadeIn')
+          touchShield.classList.add('fadeIn')
       }, 1500) // 1.5s
-      // Custom for immunity page - END
-    })
-  }, [])
+  };
+
+  if (ended) return null;
 
   return (
     <div
@@ -61,6 +73,7 @@ const WellComeVideo = (props) => {
       className='modal-video'
     >
       <div id='welcome-video'>
+          <VideoJS src={src} options={{ muted }} onEnded={handleEnded} />
         <button
           style={{
             position: 'absolute',
@@ -72,12 +85,9 @@ const WellComeVideo = (props) => {
             border: 'none',
             zIndex: '2',
           }}
-          onClick={() => {
-            videoRef.current.muted = videoRef.current.muted ? false : true
-            setMute((prev) => !prev)
-          }}
+          onClick={() => { setMuted((prev) => !prev) }}
         >
-          {mute ? (
+          {!muted ? (
             <img
               style={{
                 width: '60px',
