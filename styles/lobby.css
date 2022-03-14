@@ -36,7 +36,7 @@ body {
 .container .text {
   width: 100vw;
   position: absolute;
-  top: 12vh;
+  top: 13vh;
   left: 0;
   right: 0;
   font-size: 25px;
@@ -78,8 +78,69 @@ body {
   left: 76vw;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1390px) and (min-width: 1200px) {
+  .container .text {
+    top: 17vh;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1024px) {
   .container {
     width: 1200px;
+  }
+
+  .container .text {
+    top: 18vh;
+  }
+
+  .room.room-1 {
+    left: 40px;
+    top: 28vh;
+  }
+
+  .room.room-2 {
+    left: 335px;
+    top: 28vh;
+  }
+
+  .room.room-3 {
+    left: 650px;
+    top: 28vh;
+  }
+
+  .room.room-4 {
+    left: 945px;
+    top: 28vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 450px) {
+  .container .text {
+    font-size: 16px;
+    top: 12vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 420px) {
+  .container .text {
+    top: 16vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 415px) {
+  .container .text {
+    top: 16vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 400px) {
+  .container .text {
+    top: 12vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 376px) {
+  .container .text {
+    top: 14vh;
   }
 }
