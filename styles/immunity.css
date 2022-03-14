@@ -44,7 +44,7 @@ video {
 
 .touch-shield.fadeIn {
   opacity: 1;
-  pointer-events: unset;
+  pointer-events: auto;
   transform: none;
 }
 
