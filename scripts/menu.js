@@ -60,7 +60,8 @@ const Menu = () => {
                     <li className="menu-item">
                         <p className="submenu-title">
                             Phòng trải ngiệm
-                            <i className="icon"></i>
+                          <img src="./images/dropdown-icon.png"
+                               alt="dropdown_icon" />
                         </p>
                         <ul className="menu-submenu">
                             <li className="menu-item submenu-item">
@@ -80,7 +81,8 @@ const Menu = () => {
                     <li className="menu-item">
                         <p className="submenu-title">
                             Thử thách
-                            <i className="icon"></i>
+                          <img src="./images/dropdown-icon.png"
+                               alt="dropdown_icon" />
                         </p>
                         <ul className="menu-submenu">
                             <li className="menu-item submenu-item">
@@ -106,10 +108,10 @@ const Menu = () => {
                 </ul>
 
                 <div className="menu-logo">
-                  <img src="./images/logo-vade.png"
-                       alt="logo_vade" />
                   <img src="./images/logo-abbott.png"
                        alt="logo_abbott" />
+                  <img src="./images/logo-vade.png"
+                       alt="logo_vade" />
                 </div>
             </div>
 
