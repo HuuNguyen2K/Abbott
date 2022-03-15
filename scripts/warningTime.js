@@ -59,6 +59,7 @@ const WarningTimeOut = () => {
         bottom: '5%',
         left: '50%',
         transform: 'translateX(-50%)',
+        zIndex: 999
       }}
     >
       {isWarning && durationTime && (
