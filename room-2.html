@@ -78,7 +78,6 @@
 <div id="global-leaderboard"></div>
 
 <div id="iframe-game-render"></div>
-<div id="global-modal-qr"></div>
 <div id="back-home"></div>
 <div id="warning-time-out"></div>
 
@@ -109,7 +108,7 @@
 </script>
 <script src="./scripts/leaderboard.js" type="text/babel"></script>
 <script src="./scripts/iframe-game.js" type="text/babel"></script>
-<script src="./scripts/modal-qr.js" type="text/babel"></script>
+<!--<script src="./scripts/modal-qr.js" type="text/babel"></script>-->
 <script src="./scripts/videoJS.js" type="text/babel"></script>
 <script type="text/babel" src="./scripts/backHome.js"></script>
 
@@ -128,11 +127,11 @@
         );
     }
 
-    const domModalQrContainer = document.querySelector('#global-modal-qr');
-    ReactDOM.render(
-        <ModalQR src="./images/qrcode_dummy.png" />,
-        domModalQrContainer
-    );
+    // const domModalQrContainer = document.querySelector('#global-modal-qr');
+    // ReactDOM.render(
+    //     <ModalQR src="./images/qrcode_dummy.png" />,
+    //     domModalQrContainer
+    // );
 
     const domIframeContainer = document.querySelector('#iframe-game-render');
     ReactDOM.render(

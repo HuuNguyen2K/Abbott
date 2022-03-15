@@ -74,17 +74,16 @@
         <!-- Begin popup event center -->
         <div id="event-libre-center" class="popup room-3__popup-center ">
             <div class="popup-wrap popup-video">
-                    <div id='video-js-center' style="width: 692px"></div>
+                <div id="event-close-slide-center" class="swiper-btn-close" style="background-image: url(./images/btn-close-slider.png)"></div>
+                <div id='video-js-center' style="width: 692px"></div>
             </div>
         </div>
         <!-- End popup event end -->
 
         <!-- Begin popup event right -->
         <div id="event-libre-right" class="popup room-3__popup-right">
-            <!-- <video width="600" poster="./images/frame-bg.png" controls loop>
-                 <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-             </video>-->
             <div class="popup-wrap popup-video">
+                <div id="event-close-slide-right" class="swiper-btn-close" style="background-image: url(./images/btn-close-slider.png)"></div>
                 <div id='video-js-right' style="width: 692px"></div>
             </div>
 
@@ -139,15 +138,40 @@
 </script>
 
 <script type="text/babel">
+    const handlePlayerReady = (player) => {
+        const closeDom = document.getElementById('event-close-slide-right');
+        closeDom.addEventListener('click', () => {
+            player.pause();
+        });
+    };
+
     const domContainer = document.querySelector("#video-js-right");
-    ReactDOM.render(<VideoJS src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"/>, domContainer);
+    ReactDOM.render(
+        <VideoJS
+            src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"
+            onReady={handlePlayerReady}
+        />,
+        domContainer
+    );
 
 </script>
 
 <script type="text/babel">
+    const handlePlayerReady = (player) => {
+        const closeDom = document.getElementById('event-close-slide-center');
+        closeDom.addEventListener('click', () => {
+            player.pause();
+        });
+    };
+
     const domContainer = document.querySelector("#video-js-center");
-    ReactDOM.render(<VideoJS src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"/>, domContainer);
-</script>
+    ReactDOM.render(
+        <VideoJS
+            src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"
+            onReady={handlePlayerReady}
+        />,
+        domContainer
+    );</script>
 
 <script src="./scripts/room-3.js"></script>
 <script async defer src="./scripts/common.js"></script>
