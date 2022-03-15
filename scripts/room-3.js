@@ -7,16 +7,18 @@ const elRoom3PopupCenter = document.getElementById('event-libre-center')
 const elRoom3PopupRight = document.getElementById('event-libre-right')
 
 const showPopup = (event) => {
-    event.preventDefault();
-    let showEventPopup = event.target.getAttribute('data-toggle');
-    let elRoom3Popup = document.getElementById(showEventPopup)
-    elRoom3Popup.classList.add('open', 'overlay')
+  event.preventDefault();
+  let showEventPopup = event.target.getAttribute('data-toggle');
+  let elRoom3Popup = document.getElementById(showEventPopup)
+  elRoom3Popup.classList.add('open', 'overlay')
+
 }
 
 const hidePopup = (event) => {
-    event.preventDefault();
-    event.target.classList.remove('open', 'overlay')
+  // event.preventDefault();
+  event.target.classList.remove('open', 'overlay')
 }
+
 
 btnRoom3Left.addEventListener('click', showPopup)
 
@@ -32,16 +34,16 @@ elRoom3PopupRight.addEventListener('click', hidePopup)
 
 // Slider
 const swiper = new Swiper('.swiper', {
-    centeredSlides: true,
-    spaceBetween: 120,
-    // autoplay: {
-    //     delay: 2500
-    // },
+  centeredSlides: true,
+  spaceBetween: 120,
+  // autoplay: {
+  //     delay: 2500
+  // },
 
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-});
+})

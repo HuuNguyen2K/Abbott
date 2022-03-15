@@ -30,7 +30,15 @@ body {
   background-repeat: no-repeat;
   height: 45%;
   width: 730px;
-  padding: 50px 60px 0;
+  padding: 15px 60px 0;
+}
+
+.content .title {
+  color: var(--main-color);
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 6px;
 }
 
 .group {
@@ -44,14 +52,14 @@ body {
 
 .group span {
   color: var(--main-color);
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 600;
   min-width: 160px;
   display: block;
 }
 
 .group .in {
-  height: 52px;
+  height: 45px;
   width: 100%;
   border: none;
   outline: none;
@@ -99,7 +107,7 @@ body {
 }
 
 .action {
-  margin-top: 15px;
+  margin-top: 5px;
   text-align: center;
 }
 
@@ -130,7 +138,7 @@ body {
 }
 
 .show-password {
-  margin-top: 10px;
+  margin-top: 4px;
   margin-left: 170px;
   display: flex;
   align-items: center;
@@ -159,6 +167,7 @@ body {
 }
 
 .avt {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -439,9 +448,12 @@ label {
 }
 
 @media screen and (max-width: 767px) {
+  .content .title {
+    display: none;
+  }
   .otp {
     width: 100%;
-    padding: 10px !important; 
+    padding: 10px !important;
   }
 
   .otp > p {
