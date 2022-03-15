@@ -68,7 +68,7 @@ img {
 .sec-iframe.open-iframe {
   visibility: visible;
   opacity: 1;
-  pointer-events: unset;
+  pointer-events: auto;
 }
 
 .sec-iframe.open-iframe .iframe-game {
@@ -162,6 +162,6 @@ input[type=number] {
   .close-popup {
     top: 2.5vw;
     right: 2vw;
-    width: 1.5vw;
+    width: 1.3vw;
   }
 }

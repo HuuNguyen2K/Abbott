@@ -10,8 +10,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /*background-image: url('../images/...link background');*/
-  background-color: var(--secondary-color); /* TODO: Will be remove when have design */
+  background-image: url('../images/background-modal-qr.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,34 +27,29 @@
 }
 
 .modal-qr .qr-container {
+  padding-top: 5vw;
   text-align: center;
 }
 
 .modal-qr .qr-title {
-  font-size: 55px;
+  font-size: 3vw;
   font-weight: bold;
   text-transform: uppercase;
   color: #740e45;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .modal-qr .qr-desc {
-  font-size: 35px;
+  font-size: 2.5vw;
   color: #740e45;
-  margin-bottom: 40px;
+  margin-bottom: 3.2vw;
 }
 
 .modal-qr .direct-google {
   display: inline-block;
-  font-size: 23px;
-  font-weight: bold;
-  line-height: 1.3;
-  color: #740e45;
-  padding: 8px;
-  width: 100%;
-  max-width: 480px;
-  /*background-image: url('../images/...link background');*/
-  background-color: #efd445; /* TODO: Will be remove when have design */
+  width: 51vw;
+  height: 13vw;
+  background-image: url('../images/button-invite-fill-form.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,61 +57,80 @@
 }
 
 .modal-qr .qr-code {
-  width: 300px;
+  width: 14vw;
   height: auto;
-  margin: 0 auto 40px;
+  margin: 0 auto 2vw;
   background-color: #ffffff;
 }
 
 /* ===== Responsive ===== */
 @media only screen and (max-width: 1550px) {
   .modal-qr .qr-title {
-    font-size: 46px;
-    margin-bottom: 15px;
+    font-size: 3vw;
+  }
+
+  .modal-qr .qr-container {
+    padding-top: 3vw;
   }
 
   .modal-qr .qr-desc {
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 2.5vw;
+    margin-bottom: 3.2vw;
   }
 
   .modal-qr .direct-google {
-    font-size: 16px;
-    padding: 8px;
-    max-width: 350px;
+    width: 51vw;
+    height: 13vw;
   }
 
   .modal-qr .qr-code {
-    width: 200px;
-    margin: 0 auto 20px;
+    width: 14vw;
+    margin: 0 auto 2vw;
   }
 }
 
 @media only screen and (max-width: 1025px) {
+  .modal-qr .qr-title {
+    font-size: 4vw;
+  }
+
+  .modal-qr .qr-container {
+    padding-top: 7vw;
+  }
+
+  .modal-qr .qr-desc {
+    font-size: 3.5vw;
+    margin-bottom: 2.5vw;
+  }
+
+  .modal-qr .direct-google {
+    width: 67vw;
+    height: 18vw;
+  }
+
   .modal-qr .qr-code {
-    width: 240px;
+    width: 18vw;
+    margin: 0 auto 3vw;
   }
 }
 
 @media only screen and (max-height: 600px) {
   .modal-qr .qr-title {
     font-size: 4vw;
-    margin-bottom: 1vw;
   }
 
   .modal-qr .qr-desc {
-    font-size: 2.5vw;
+    font-size: 3.5vw;
     margin-bottom: 3vw;
   }
 
   .modal-qr .direct-google {
-    font-size: 2vw;
-    padding: 1vw;
-    max-width: 36vw;
+    width: 64vw;
+    height: 17vw;
   }
 
   .modal-qr .qr-code {
-    width: 25vw;
+    width: 20vw;
     margin: 0 auto 4vw;
   }
 }
@@ -125,22 +138,24 @@
 @media only screen and (max-height: 500px) {
   .modal-qr .qr-title {
     font-size: 2.7vw;
-    margin-bottom: 1vw;
+  }
+
+  .modal-qr .qr-container {
+    padding-top: 4vw;
   }
 
   .modal-qr .qr-desc {
-    font-size: 1.7vw;
+    font-size: 2.2vw;
     margin-bottom: 2vw;
   }
 
   .modal-qr .direct-google {
-    font-size: 1.2vw;
-    padding: 0.5vw;
-    max-width: 24vw;
+    width: 43vw;
+    height: 12vw;
   }
 
   .modal-qr .qr-code {
-    width: 15vw;
+    width: 13vw;
     margin: 0 auto 2vw;
   }
 }
@@ -151,16 +166,16 @@
   }
 
   .modal-qr .qr-desc {
-    font-size: 2vw;
+    font-size: 2.4vw;
   }
 
   .modal-qr .direct-google {
-    font-size: 1.3vw;
-    max-width: 27vw;
+    width: 46vw;
+    height: 12vw;
   }
 
   .modal-qr .qr-code {
-    width: 18vw;
+    width: 14vw;
   }
 }
 /* ===== Responsive - END ===== */

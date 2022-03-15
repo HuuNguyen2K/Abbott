@@ -8,9 +8,12 @@
     <title>Room 2</title>
     <link rel="stylesheet" href="./styles/base.css"/>
     <link rel="stylesheet" href="./styles/room-2.css"/>
+    <link rel="stylesheet" href="./styles/swiper-bundle.min.css"/>
+
     <!-- TODO -->
     <link rel="stylesheet" href="styles/menu.css"/>
     <link rel="stylesheet" href="styles/backHome.css"/>
+    <link rel="stylesheet" href="styles/warningTime.css" />
 
 </head>
 <body>
@@ -27,10 +30,28 @@
 
         <!-- Begin popup event left -->
         <div id="event-room-2-left" class="popup room2__popup-left ">
-            <div class="popup-wrap popup-info" style="background-image: url(./images/room-2-popup-tdna.png)">
-                <a href="https://google.com" target="_blank" class="btn-download"></a>
-                <a href="https://www.youtube.com/" target="_blank" class="btn-download"></a>
-                <a href="https://www.youtube.com/" target="_blank" class="btn-download"></a>
+            <div class="popup-wrap popup-slide">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide" style="background-image: url(./images/room-2-slide-tdna-1.png)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/room-2-slide-tdna-2.png)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/room-2-slide-tdna-3.png)">
+                            <a href="#" class="swiper-btn"></a>
+                        </div>
+                    </div>
+                    <!-- If we need close button-->
+                    <div id="event-close-slide" class="swiper-btn-close" style="background-image: url(./images/btn-close-slider.png)"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
             </div>
         </div>
         <!-- End popup event left -->
@@ -52,6 +73,8 @@
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
+<script src="./scripts/fetch.js" type="text/babel"></script>
+<script src="./scripts/swiper-bundle.min.js"></script>
 <script src="./scripts/menu.js" type="text/babel"></script>
 <script src="./scripts/welcome.js" type="text/babel"></script>
 
@@ -70,8 +93,11 @@
 </script>
 
 <script type="text/babel" src="./scripts/backHome.js"></script>
+
+<script src="./time.js" type="text/javascript"></script>
 <script type="text/babel" src="./scripts/warningTime.js"></script>
+
 <script src="./scripts/room-2.js"></script>
-<script src="./scripts/common.js"></script>
+<script async defer src="./scripts/common.js"></script>
 </body>
 </html>

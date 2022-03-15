@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/login.css" />
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
@@ -20,7 +21,10 @@
       crossorigin
     ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
     <script src="./scripts/fetch.js"></script>
+    <script src="./scripts/videoJS.js" type="text/babel"></script>
     <script src="./scripts/welcome.js" type="text/babel"></script>
     <script type="text/babel" src="./scripts/login.js"></script>
     <script type="text/babel">
@@ -31,7 +35,7 @@
         const domContainer = document.querySelector('#welcome-video-render')
         ReactDOM.render(
           // <WellComeVideo src='http://hoithaodaithaoduong.com/video/tearsing-clip-06-03.mp4' />,
-          <WellComeVideo src='https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4' />,
+          <WellComeVideo src='https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8' />,
           domContainer
         )
       }
