@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="./styles/base.css"/>
     <link rel="stylesheet" href="./styles/room-2.css"/>
     <link rel="stylesheet" href="./styles/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./styles/leaderboard.css" />
 
     <!-- TODO -->
     <link rel="stylesheet" href="styles/menu.css"/>
     <link rel="stylesheet" href="styles/backHome.css"/>
     <link rel="stylesheet" href="styles/warningTime.css" />
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
+
 
 </head>
 <body>
@@ -92,10 +95,10 @@
 <script src="./scripts/welcome.js" type="text/babel"></script>
 
 <script type="text/babel">
-    const search = window.location.search.substring(1)
-    const params = new URLSearchParams(search)
-    const welcome = params.get('welcome');
-    if (welcome === 'true') {
+    const search1 = window.location.search.substring(1)
+    const params1 = new URLSearchParams(search1)
+    const welcome1 = params1.get('welcome');
+    if (welcome1 === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
         ReactDOM.render(
             <WellComeVideo
