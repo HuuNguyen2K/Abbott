@@ -10,7 +10,7 @@ const Lobby = () => {
     try {
       await fetchData(url, 'POST', payload)
     } catch (error) {}
-    location.href = './immunity.html'
+    location.href = './immunity.html?welcome=true'
   }
   const handleRoom2Click = async () => {
     const url = '/api/user_click_topic'
@@ -23,7 +23,7 @@ const Lobby = () => {
     try {
       await fetchData(url, 'POST', payload)
     } catch (error) {}
-    location.href = './room-2.html'
+    location.href = './room-2.html?welcome=true'
   }
   const handleRoom3Click = async () => {
     const url = '/api/user_click_topic'
