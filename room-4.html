@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="styles/leaderboard.css" />
 <!--  <link rel="stylesheet" href="./styles/backHome.css" />-->
   <link rel="stylesheet" href="styles/warningTime.css" />
+  <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -22,15 +23,17 @@
 
     <!-- Begin event video -->
     <div class="room-4__left">
-      <div class="room-4__left-video">
-        <div id='room-4-video-left'></div>
+      <div class="room-4__left-video" style="background-image:url(images/room-4-bg.jpg)">
+<!--        <div id='room-4-video-left'></div>-->
+        <div id='video-js-center' class="video-js-center"></div>
+
       </div>
       <!-- Begin event option -->
       <div class="room-4__left-option">
         <!-- Begin select employee -->
         <div class="room-4__select-employee">
           <select id="select-employee">
-            <option value="0">TB.BS Nguyễn Văn A</option>
+            <option value="0" class="selected">TB.BS Nguyễn Văn A</option>
             <option value="1">TB.BS Nguyễn Văn B</option>
             <option value="2">TB.BS Nguyễn Văn C</option>
             <option value="3">TB.BS Nguyễn Văn D</option>
@@ -42,7 +45,7 @@
         <!-- Begin question message -->
         <div class="room-4__question-message">
           <a href="#" class="room-4__btn-submit">Gửi câu hỏi</a>
-          <textarea class='room-4__textarea autoExpand' rows='3' data-min-rows='3' placeholder='Auto-Expanding Textarea' autofocus></textarea>
+          <textarea class='room-4__textarea autoExpand' rows='3' data-min-rows='3' placeholder='' autofocus></textarea>
         </div>
         <!-- End question message -->
 
@@ -114,7 +117,7 @@
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
+<script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
 <script src="./scripts/fetch.js" type="text/babel"></script>
 <!--<script src="./scripts/menu.js" type="text/babel"></script>-->
 <!--<script src="./scripts/backHome.js" type="text/babel"></script>-->
@@ -123,25 +126,12 @@
 
 <script src="./time.js" type="text/javascript"></script>
 <script src="./scripts/warningTime.js" type="text/babel"></script>
+<script src="./scripts/videoJS.js" type="text/babel"></script>
+
 
 <script type="text/babel">
-  const search = window.location.search.substring(1)
-  const params = new URLSearchParams(search)
-  const welcome = params.get('welcome');
-  if (welcome === 'true') {
-    const domContainer = document.querySelector('#welcome-video-render');
-    ReactDOM.render(
-      <WellComeVideo
-        src="https://ak.picdn.net/shutterstock/videos/1047168874/preview/stock-footage-black-and-white-monochrome-universal-countdown-film-leader-countdown-clock-from-to-effect.mp4" />,
-      domContainer
-    );
-  }
-
-  const domIframeContainer = document.querySelector('#iframe-game-render');
-  ReactDOM.render(
-    <IframeGame src="http://hoithaodaithaoduong.com/game/find-object" />,
-    domIframeContainer
-  );
+  const domContainer = document.querySelector("#video-js-center");
+  ReactDOM.render(<VideoJS src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"/>, domContainer);
 </script>
 
 <script async defer src="./scripts/common.js"></script>
