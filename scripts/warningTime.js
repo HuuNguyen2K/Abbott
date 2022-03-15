@@ -7,7 +7,7 @@ const WarningTimeOut = () => {
 
   // [startTime1] -5 minutes- [endTime1] ----- [startTime2] -30 seconds- [endTime2]
 
-  const endTime2Ref = useRef(moment().add(31, 'minutes')); // start event
+  const endTime2Ref = useRef(START_EVENT_TIME); // start event
   const startTime1Ref = useRef(endTime2Ref.current.clone().subtract(30, 'minutes'));
 
   const endTime1Ref = useRef(startTime1Ref.current.clone().add(5, 'minutes'));
@@ -67,10 +67,10 @@ const WarningTimeOut = () => {
           <p>CHƯƠNG TRÌNH HỘI THẢO SẼ BẮT ĐẦU SAU</p>
           <div className='timer' >
             <div>
-              <p>{ durationTime.minutes() }</p>
+              <p>{ durationTime.minutes() < 10 ? `0${durationTime.minutes()}` : durationTime.minutes() }</p>
             </div>
             <div >
-              <p>{ durationTime.seconds() }</p>
+              <p>{ durationTime.seconds() < 10 ? `0${durationTime.seconds()}` : durationTime.seconds() }</p>
             </div>
           </div>  
         </div>
