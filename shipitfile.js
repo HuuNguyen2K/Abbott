@@ -13,7 +13,7 @@ module.exports = function (shipit) {
 
   shipit.task("js:deploy", async () => {
     // Zip the dist folder into dist.zip package then remove the folder as we don't need it anymore
-    await shipit.local("zip -r dist.zip .");
+    await shipit.local("zip -r dist.zip . -x 'docs/*' '.git/*' '.idea/*' 'node_modules/*'");
 
     // Create deployTo folder if it's not existed
     await shipit.remote(

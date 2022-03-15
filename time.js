@@ -1,0 +1,1 @@
+const START_EVENT_TIME = moment('15-03-2022 13:25', 'DD-MM-YYYY HH:mm');
