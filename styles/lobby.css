@@ -12,15 +12,6 @@ body {
   position: relative;
 }
 
-#video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-}
-
 .container {
   background-size: cover;
   background-repeat: no-repeat;
@@ -31,43 +22,6 @@ body {
   max-height: 100vh;
 }
 
-.container .room {
-  position: absolute;
-  top: 46.5%;
-  z-index: 1;
-  font-size: 23px;
-  text-shadow: 2px 2px #c3c3c3;
-  color: var(--main-color);
-}
-
-.container .room.active,
-.container .room:hover {
-  color: #ffea6c;
-  text-shadow: 0px 0px 30px #fdec6e;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-
-.container .room.room-1 {
-  left: 10%;
-}
-
-.container .room.room-2 {
-  left: 31.5%;
-  top: 45%;
-  text-align: center;
-}
-
-.container .room.room-3 {
-  left: 57%;
-}
-
-.container .room.room-4 {
-  left: 78%;
-}
-
 .container .invite-choice {
   position: absolute;
   top: 80%;
@@ -76,15 +30,15 @@ body {
 }
 
 .container .invite-choice img {
-  width: 380px;
+  width: 25vw;
 }
 
 .container .text {
-  /* width: 1380px; */
-  width: 89.6%;
+  width: 100vw;
   position: absolute;
-  top: 18.7%;
-  left: 65px;
+  top: 13vh;
+  left: 0;
+  right: 0;
   font-size: 25px;
   overflow: hidden;
 }
@@ -98,130 +52,95 @@ body {
   text-shadow: 2px 2px #5e5e5e;
 }
 
-.menu-content {
+.room {
+  width: 15vw;
   position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.menu-content img {
-  width: 1000px;
-}
-
-.burger {
-  position: fixed;
-  top: 20px;
-  left: 20px;
   cursor: pointer;
 }
 
-.burger div {
-  border-radius: 20px;
-  height: 8px;
-  width: 50px;
-  background-color: var(--main-color);
-  margin: 5px;
+.room.room-1 {
+  top: 24vh;
+  left: 6vw;
 }
 
-.burger ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  max-height: 0;
-  transition: max-height 0.3s ease-out;
-  overflow: hidden;
+.room.room-2 {
+  top: 24vh;
+  left: 29vw;
 }
 
-.burger.toggle ul {
-  max-height: 500px;
+.room.room-3 {
+  top: 24vh;
+  left: 52vw;
 }
 
-.burger ul li a {
-  padding: 5px;
-  display: block;
-  font-size: 15px;
-  background-color: var(--main-color);
-  color: #fff;
-  white-space: nowrap;
+.room.room-4 {
+  top: 24vh;
+  left: 76vw;
 }
 
-.burger ul li a:hover {
-  background-color: #fff;
-  color: var(--main-color);
-}
-
-@keyframes burger_none {
-  from {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-500%);
+@media only screen and (max-width: 1390px) and (min-width: 1200px) {
+  .container .text {
+    top: 17vh;
   }
 }
 
-.burger > div {
-  transition: transform ease-in 0.2s;
-}
-
-.toggle div:nth-child(1) {
-  transform: rotate(-45deg) translate(-12px, 6.25px);
-}
-
-.toggle div:nth-child(2) {
-  animation: burger_none ease-in 0.4s forwards;
-}
-
-.toggle div:nth-child(3) {
-  transform: rotate(45deg) translate(-12px, -6.25px);
-}
-
-@media screen and (max-width: 1440px) {
-  .container .room.room-2 {
-    left: 30.4%;
-  }
-
-  /* .container .text {
-    top: 19%;
-  } */
-}
-
-@media screen and (max-width: 1350px) {
+@media only screen and (max-width: 1200px) and (min-width: 1024px) {
   .container {
-    min-width: 1350px;
-    overflow-y: hidden;
-  }
-
-  /* .container .room {
-    top: 338px;
-  } */
-
-  /* .container .room.room-2 {
-    top: 320px;
-  } */
-
-  .container .invite-choice {
-    top: 72%;
+    width: 1200px;
   }
 
   .container .text {
-    width: 1218px;
-    position: absolute;
-    top: 20%;
-    left: 55px;
-    overflow: hidden;
+    top: 18vh;
+  }
+
+  .room.room-1 {
+    left: 40px;
+    top: 28vh;
+  }
+
+  .room.room-2 {
+    left: 335px;
+    top: 28vh;
+  }
+
+  .room.room-3 {
+    left: 650px;
+    top: 28vh;
+  }
+
+  .room.room-4 {
+    left: 945px;
+    top: 28vh;
   }
 }
 
-@media screen and (max-height: 600px) {
+@media only screen and (max-width: 1024px) and (max-height: 450px) {
   .container .text {
-    top: 14%;
+    font-size: 16px;
+    top: 12vh;
   }
 }
 
-@media screen and (max-height: 520px) {
+@media only screen and (max-width: 1024px) and (max-height: 420px) {
   .container .text {
-    top: 7%;
+    top: 16vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 415px) {
+  .container .text {
+    top: 16vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 400px) {
+  .container .text {
+    top: 12vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 376px) {
+  .container .text {
+    top: 14vh;
   }
 }
