@@ -9,9 +9,20 @@ const openIframeGame = () => {
   const element = document.querySelector('.shield')
   const iframeGame = document.querySelector('.sec-iframe')
 
-  element && element.addEventListener('click', (evt) => {
+  element && element.addEventListener('click', async (evt) => {
     // BLock action user click without shield element
     if (evt.target.localName === 'span') return
+    const isShow = iframeGame?.classList.contains('open-iframe')
+    if(!isShow) {
+      const endpoint = '/api/user_click_game'
+      const user = JSON.parse(localStorage.getItem('user'))
+      const payload = {
+        access_token: user.access_token,
+        user_id: user.id,
+        game_number: 1
+      }
+      await fetchData(endpoint, 'POST', payload)
+    }
     iframeGame?.classList?.toggle('open-iframe')
   })
 }
