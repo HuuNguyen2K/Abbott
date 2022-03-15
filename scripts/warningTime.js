@@ -3,32 +3,53 @@ const { useEffect, useState, useRef } = React;
 const WarningTimeOut = () => {
   const [isWarning, setWarning] = useState(false);
   const [isSeminarStart, setSeminarStart] = useState(false);
-  const endTimeRef = useRef(moment().add(1, 'minutes'));
-  const startTime = endTimeRef.current.clone().subtract(2, 'minutes');
+  const[durationTime, setDurationTime] = useState(null);
 
-  const checkTime = () => {
+  // [startTime1] -5 minutes- [endTime1] ----- [startTime2] -30 seconds- [endTime2]
+
+  const endTime2Ref = useRef(moment().add(31, 'minutes')); // start event
+  const startTime1Ref = useRef(endTime2Ref.current.clone().subtract(30, 'minutes'));
+
+  const endTime1Ref = useRef(startTime1Ref.current.clone().add(5, 'minutes'));
+  const startTime2Ref = useRef(endTime2Ref.current.clone().subtract(30, 'seconds'));
+
+  const handleShowWarning = () => {
     const now = moment();
-    return now.isBetween(startTime, endTimeRef.current);
+    const isBetween1 = now.isBetween(startTime1Ref.current, endTime1Ref.current);
+    if (isBetween1) {
+      setWarning(true);
+      setDurationTime(moment.duration(endTime1Ref.current - now));
+      return;
+    }
+
+    const isBetween2 = now.isBetween(startTime2Ref.current, endTime2Ref.current);
+    if (isBetween2) {
+      setWarning(true);
+      setDurationTime(moment.duration(endTime2Ref.current - now));
+      return;
+    }
+
+    setWarning(false);
+    setDurationTime(null);
   }
 
   const checkSeminarStart = () => {
     const now = moment();
-    return now.isSameOrAfter(endTimeRef.current);
+    return now.isSameOrAfter(endTime2Ref.current);
   }
 
   useEffect(() => {
-    setInterval(() => {
-      setWarning(checkTime());
+    const handleInterval = setInterval(() => {
+      handleShowWarning();
       setSeminarStart(checkSeminarStart());
     }, 1000);
+    return () => { clearInterval(handleInterval) }
   }, []);
 
-  useEffect(() => {
-    // if (isWarning) alert('Còn 5, 10 phút nữa hết giờ trải nghiệm!');
-  }, [isWarning]);
-
-  useEffect(() => {
-    // if (isSeminarStart) alert('Đã đến giờ hội thảo!');
+  useEffect(() =>{
+    if (isSeminarStart) {
+      // Redirect here
+    }
   }, [isSeminarStart]);
 
   return (
@@ -41,15 +62,15 @@ const WarningTimeOut = () => {
         zIndex: 999
       }}
     >
-      {isWarning && (
+      {isWarning && durationTime && (
         <div className='counter'>
           <p>CHƯƠNG TRÌNH HỘI THẢO SẼ BẮT ĐẦU SAU</p>
           <div className='timer' >
-            <div >
-              <p>10</p>
+            <div>
+              <p>{ durationTime.minutes() }</p>
             </div>
             <div >
-              <p>00</p>
+              <p>{ durationTime.seconds() }</p>
             </div>
           </div>  
         </div>
