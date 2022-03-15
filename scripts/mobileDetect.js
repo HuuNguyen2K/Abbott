@@ -1,3 +1,7 @@
+const handleCheck = setInterval(() => {
+    handleDevice();
+}, 10000);
+
 const handleDevice = () => {
     var md = new MobileDetect(window.navigator.userAgent);
     if (md.mobile()) {
@@ -7,8 +11,6 @@ const handleDevice = () => {
     } else clearTimeout(handleCheck);
 };
 
-handleDevice();
-
-const handleCheck = setInterval(() => {
+window.addEventListener('load', () => {
     handleDevice();
-}, 10000);
+});
