@@ -48,8 +48,9 @@ body {
   white-space: nowrap;
   color: #fff;
   transform: translateX(100%);
-  animation: move linear 10s infinite;
+  animation: move linear 15s infinite;
   text-shadow: 2px 2px #5e5e5e;
+  font-weight: bold;
 }
 
 .room {
