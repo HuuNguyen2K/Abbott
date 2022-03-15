@@ -59,7 +59,7 @@ const Menu = () => {
                     </li>
                     <li className="menu-item">
                         <p className="submenu-title">
-                            Phòng trải ngiệm
+                            Phòng trải nghiệm
                           <img src="./images/dropdown-icon.png"
                                alt="dropdown_icon" />
                         </p>

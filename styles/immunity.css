@@ -44,7 +44,7 @@ video {
 
 .touch-shield.fadeIn {
   opacity: 1;
-  pointer-events: unset;
+  pointer-events: auto;
   transform: none;
 }
 
@@ -215,6 +215,12 @@ video {
   }
 }
 
+@media only screen and (max-height: 945px) {
+  .touch-shield {
+    top: 15vw;
+  }
+}
+
 @media only screen and (max-height: 920px) {
   .touch-shield {
     top: 21.9vw;
@@ -231,6 +237,15 @@ video {
   }
 }
 
+@media only screen and (max-height: 550px) {
+  .touch-shield {
+    position: absolute;
+    top: 25.5vw;
+    left: 59.2vw;
+    width: 36vw;
+  }
+}
+
 @media only screen and (max-height: 420px) {
   .touch-shield {
     top: 12.9vw;
@@ -241,7 +256,7 @@ video {
 
 @media only screen and (max-height: 376px) {
   .touch-shield {
-    top: 18.5vw;
+    top: 14.8vw;
   }
 }
 
