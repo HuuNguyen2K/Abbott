@@ -14,11 +14,11 @@ const fetchData = async (url, _method = 'GET', data = {}) => {
         method: _method,
         headers,
         body: JSON.stringify(data),
-      }).then((respone) => respone.json())
+      }).then((respone) => respone.json()).catch((error) => {})
     case 'GET':
       return fetch(URL_API_PREFIX + url, {
         method: _method,
         headers,
-      }).then((respone) => respone.json())
+      }).then((respone) => respone.json()).catch((error) => {})
   }
 }
