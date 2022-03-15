@@ -3,29 +3,6 @@
     width: 100%;
 }
 
-@media screen and (max-width: 1350px) {
-    .container {
-        min-width: 1350px;
-        overflow-y: hidden;
-    }
-}
-
-/*@media screen and (max-height: 1024px) {*/
-/*    .container {*/
-/*        min-height: 1200px;*/
-/*        overflow-y: hidden;*/
-/*    }*/
-/*}*/
-
-
-@media screen and (max-height: 768px) {
-    .container {
-        min-height: 768px;
-        overflow-y: hidden;
-    }
-}
-
-
 .room-3 {
     background-size: cover;
     background-repeat: no-repeat;
@@ -81,6 +58,7 @@
     animation-delay: 3s;
 
 }
+
 @media screen and (max-width: 1700px) {
     .room-3__event-left .room-3__tutorial-text {
         top: calc(50% - 192px);
@@ -92,14 +70,50 @@
         top: calc(50% - 182px);
     }
 }
+@media screen and (max-width: 1200px) {
+    .room-3__event-left .room-3__tutorial-text {
+        top: calc(50% - 147px);
+        width: 250px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .room-3__event-left .room-3__tutorial-text {
+        top: calc(50% - 140px);
+    }
+}
+
+@media screen and (max-width: 915px) {
+    .room-3__event-left .room-3__tutorial-text {
+        top: calc(50% - 115px);
+        width: 200px;
+        height: 130px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .room-3__event-left .room-3__tutorial-text {
+        top: calc(50% - 105px);
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .room-3__event-left .room-3__tutorial-text {
+        top: calc(50% - 92px);
+        width: 180px;
+        height: 100px;
+    }
+}
+
 /*css event tutorial-text center*/
 .room-3__event-center .room-3__tutorial-text {
     background-size: contain;
     position: absolute;
-    bottom:8%;
+    bottom: 8%;
     left: 51%;
     width: 100%;
-    height:170px;
+    height: 170px;
     transform: translateX(-50%);
     z-index: 9;
     opacity: 0;
@@ -108,34 +122,43 @@
     animation-delay: 3s;
 }
 
-@media screen and (max-height: 1368px) {
+@media screen and (max-width: 1400px) {
     .room-3__event-center .room-3__tutorial-text {
-        bottom:15%;
+        bottom: 10%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .room-3__event-center .room-3__tutorial-text {
+        width: 250px;
+        height: 150px;
+        bottom: 12%;
     }
 }
 
-@media screen and (max-height: 1200px) {
+@media screen and (max-width: 1024px) {
     .room-3__event-center .room-3__tutorial-text {
-        bottom:14%;
+        bottom: 10%;
     }
 }
 
-@media screen and (max-height: 1024px) {
+@media screen and (max-width: 915px) {
     .room-3__event-center .room-3__tutorial-text {
-        bottom:12%;
+        width: 220px;
+        height: 150px;
+        bottom: 8%;
     }
 }
 
-@media screen and (max-height: 992px) {
+@media screen and (max-width: 768px) {
     .room-3__event-center .room-3__tutorial-text {
-        bottom:8%;
+        bottom: 15%;
     }
 }
-
-@media screen and (max-height: 768px) {
+@media screen and (max-width: 660px) {
     .room-3__event-center .room-3__tutorial-text {
-        bottom:9%;
-        height:150px;
+        bottom: -3%;
+        width: 150px;
+        height: 110px;
     }
 }
 
@@ -165,6 +188,39 @@
 @media screen and (max-width: 1368px) {
     .room-3__event-right .room-3__tutorial-text {
         top: calc(50% - 182px);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .room-3__event-right .room-3__tutorial-text {
+        top: calc(50% - 147px);
+        width: 250px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .room-3__event-right .room-3__tutorial-text {
+        top: calc(50% - 140px);
+    }
+}
+@media screen and (max-width: 915px) {
+    .room-3__event-right .room-3__tutorial-text {
+        top: calc(50% - 115px);
+        width: 200px;
+        height: 130px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .room-3__event-right .room-3__tutorial-text {
+        top: calc(50% - 105px);
+    }
+}
+@media screen and (max-width: 660px) {
+    .room-3__event-right .room-3__tutorial-text {
+        top: calc(50% - 92px);
+        width: 180px;
+        height: 100px;
     }
 }
 /*css event btn */
@@ -287,15 +343,14 @@
 }
 
 .popup-slide .swiper-button-prev::after,
-
 .popup-slide .swiper-button-next::after {
     display: none;
 }
 
 /*Animations*/
-@keyframes tutorial-text-fadeInDown{
+@keyframes tutorial-text-fadeInDown {
     0% {
-        top:-100% ;
+        top: -100%;
         opacity: 0;
     }
     100% {
@@ -304,9 +359,9 @@
     }
 }
 
-@keyframes tutorial-text-fadeInUp{
+@keyframes tutorial-text-fadeInUp {
     0% {
-        bottom:-100% ;
+        bottom: -100%;
         opacity: 0;
     }
     100% {
