@@ -229,6 +229,14 @@ video {
   }
 }
 
+@media (max-width: 1540px) and (max-height: 762px) {
+  .touch-shield {
+    top: 14.9vw;
+    left: 57vw;
+    width: 30vw;
+  }
+}
+
 @media only screen and (max-height: 720px) {
   .touch-shield {
     top: 14.5vw;
@@ -247,6 +255,12 @@ video {
 }
 
 @media only screen and (max-height: 420px) {
+  .shield {
+    left: 48.5%;
+    width: 20vw;
+    height: 23vw;
+  }
+
   .touch-shield {
     top: 12.9vw;
     left: 56.8vw;

@@ -7,9 +7,9 @@ const openModalRemindGame = () => {
 
 const openIframeGame = () => {
   const element = document.querySelector('.shield')
-  const iframeGame = document.querySelector('.sec-iframe')
 
   element && element.addEventListener('click', async (evt) => {
+    const iframeGame = document.querySelector('.sec-iframe')
     // BLock action user click without shield element
     if (evt.target.localName === 'span') return
     const isShow = iframeGame?.classList.contains('open-iframe')

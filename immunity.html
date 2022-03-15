@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/menu.css" />
     <link rel="stylesheet" href="./styles/leaderboard.css" />
-    <link rel="stylesheet" href="./styles/modal-qr.css" />
     <link rel="stylesheet" href="./styles/immunity.css" />
     <link rel="stylesheet" href="./styles/backHome.css" />
     <link rel="stylesheet" href="styles/warningTime.css" />
@@ -30,7 +29,6 @@
     <div id="welcome-video-render"></div>
     <div id="global-leaderboard"></div>
     <div id="iframe-game-render"></div>
-    <div id="global-modal-qr"></div>
     <div id="back-home"></div>
     <div id="warning-time-out"></div>
 
@@ -46,7 +44,6 @@
     <script src="./scripts/menu.js" type="text/babel"></script>
     <script src="./scripts/leaderboard.js" type="text/babel"></script>
     <script src="./scripts/iframe-game.js" type="text/babel"></script>
-    <script src="./scripts/modal-qr.js" type="text/babel"></script>
     <script src="./scripts/videoJS.js" type="text/babel"></script>
     <script src="./scripts/welcome.js" type="text/babel"></script>
     <script src="./scripts/backHome.js" type="text/babel"></script>
@@ -66,15 +63,9 @@
         );
       }
 
-      const domModalQrContainer = document.querySelector('#global-modal-qr');
-      ReactDOM.render(
-              <ModalQR src="./images/qrcode_dummy.png" />,
-              domModalQrContainer
-      );
-
       const domIframeContainer = document.querySelector('#iframe-game-render');
       ReactDOM.render(
-              <IframeGame src="http://hoithaodaithaoduong.com/game/flappy-bird" />,
+                <IframeGame src="http://hoithaodaithaoduong.com/game/flappy-bird" />,
               domIframeContainer
       );
     </script>

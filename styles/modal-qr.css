@@ -27,33 +27,48 @@
 }
 
 .modal-qr .qr-container {
-  padding-top: 5vw;
   text-align: center;
 }
 
 .modal-qr .qr-title {
   font-size: 3vw;
   font-weight: bold;
-  text-transform: uppercase;
   color: #740e45;
-  margin-bottom: 0;
+  margin-bottom: 3vw;
 }
 
-.modal-qr .qr-desc {
-  font-size: 2.5vw;
-  color: #740e45;
-  margin-bottom: 3.2vw;
+.modal-qr .qr-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.modal-qr .direct-google {
-  display: inline-block;
-  width: 51vw;
-  height: 13vw;
-  background-image: url('../images/button-invite-fill-form.png');
+.modal-qr .qr-button {
+  width: 21vw;
+  height: 7vw;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 1vw;
+  box-shadow: 0.2vw 0.2vw 0.5vw 0 rgb(0 0 0 / 60%);
   cursor: pointer;
+}
+
+.modal-qr .qr-button:not(:last-child) {
+  margin-right: 4vw;
+}
+
+.modal-qr .document-download {
+  background-image: url('../images/button-document-download.png');
+}
+
+.modal-qr .direct-google {
+  width: 24vw;
+  background-image: url('../images/button-invite-fill-form.png');
+}
+
+.modal-qr .faq {
+  background-image: url('../images/button-qa.png');
 }
 
 .modal-qr .qr-code {
@@ -66,46 +81,31 @@
 /* ===== Responsive ===== */
 @media only screen and (max-width: 1550px) {
   .modal-qr .qr-title {
-    font-size: 3vw;
+    font-size: 4.5vw;
   }
 
-  .modal-qr .qr-container {
-    padding-top: 3vw;
+  .modal-qr .qr-button {
+    width: 26vw;
+    height: 9vw;
   }
 
-  .modal-qr .qr-desc {
-    font-size: 2.5vw;
-    margin-bottom: 3.2vw;
+  .modal-qr .qr-button:not(:last-child) {
+    margin-right: 4vw;
   }
 
   .modal-qr .direct-google {
-    width: 51vw;
-    height: 13vw;
+    width: 31vw;
   }
 
   .modal-qr .qr-code {
-    width: 14vw;
-    margin: 0 auto 2vw;
+    width: 20vw;
+    margin: 0 auto 2.5vw;
   }
 }
 
 @media only screen and (max-width: 1025px) {
   .modal-qr .qr-title {
     font-size: 4vw;
-  }
-
-  .modal-qr .qr-container {
-    padding-top: 7vw;
-  }
-
-  .modal-qr .qr-desc {
-    font-size: 3.5vw;
-    margin-bottom: 2.5vw;
-  }
-
-  .modal-qr .direct-google {
-    width: 67vw;
-    height: 18vw;
   }
 
   .modal-qr .qr-code {
@@ -116,62 +116,39 @@
 
 @media only screen and (max-height: 600px) {
   .modal-qr .qr-title {
-    font-size: 4vw;
-  }
-
-  .modal-qr .qr-desc {
-    font-size: 3.5vw;
-    margin-bottom: 3vw;
-  }
-
-  .modal-qr .direct-google {
-    width: 64vw;
-    height: 17vw;
+    font-size: 3.8vw;
   }
 
   .modal-qr .qr-code {
-    width: 20vw;
-    margin: 0 auto 4vw;
+    width: 18vw;
+    margin: 0 auto 3vw;
   }
 }
 
 @media only screen and (max-height: 500px) {
   .modal-qr .qr-title {
-    font-size: 2.7vw;
-  }
-
-  .modal-qr .qr-container {
-    padding-top: 4vw;
-  }
-
-  .modal-qr .qr-desc {
-    font-size: 2.2vw;
-    margin-bottom: 2vw;
-  }
-
-  .modal-qr .direct-google {
-    width: 43vw;
-    height: 12vw;
+    font-size: 3.5vw;
+    margin-bottom: 2.2vw;
   }
 
   .modal-qr .qr-code {
-    width: 13vw;
+    width: 17vw;
     margin: 0 auto 2vw;
   }
 }
 
 @media only screen and (max-height: 395px) {
   .modal-qr .qr-title {
-    font-size: 3vw;
+    font-size: 3.3vw;
   }
 
-  .modal-qr .qr-desc {
-    font-size: 2.4vw;
+  .modal-qr .qr-button {
+    width: 22vw;
+    height: 7vw;
   }
 
   .modal-qr .direct-google {
-    width: 46vw;
-    height: 12vw;
+     width: 25vw;
   }
 
   .modal-qr .qr-code {
