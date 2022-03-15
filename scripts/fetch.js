@@ -1,5 +1,5 @@
-// const URL_API_PREFIX = 'http://hoithaodaithaoduong.com'
 // const URL_API_PREFIX = 'http://127.0.0.1:8000'
+// const URL_API_PREFIX = 'http://54.251.217.230'
 const URL_API_PREFIX = ''
 const fetchData = async (url, _method = 'GET', data = {}) => {
   const headers = {
