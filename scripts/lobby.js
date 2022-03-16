@@ -37,7 +37,7 @@ const Lobby = () => {
     try {
       await fetchData(url, 'POST', payload)
     } catch (error) {}
-    location.href = './room-3.html'
+    location.href = './room-3.html?welcome=true'
   }
   const handleRoom4Click = async () => {
     const url = '/api/user_click_topic'
