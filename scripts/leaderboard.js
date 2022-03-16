@@ -3,15 +3,15 @@ const { useEffect, useState } = React
 const Leaderboard = () => {
   const [rank, setRank] = useState(null)
   const getRank = async () => {
-    const endPoint = '/api/get_game_ranking/1'
+    const endPoint = '/api/get_all_game_ranking'
     const user = JSON.parse(localStorage.getItem('user'))
     const payload = {
       access_token: user.access_token,
       user_id: user.id,
     }
     await fetchData(endPoint, 'POST', payload).then((rs) => {
-      const { data, success } = rs
-      if (success === true) setRank(data)
+      const { success } = rs
+      if (success === true) setRank(rs.data)
     })
   }
 
@@ -111,7 +111,7 @@ const Leaderboard = () => {
                   />
                   <p className='user-name'>{rank.medals.bronze.user.name}</p>
                   <strong className='user-score'>
-                    {rank.medals.bronze.user.name}
+                    {rank.medals.bronze.score}
                   </strong>
                 </div>
               </div>
@@ -163,6 +163,7 @@ const Leaderboard = () => {
                   </div>
                 )
               })}
+              
               {/* <div className='leaderboard-list__item'>
                 <img
                   className='background-member'

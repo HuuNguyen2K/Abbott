@@ -39,6 +39,7 @@
     <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.5/mobile-detect.min.js"></script>
 
+    <script src="./scripts/linkGame.js"></script>
     <script src="./scripts/checkIsLogged.js"></script>
     <script src="./scripts/fetch.js" type="text/babel"></script>
     <script src="./scripts/menu.js" type="text/babel"></script>
@@ -65,7 +66,7 @@
 
       const domIframeContainer = document.querySelector('#iframe-game-render');
       ReactDOM.render(
-                <IframeGame src="http://hoithaodaithaoduong.com/game/flappy-bird" />,
+                <IframeGame src={URL_GAME_1} />,
               domIframeContainer
       );
     </script>

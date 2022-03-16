@@ -4,7 +4,8 @@ const PostQuestion = () => {
   const picRef = useRef(null)
   const textRef = useRef(null)
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     const pic = picRef.current.value
     const symposium_user_comment = textRef.current.value
 

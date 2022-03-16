@@ -3,10 +3,45 @@ const btnRoom2Right = document.querySelector('.room-2__btn-right')
 const elEventRoom2PopupLeft = document.getElementById('event-room-2-left')
 const elEventRoom2PopupRight = document.getElementById('event-room-2-right')
 const eventCloseSlide = document.getElementById('event-close-slide')
-console.log(eventCloseSlide)
+const btnDownload = document.getElementById('download')
 
-const showPopup = (event) => {
+btnDownload.addEventListener('click', (e) => {
+    // api down tài liệu
+    // const endPoint = ''
+    // const user = JSON.parse(localStorage.getItem('user'))
+    // const payload = {
+    //     access_token: user.access_token,
+    //     user_id: user.id
+    // }
+
+    // try {
+    //     const rs = await fetchData(endpoint, 'POST', payload)
+    // } catch (error) {}
+
+    e.preventDefault()
+    const aTag = document.createElement('a')
+    aTag.download = 'Tài liệu'
+    aTag.href = 'https://drive.google.com/u/0/uc?id=1SCx4Y2Qn0K_hXOeoA58FpPMU1oD0Dm11&export=download'
+    aTag.click()
+    aTag.remove()
+})
+
+const showPopup = async (event) => {
     // event.preventDefault();
+
+    // api tDnA
+    // const endPoint = ''
+    // const user = JSON.parse(localStorage.getItem('user'))
+    // const payload = {
+    //     access_token: user.access_token,
+    //     user_id: user.id
+    // }
+
+    // try {
+    //     const rs = await fetchData(endpoint, 'POST', payload)
+    // } catch (error) {}
+
+
     let showEventPopup = event.target.getAttribute('data-toggle');
     let elEventLibrePopup = document.getElementById(showEventPopup)
     elEventLibrePopup.classList.add('open', 'overlay')
