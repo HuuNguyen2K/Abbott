@@ -16,11 +16,12 @@ const Leaderboard = () => {
   }
 
   useEffect(() => {
-    handleToggleByIssue()
-    getRank()
+    getRank().then(() => {
+      handleToggleByIssue()
+    })
 
     const timer = setInterval(() => {
-      // getRank()
+      getRank()
     }, 5000)
 
     return () => clearInterval(timer)
@@ -164,7 +165,7 @@ const Leaderboard = () => {
                   </div>
                 )
               })}
-              
+
               {/* <div className='leaderboard-list__item'>
                 <img
                   className='background-member'
