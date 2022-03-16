@@ -31,7 +31,7 @@ const ModalQR = (props) => {
   }, []);
 
   return (
-      <div className="modal-qr modal-qr-visible">
+      <div className="modal-qr">
         <div className="qr-container">
           <h3 className="qr-title">Mời Quý Chuyên viên y tế <br/>chọn các tính năng bên dưới</h3>
           <img className="qr-code" src={ src } alt="qr_code"/>
