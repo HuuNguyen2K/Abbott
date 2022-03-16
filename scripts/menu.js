@@ -75,7 +75,9 @@ const Menu = () => {
                               <a href="./room-3.html?welcome=true">theo dõi<br/>glucose liên tục</a>
                             </li>
                             <li className="menu-item submenu-item">
-                              <a href="./room-4.html">Hội Thảo Khoa Học</a>
+                                <WarningTimeBeforeEvent onEnd={() => { window.location = "./room-4.html" }}>
+                                    <a href="#" onClick={(e) => e.propertyIsEnumerable()}>Hội Thảo Khoa Học</a>
+                                </WarningTimeBeforeEvent>
                             </li>
                         </ul>
                     </li>

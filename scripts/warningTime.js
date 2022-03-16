@@ -1,10 +1,6 @@
 const { useEffect, useState, useRef } = React;
 
 const WarningTimeOut = () => {
-  const [isWarning, setWarning] = useState(false);
-  const [isSeminarStart, setSeminarStart] = useState(false);
-  const[durationTime, setDurationTime] = useState(null);
-
   // [startTime1] -5 minutes- [endTime1] ----- [startTime2] -30 seconds- [endTime2]
 
   const endTime2Ref = useRef(START_EVENT_TIME); // start event
@@ -12,6 +8,10 @@ const WarningTimeOut = () => {
 
   const endTime1Ref = useRef(startTime1Ref.current.clone().add(5, 'minutes'));
   const startTime2Ref = useRef(endTime2Ref.current.clone().subtract(30, 'seconds'));
+
+  const [isWarning, setWarning] = useState(false);
+  const [isSeminarStart, setSeminarStart] = useState(false);
+  const[durationTime, setDurationTime] = useState(endTime2Ref.current - moment());
 
   const handleShowWarning = () => {
     const now = moment();
