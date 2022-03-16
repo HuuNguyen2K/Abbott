@@ -14,6 +14,7 @@ const ModalQR = (props) => {
   }
 
   useEffect(() => {
+    handleToggleByIssue()
   }, []);
 
   return (
