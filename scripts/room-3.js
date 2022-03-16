@@ -24,11 +24,28 @@ const hidePopup = (event) => {
 }
 
 
-btnRoom3Left.addEventListener('click', showPopup)
+btnRoom3Left.addEventListener('click', (e) => {
+  // api thống kê
+  // const endPoint = ''
+  // const user = JSON.parse(localStorage.getItem('user'))
+  // const payload = {
+  //     access_token: user.access_token,
+  //     user_id: user.id
+  // }
 
-btnRoom3Center.addEventListener('click', showPopup)
+  // try {
+  //     const rs = await fetchData(endpoint, 'POST', payload)
+  // } catch (error) {}
+  showPopup(e)
+})
 
-btnRoom3Right.addEventListener('click', showPopup)
+btnRoom3Center.addEventListener('click', (e) => {
+  showPopup(e)
+})
+
+btnRoom3Right.addEventListener('click', (e) => {
+  showPopup(e)
+})
 
 elRoom3PopupLeft.addEventListener('click', hidePopup)
 

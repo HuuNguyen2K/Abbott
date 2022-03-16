@@ -50,7 +50,7 @@ const Lobby = () => {
      try {
       await fetchData(url, 'POST', payload)
     } catch (error) {}
-    // location.href = './room-3.html'
+    location.href = './room-4.html'
   }
   return (
     <div
