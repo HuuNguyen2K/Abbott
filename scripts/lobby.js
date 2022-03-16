@@ -68,9 +68,13 @@ const Lobby = () => {
       <div onClick={handleRoom3Click} className='room room-3 slide-shine'>
         <img src='./images/room-3-icon.png' alt='' />
       </div>
-      <div onClick={handleRoom4Click} className='room room-4 slide-shine'>
-        <img src='./images/room-4-icon.png' alt='' />
-      </div>
+      {
+        <WarningTimeBeforeEvent onEnd={handleRoom4Click}>
+          <div className='room room-4 slide-shine'>
+            <img src='./images/room-4-icon.png' alt='' />
+          </div>
+        </WarningTimeBeforeEvent>
+      }
       <div className='invite-choice'>
         <img
           src='./images/lobby-moi.png'
