@@ -65,6 +65,35 @@ const PostQuestion = () => {
 }
 
 const Room4Left = () => {
+  const playerRef = React.useRef();
+
+  const handleReady = (player) => {
+    playerRef.current = player;
+  };
+
+  const handleChangeVideo = (type) => {
+    if (!playerRef.current) return ;
+    let src;
+
+    switch (type) {
+      case 'vi':
+        src = "https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8";
+        break;
+      case 'en':
+        src = "https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8";
+        break;
+      default:
+        src = "https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8";
+        break;
+    }
+
+    playerRef.current.pause();
+    const currentTime = playerRef.current.currentTime();
+    playerRef.current.src([{ src, type: 'application/x-mpegURL'}]);
+    playerRef.current.currentTime(currentTime);
+    playerRef.current.play();
+  };
+
   return (
     <Fragment>
       <div
@@ -75,7 +104,10 @@ const Room4Left = () => {
       >
         <div id='room-4-video-left'></div>
         <div id='video-js-center' className='video-js-center'>
-          <VideoJS src='https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8' />
+          <VideoJS
+              src='https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+              onReady={handleReady}
+          />
         </div>
         <div className='live-btn'>
           Live <span className='circle'></span>
@@ -86,9 +118,9 @@ const Room4Left = () => {
 
         <div className='room-4__select-language'>
           <label htmlFor='select-language'></label>
-          <select id='select-language'>
-            <option value=''>Tiếng Viết</option>
-            <option value='january'>English</option>
+          <select id='select-language' onChange={(e) => handleChangeVideo(e.target.value)}>
+            <option value='vn'>Tiếng Việt</option>
+            <option value='en'>English</option>
           </select>
         </div>
       </div>
