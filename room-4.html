@@ -23,85 +23,12 @@
   <div class="room-4__wrap">
 
     <!-- Begin event video -->
-    <div class="room-4__left">
-      <div class="room-4__left-video" style="background-image:url(images/room-4-bg.jpg)">
-        <!--        <div id='room-4-video-left'></div>-->
-        <div id='video-js-center' class="video-js-center"></div>
-        <div class="live-btn">Live <span class="circle"></span></div>
-      </div>
-      <!-- Begin event option -->
-      <div class="room-4__left-option">
-        <!-- Begin select employee -->
-        <div class="room-4__select-employee">
-          <select id="select-employee">
-            <option value="0" class="selected">TB.BS Nguyễn Văn A</option>
-            <option value="1">TB.BS Nguyễn Văn B</option>
-            <option value="2">TB.BS Nguyễn Văn C</option>
-            <option value="3">TB.BS Nguyễn Văn D</option>
-            <option value="4">TB.BS Nguyễn Văn E</option>
-          </select>
-        </div>
-        <!-- Begin select employee -->
-
-        <!-- Begin question message -->
-        <div class="room-4__question-message">
-          <a href="#" class="room-4__btn-submit">Gửi câu hỏi</a>
-          <textarea class='room-4__textarea autoExpand' rows='3' data-min-rows='3' placeholder='' autofocus></textarea>
-        </div>
-        <!-- End question message -->
-
-        <!-- Begin select language -->
-        <div class="room-4__select-language">
-          <label for="select-language"></label>
-          <select id="select-language">
-            <option value="">Tiếng Viết</option>
-            <option value="january">English</option>
-          </select>
-        </div>
-        <!-- End select language -->
-
-      </div>
-      <!-- End event option -->
+    <div id="room-4-left" class="room-4__left">
     </div>
     <!-- End event video -->
 
     <!-- Begin event list employee -->
-    <div class="room-4__right">
-      <div class="room-4__list-employee">
-        <div class="room-4__item-employee">
-          <h3>TB.BS Nguyễn Văn A</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="room-4__item-employee">
-          <h3>TB.BS Nguyễn Văn A</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="room-4__item-employee">
-          <h3>TB.BS Nguyễn Văn A</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="room-4__item-employee">
-          <h3>TB.BS Nguyễn Văn A</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="room-4__item-employee">
-          <h3>TB.BS Nguyễn Văn A</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="room-4__item-employee">
-
-          <h3>TB.BS Nguyễn Văn A</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="room-4__item-employee">
-          <h3>TB.BS Nguyễn Văn A</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="room-4__item-employee">
-          <h3>TB.BS Nguyễn Văn A</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-      </div>
+    <div id="room-4-right" class="room-4__right">
     </div>
     <!-- End event list employee -->
   </div>
@@ -124,6 +51,7 @@
 <script src="./scripts/fetch.js" type="text/babel"></script>
 <!--<script src="./scripts/menu.js" type="text/babel"></script>-->
 <!--<script src="./scripts/backHome.js" type="text/babel"></script>-->
+<script src="./scripts/common.js"></script>
 <script src="./scripts/room-4.js"></script>
 <script src="./scripts/welcome.js" type="text/babel"></script>
 
@@ -135,9 +63,9 @@
 
 
 <script type="text/babel">
-  const domContainer = document.querySelector("#video-js-center");
-  ReactDOM.render(<VideoJS
-    src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8" />, domContainer);
+  // const domContainer = document.querySelector("#video-js-center");
+  // ReactDOM.render(<VideoJS
+  //   src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8" />, domContainer);
 
   const domModalQrContainer = document.querySelector('#global-modal-qr');
   ReactDOM.render(
@@ -152,6 +80,7 @@
   );
 </script>
 
-<script async defer src="./scripts/common.js"></script>
+<script type="text/babel" src="./scripts/room-4-left.js"></script>
+<script type="text/babel" src="./scripts/room-4-right.js"></script>
 </body>
 </html>

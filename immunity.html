@@ -40,6 +40,7 @@
     <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.5/mobile-detect.min.js"></script>
 
     <script src="./scripts/checkIsLogged.js"></script>
+    <script src="./scripts/common.js"></script>
     <script src="./scripts/fetch.js" type="text/babel"></script>
     <script src="./scripts/menu.js" type="text/babel"></script>
     <script src="./scripts/leaderboard.js" type="text/babel"></script>
@@ -65,13 +66,12 @@
 
       const domIframeContainer = document.querySelector('#iframe-game-render');
       ReactDOM.render(
-                <IframeGame src="http://hoithaodaithaoduong.com/game/flappy-bird" />,
+              <IframeGame src="http://54.251.217.230/game/flappy-bird" />,
               domIframeContainer
       );
     </script>
 
     <script src="./scripts/immunity.js"></script>
     <script src="./scripts/mobileDetect.js"></script>
-    <script async defer src="./scripts/common.js"></script>
   </body>
 </html>
