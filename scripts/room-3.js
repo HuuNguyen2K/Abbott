@@ -6,6 +6,10 @@ const elRoom3PopupLeft = document.getElementById('event-libre-left')
 const elRoom3PopupCenter = document.getElementById('event-libre-center')
 const elRoom3PopupRight = document.getElementById('event-libre-right')
 
+const eventCloseSlideLeft= document.getElementById('event-close-slide-left')
+const eventCloseSlideCenter = document.getElementById('event-close-slide-center')
+const eventCloseSlideRight = document.getElementById('event-close-slide-right')
+
 const showPopup = (event) => {
   event.preventDefault();
   let showEventPopup = event.target.getAttribute('data-toggle');
@@ -49,14 +53,22 @@ elRoom3PopupCenter.addEventListener('click', hidePopup)
 
 elRoom3PopupRight.addEventListener('click', hidePopup)
 
+eventCloseSlideLeft.addEventListener('click', function () {
+  if(elRoom3PopupLeft) elRoom3PopupLeft.classList.remove('open', 'overlay')
+})
+
+eventCloseSlideCenter.addEventListener('click', function () {
+  if(elRoom3PopupCenter) elRoom3PopupCenter.classList.remove('open', 'overlay')
+})
+
+eventCloseSlideRight.addEventListener('click', function () {
+  if(elRoom3PopupRight) elRoom3PopupRight.classList.remove('open', 'overlay')
+})
+
 // Slider
 const swiper = new Swiper('.swiper', {
   centeredSlides: true,
   spaceBetween: 120,
-  // autoplay: {
-  //     delay: 2500
-  // },
-
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
