@@ -272,6 +272,9 @@ label {
   width: 18px;
   height: 18px;
   cursor: pointer;
+}
+
+.form-sign-up input:not(:last-child) {
   margin-right: 10px;
 }
 
@@ -465,11 +468,6 @@ label {
 }
 
 @media screen and (max-width: 767px) {
-  .otp {
-    width: 100%;
-    padding: 10px !important;
-  }
-
   .otp > p {
     white-space: normal;
   }
@@ -645,6 +643,99 @@ label {
   .btn + .btn {
     margin-left: 3.2vw;
   }
+
+  /* ===== Form sign up ===== */
+  .form-sign-up {
+    border-radius: 3vw;
+    border-right: 0.2vw #caaaaa solid;
+    border-left: 0.2vw #caaaaa solid;
+    padding: 2vw 5vw;
+    max-height: 90%;
+    overflow-y: auto;
+  }
+
+  .form-sign-up .time {
+    top: 0.8vw;
+    right: 3.5vw;
+    font-size: 2.8vw;
+    padding: 0;
+  }
+
+  .form-sign-up h3 {
+    font-size: 2vw;
+    margin-bottom: 1.2vw;
+  }
+
+  .form-sign-up p {
+    font-size: 1.5vw;
+  }
+
+  .form-sign-up .action button {
+    padding: 1vw 1.2vw;
+    border-radius: 0.7vw;
+    font-size: 1.7vw;
+    min-width: 18vw;
+    height: 4vw;
+  }
+
+  .form-sign-up .sign-up-group label {
+    font-size: 1.8vw;
+    margin-bottom: 0.1vw;
+  }
+
+  .form-sign-up .sign-up-group label span {
+    font-size: 1.6vw;
+  }
+
+  .form-sign-up .sign-up-group input {
+    margin-top: 0.6vw;
+    height: 4vw;
+    font-size: 1.8vw;
+    border: 0.2vw solid #e6e6e6;
+    padding: 0px 1.5vw;
+    border-radius: 1.4vw;
+  }
+
+  .form-sign-up .sign-up-group + .sign-up-group {
+    margin-top: 0.6vw;
+  }
+  /* ===== Form sign up - END ===== */
+
+  /* ===== Toast err message ===== */
+  .toast-err {
+    border-width: 0.3vw !important;
+    border-radius: 1.5vw !important;
+    padding: 2.5vw 8vw !important;
+  }
+
+  .toast-err img {
+    width: 14vw !important;
+  }
+
+  .toast-err p {
+    margin-top: 2vw !important;
+    font-size: 2.3vw !important;
+  }
+
+  .toast-err .close-toast {
+    font-size: 4vw !important;
+    height: 6vw !important;
+    width: 6vw !important;
+    line-height: 4.5vw !important;
+  }
+  /* ===== Toast err message - END ===== */
+
+  /* ===== Modal OTP ===== */
+  .otp {
+    padding: 3.5vw 5vw !important;
+    border-width: 0.3vw !important;
+    border-radius: 1.5vw !important;
+  }
+
+  .otp .noti span {
+    font-size: 1.4vw;
+  }
+  /* ===== Modal OTP - END ===== */
 }
 
 @media only screen and (max-height: 550px) {

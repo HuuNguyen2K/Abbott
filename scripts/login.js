@@ -44,6 +44,7 @@ const ToastErr = (props) => {
             color: 'rgb(127 125 125)',
           }}
           onClick={() => setShow(false)}
+          className="close-toast"
         >
           x
         </div>
@@ -634,10 +635,10 @@ Password: ${rs.data.name.toLowerCase().replace(/\s/g, '')}`,
             GỬI THÔNG TIN
           </button>
         </div>
-        <div onClick={() => setMode(MODE.SIGN_IN)} className='time'>
-          x
-        </div>
       </form>
+      <div onClick={() => setMode(MODE.SIGN_IN)} className='time'>
+        x
+      </div>
       <ToastErr message={message} show={show} setShow={setShow} />
       <Policy show={isShowPolicy} setShow={setIsShowPolicy} />
       {isShowOTP && (
