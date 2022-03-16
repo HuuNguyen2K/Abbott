@@ -16,10 +16,11 @@ const Leaderboard = () => {
   }
 
   useEffect(() => {
+    handleToggleByIssue()
     getRank()
 
     const timer = setInterval(() => {
-      getRank()
+      // getRank()
     }, 5000)
 
     return () => clearInterval(timer)

@@ -4,6 +4,7 @@ const IframeGame = (props) => {
   const { src } = props
 
   useEffect(() => {
+    handleToggleByIssue()
   }, []);
 
   return (
