@@ -28,9 +28,9 @@ body {
   background-image: url('../images/content-login.png');
   background-size: contain;
   background-repeat: no-repeat;
-  height: 45%;
-  width: 730px;
-  padding: 15px 60px 0;
+  height: 46%;
+  width: 800px;
+  padding: 25px 60px 0;
 }
 
 .content .title {
@@ -107,7 +107,6 @@ body {
 }
 
 .action {
-  margin-top: 5px;
   text-align: center;
 }
 
@@ -138,8 +137,7 @@ body {
 }
 
 .show-password {
-  margin-top: 4px;
-  margin-left: 170px;
+  margin: 4px 0 12px 170px;
   display: flex;
   align-items: center;
 }
@@ -441,16 +439,32 @@ label {
   display: flex;
 }
 
-@media screen and (max-width: 1023px) {
+/* ===== Responsive ===== */
+@media screen and (max-width: 1025px) {
   .form-sign-up {
     width: 90%;
+  }
+
+  .content {
+    width: 820px
+  }
+
+  .group span {
+    min-width: 140px;
+  }
+
+  .show-password {
+    margin: 4px 0 12px 150px;
+  }
+
+  .btn {
+    width: 183px;
+    height: 50px;
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .content .title {
-    display: none;
-  }
   .otp {
     width: 100%;
     padding: 10px !important;
@@ -495,10 +509,6 @@ label {
     margin-top: 8px;
   }
 
-  .err-login-container {
-    width: 90%;
-  }
-
   .content {
     width: 95%;
     padding: 40px;
@@ -513,10 +523,13 @@ label {
     height: 35px;
   }
 
+  .show-password {
+    margin-left: 120px;
+  }
+
   .action {
     display: flex;
     justify-content: center;
-    margin-top: 8px;
   }
 
   button {
@@ -573,3 +586,155 @@ label {
     font-size: 15px;
   }
 }
+
+@media only screen and (max-height: 610px) {
+  .content {
+    height: 56%;
+    width: 80vw;
+    padding: 2.5vw 8vw 0;
+  }
+
+  .content .title {
+    font-size: 2.2vw;
+    margin-bottom: 1.2vw;
+  }
+
+  .group span {
+    font-size: 2vw;
+    min-width: 11vw;
+  }
+
+  .group .in {
+    height: 4.2vw;
+    padding: 0.9vw 1.2vw;
+    font-size: 1.9vw;
+    border-radius: 1.6vw;
+  }
+
+  .group .in::placeholder {
+    font-size: 1.9vw;
+  }
+
+  .group + .group {
+    margin-top: 1.2vw;
+  }
+
+  .show-password .checkbox {
+    height: 1.9vw;
+    width: 1.9vw;
+    margin-right: 1.2vw;
+  }
+
+  .show-password {
+    margin: 1vw 0 1.7vw 11.2vw;
+  }
+
+  .show-password span {
+    font-size: 1.8vw;
+    line-height: 1;
+  }
+
+  .btn {
+    width: 17.2vw;
+    height: 4.7vw;
+    border-width: 0.4vw;
+    border-radius: 5vw;
+    font-size: 1.8vw;
+  }
+
+  .btn + .btn {
+    margin-left: 3.2vw;
+  }
+}
+
+@media only screen and (max-height: 550px) {
+  .content {
+    height: 43%;
+  }
+
+  .err-login-container {
+    width: 55vw;
+  }
+
+  .err-login-container .time {
+    top: 0.5vw;
+    right: 3.5vw;
+    font-size: 3vw;
+    padding: 1vw 1vw;
+  }
+}
+
+@media only screen and (max-height: 420px) {
+  .content {
+    height: 66%;
+    width: 73vw;
+    padding: 2vw 8vw 0;
+  }
+
+  .content .title {
+    font-size: 2vw;
+    margin-bottom: 1vw;
+  }
+
+  .group span {
+    font-size: 1.8vw;
+    min-width: 10vw;
+  }
+
+  .group .in {
+    height: 4vw;
+    padding: 0.7vw 1vw;
+    font-size: 1.7vw;
+    border-radius: 1.4vw;
+  }
+
+  .group .in::placeholder {
+    font-size: 1.7vw;
+  }
+
+  .group + .group {
+    margin-top: 1vw;
+  }
+
+  .show-password .checkbox {
+    height: 1.7vw;
+    width: 1.7vw;
+    margin-right: 1vw;
+  }
+
+  .show-password {
+    margin: 0.8vw 0 1.5vw 11vw;
+  }
+
+  .show-password span {
+    font-size: 1.6vw;
+  }
+
+  .btn {
+    width: 17vw;
+    height: 4.5vw;
+    border-width: 0.25vw;
+    border-radius: 5vw;
+    font-size: 1.6vw;
+  }
+
+  .btn + .btn {
+    margin-left: 3vw;
+  }
+
+  .err-login-container {
+    width: 49vw;
+  }
+
+  .err-login-container .time {
+    right: 3vw;
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-height: 300px) {
+  .content {
+    width: 70vw;
+  }
+}
+/* ===== Responsive - END ===== */
