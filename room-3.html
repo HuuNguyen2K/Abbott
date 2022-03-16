@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Libre Screen</title>
+    <title>Room 3 - Libre screen</title>
     <link rel="stylesheet" href="./styles/base.css"/>
     <link rel="stylesheet" href="./styles/room-3.css"/>
     <link rel="stylesheet" href="./styles/swiper-bundle.min.css"/>
@@ -141,20 +141,20 @@
 </script>
 
 <script type="text/babel">
-    const handlePlayerReady = (player) => {
+    const handlePlayerReady1 = (player) => {
         const closeDom = document.getElementById('event-close-slide-right');
         closeDom.addEventListener('click', () => {
             player.pause();
         });
     };
 
-    const domContainer = document.querySelector("#video-js-right");
+    const domContainer1 = document.querySelector("#video-js-right");
     ReactDOM.render(
         <VideoJS
             src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"
-            onReady={handlePlayerReady}
+            onReady={handlePlayerReady1}
         />,
-        domContainer
+        domContainer1
     );
 
 </script>
@@ -177,6 +177,6 @@
     );</script>
 
 <script src="./scripts/room-3.js"></script>
-<script src="./scripts/mobileDetect.js"></script>>
+<script src="./scripts/mobileDetect.js"></script>
 </body>
 </html>

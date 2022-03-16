@@ -56,7 +56,7 @@ const Menu = () => {
                 </h5>
                 <ul className="menu-root">
                     <li className="menu-item">
-                        <a href="javascript:void(0)">Chương trình hội thảo</a>
+                        <a href="javascript:void(0)" id="menu-seminar">Chương trình hội thảo</a>
                     </li>
                     <li className="menu-item">
                         <p className="submenu-title">
