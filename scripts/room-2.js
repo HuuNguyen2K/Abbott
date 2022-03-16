@@ -3,7 +3,6 @@ const btnRoom2Right = document.querySelector('.room-2__btn-right')
 const elEventRoom2PopupLeft = document.getElementById('event-room-2-left')
 const elEventRoom2PopupRight = document.getElementById('event-room-2-right')
 const eventCloseSlide = document.getElementById('event-close-slide')
-console.log(eventCloseSlide)
 
 const showPopup = (event) => {
     // event.preventDefault();

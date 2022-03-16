@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Libre Screen</title>
+  <link rel="stylesheet" href="./styles/base.css" />
+  <link rel="stylesheet" href="./styles/room-3.css" />
+  <link rel="stylesheet" href="./styles/modal-count-down.css" />
+  <link rel="stylesheet" href="./styles/swiper-bundle.min.css" />
+  <!-- TODO -->
+  <link rel="stylesheet" href="styles/menu.css" />
+  <link rel="stylesheet" href="./styles/backHome.css" />
+  <link rel="stylesheet" href="styles/leaderboard.css" />
+  <link rel="stylesheet" href="./styles/backHome.css" />
+  <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/warningTime.css" />
+
+</head>
+<body>
+<div id="room-3" class="container room-3" style="background-image:url(images/room-3-bg.jpg)">
+
+  <a href="#" id="btn-count-down" class="btn-count-down">ID Event Click Show Modal Count Time</a>
+  <!-- Begin popup count down -->
+  <div id="event-count-down" class="modal__count-down">
+    <div class="modal__count-down-bg" style="background-image:url(images/count-down-bg-text.png)">
+
+      <div class="modal__count-down-time">
+        <div class="modal__count-down-time-wrap">
+          <div class="modal__count-down-time-bg "
+               style="background-image:url(images/count-down-time-bg.png); margin-right: 3px">
+            <span class="hour">30</span>
+          </div>
+
+          <div class="text" style="margin-right: 3px">Phút</div>
+        </div>
+        <div class="modal__count-down-time-wrap">
+          <div class="modal__count-down-time-bg" style="background-image:url(images/count-down-time-bg.png)">
+            <span class="minutes">00</span>
+          </div>
+
+          <div class="text">Giây</div>
+        </div>
+      </div>
+
+      <div id="event-close-slide-left" class="swiper-btn-close"
+           style="background-image: url(./images/btn-close-slider.png)"></div>
+    </div>
+  </div>
+  <!-- End popup count down -->
+</div>
+
+<div id="global-menu"></div>
+<div id="back-home"></div>
+
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.5/mobile-detect.min.js"></script>
+
+<script src="./scripts/menu.js" type="text/babel"></script>
+<script src="./scripts/backHome.js" type="text/babel"></script>
+
+<script src="./scripts/count-down-30.js"></script>
+</body>
+</html>
