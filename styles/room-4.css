@@ -23,6 +23,13 @@
     justify-content: space-between;
 }
 
+@media screen and (max-width: 768px) and (max-height: 768px){
+    .room-4__wrap {
+     min-height: 650px;
+    }
+}
+
+
 /* Buttons event css*/
 .room-4__left {
     height: 100%;
@@ -47,7 +54,7 @@
 }
 
 .room-4__left-video .video-js-center {
-    width: 70%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
 }
@@ -61,6 +68,8 @@
 
 .room-4__left-video .live-btn {
     background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 2px;
     position: absolute;
     left: 5px;
     bottom: 12px;
@@ -69,6 +78,13 @@
     font-size: 12px;
     display: inline-block;
     margin-right: 4px;
+    z-index:99;
+}
+
+@media screen and (max-width: 768px) {
+    .room-4__left-video .live-btn {
+        bottom: 8px;
+    }
 }
 
 .room-4__left-video .live-btn .circle {
@@ -98,6 +114,15 @@
 
 .room-4__select-employee, .room-4__question-message, .room-4__select-language {
     width: calc((100% - 30px) / 3);
+}
+
+@media screen and (max-width: 768px) {
+    .room-4__select-employee, .room-4__question-message {
+        width: calc(38% - 5px);
+    }
+    .room-4__select-language {
+        width: calc(22%);
+    }
 }
 
 .room-4__select-employee,

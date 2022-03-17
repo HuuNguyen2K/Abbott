@@ -370,6 +370,13 @@ body {
     height: 395px;
 }
 
+@media screen and (max-width: 768px) {
+    .popup-video {
+        width: 488px;
+        height: 280px;
+    }
+}
+
 .room-3__popup-center .swiper-btn-close, .room-3__popup-right .swiper-btn-close {
     background-position: center;
     background-repeat: no-repeat;
@@ -383,6 +390,14 @@ body {
     z-index: 99;
 }
 
+@media screen and (max-width: 768px) {
+    .room-3__popup-center .swiper-btn-close,
+    .room-3__popup-right .swiper-btn-close {
+        top: 6px;
+        right: 6px;
+    }
+}
+
 .popup-video video {
     object-fit: cover;
     width: 692px;
@@ -394,6 +409,13 @@ body {
     height: 400px;
     border-radius: 20px;
     padding: 0 60px;
+}
+
+@media screen and (max-width: 768px) {
+    .popup-slide .swiper {
+        width: 540px;
+        height: 240px;
+    }
 }
 
 .popup-slide .swiper-slide {
@@ -415,6 +437,13 @@ body {
     z-index: 99;
 }
 
+@media screen and (max-width: 768px) {
+    .popup-slide .swiper-btn-close{
+        top: 8px;
+        right: 72px;
+    }
+}
+
 .popup-slide .swiper-button-prev, .popup-slide .swiper-button-next {
     background-size: 100%;
     background-repeat: no-repeat;
@@ -425,6 +454,13 @@ body {
     z-index: 99;
     width: 60px;
     height: 60px;
+}
+
+@media screen and (max-width: 768px) {
+    .popup-slide .swiper-button-prev, .popup-slide .swiper-button-next {
+        width: 46px;
+        height: 46px;
+    }
 }
 
 .popup-slide .swiper-button-prev {
