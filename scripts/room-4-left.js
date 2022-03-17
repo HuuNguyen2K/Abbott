@@ -121,7 +121,7 @@ const Room4Left = () => {
           <label htmlFor='select-language'></label>
           <select id='select-language' onChange={(e) => handleChangeVideo(e.target.value)}>
             <option value='vn'>Tiếng Việt</option>
-            <option value='en'>English</option>
+            <option value='en'>Tiếng Anh</option>
           </select>
         </div>
       </div>
