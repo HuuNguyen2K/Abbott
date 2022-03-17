@@ -148,7 +148,8 @@
 
 @media screen and (max-width: 1260px) {
     .room-2__btn-right {
-        top: 28%;
+        background-size: 90%;
+        top: 36%;
     }
 }
 
@@ -179,7 +180,7 @@
     .room-2__btn-right {
         width: 180px;
         height: 80px;
-        top: 33%;
+        top: 36%;
         margin-right: 15px;
     }
 }
