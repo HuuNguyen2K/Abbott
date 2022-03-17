@@ -1,4 +1,4 @@
-const TrackRoomTime = () => {
+const trackRoomTime = (room) => {
     debugger
     let startTime = moment();
     window.addEventListener('load', () => {
@@ -7,12 +7,10 @@ const TrackRoomTime = () => {
     });
     window.addEventListener('beforeunload', async () => {
         const endTime = moment();
-        console.log(startTime, endTime);
+        console.log(startTime, endTime, room);
         debugger
         // Call api
         // await
     });
 };
-
-TrackRoomTime();
 
