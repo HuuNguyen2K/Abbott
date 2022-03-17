@@ -101,7 +101,7 @@ const Menu = () => {
                                      active_class: 'open-iframe',
                                      without_ele: null,
                                      iframe: true,
-                                     source: 'http://54.251.217.230/game/flappy-bird'
+                                     source: URL_GAME_1,
                                    }) }>
                                     ổn định đường huyết - tăng cường miễn dịch
                                 </a>
@@ -114,7 +114,7 @@ const Menu = () => {
                                      active_class: 'open-iframe',
                                      without_ele: null,
                                      iframe: true,
-                                     source: 'http://54.251.217.230/game/word-filling-game'
+                                     source: URL_GAME_2,
                                    }) }>
                                   dinh dưỡng tối ưu
                                 </a>
