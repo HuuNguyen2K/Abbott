@@ -49,7 +49,7 @@ const WarningTimeBeforeEvent = (props) => {
         if (forever) {
             handleIntervalShowPopup = setInterval(() => {
                 handleShowPopup.current(() => {
-                    clearInterval(handleInterval)
+                    clearInterval(handleIntervalShowPopup)
                 });
             }, 1000);
         }

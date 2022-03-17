@@ -49,6 +49,7 @@ const WarningTimeOut = () => {
   useEffect(() =>{
     if (isSeminarStart) {
       // Redirect here
+      window.location = './room-4.html'
     }
   }, [isSeminarStart]);
 

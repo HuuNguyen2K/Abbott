@@ -33,19 +33,19 @@ const Menu = () => {
                 <img src="./images/menu.png"
                      alt="menu_icon"
                      data-control={ JSON.stringify({
-                         render_name: '#menu',
-                         command: 'open',
-                         active_class: 'menu-visible',
-                         without_ele: null
+                       render_name: '#menu',
+                       command: 'open',
+                       active_class: 'menu-visible',
+                       without_ele: null
                      }) }
                 />
             </div>
             <div id="menu">
             <div data-control={ JSON.stringify({
-                    render_name: '#menu',
-                    command: 'close',
-                    active_class: 'menu-visible',
-                    without_ele: null
+                  render_name: '#menu',
+                  command: 'close',
+                  active_class: 'menu-visible',
+                  without_ele: null
                 }) }
                  className="menu-overlay">
             </div>
@@ -56,7 +56,12 @@ const Menu = () => {
                 </h5>
                 <ul className="menu-root">
                     <li className="menu-item">
-                        <a href="javascript:void(0)" id="menu-seminar">Chương trình hội thảo</a>
+                        {/*<WarningTimeBeforeEvent onEnd={() => { window.location = "./room-4.html" }}>*/}
+                        {/*    <a href="#" onClick={(e) => e.propertyIsEnumerable()} id="menu-seminar">Chương trình hội thảo</a>*/}
+                        {/*</WarningTimeBeforeEvent> */}
+                        <SeminarProgram>
+                            <a href="#" id="menu-seminar">Chương trình hội thảo</a>
+                        </SeminarProgram>
                     </li>
                     <li className="menu-item">
                         <p className="submenu-title">
@@ -89,20 +94,40 @@ const Menu = () => {
                         </p>
                         <ul className="menu-submenu">
                             <li className="menu-item submenu-item">
-                                <a href="javascript:void(0)">ổn định đường huyết - tăng cường miễn dịch</a>
+                                <a href="javascript:void(0)"
+                                   data-control={ JSON.stringify({
+                                     render_name: '.sec-iframe',
+                                     command: 'open',
+                                     active_class: 'open-iframe',
+                                     without_ele: null,
+                                     iframe: true,
+                                     source: 'http://54.251.217.230/game/flappy-bird'
+                                   }) }>
+                                    ổn định đường huyết - tăng cường miễn dịch
+                                </a>
                             </li>
                             <li className="menu-item submenu-item">
-                                <a href="javascript:void(0)">dinh dưỡng tối ưu</a>
+                                <a href="javascript:void(0)"
+                                   data-control={ JSON.stringify({
+                                     render_name: '.sec-iframe',
+                                     command: 'open',
+                                     active_class: 'open-iframe',
+                                     without_ele: null,
+                                     iframe: true,
+                                     source: 'http://54.251.217.230/game/word-filling-game'
+                                   }) }>
+                                  dinh dưỡng tối ưu
+                                </a>
                             </li>
                         </ul>
                     </li>
                     <li className="menu-item">
                         <a href="javascript:void(0)"
                            data-control={ JSON.stringify({
-                               render_name: '#global-leaderboard .leaderboard',
-                               command: 'open',
-                               active_class: 'leaderboard-visible',
-                               without_ele: null
+                             render_name: '#global-leaderboard .leaderboard',
+                             command: 'open',
+                             active_class: 'leaderboard-visible',
+                             without_ele: null
                            }) }
                         >
                             bảng xếp hạng
@@ -120,10 +145,10 @@ const Menu = () => {
 
             <img className="close-popup"
                  data-control={ JSON.stringify({
-                     render_name: '#menu',
-                     command: 'close',
-                     active_class: 'menu-visible',
-                     without_ele: null
+                   render_name: '#menu',
+                   command: 'close',
+                   active_class: 'menu-visible',
+                   without_ele: null
                  }) }
                  src="./images/close_icon.png"
                  alt="close_icon" />

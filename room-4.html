@@ -13,11 +13,12 @@
   <link rel="stylesheet" href="./styles/backHome.css" />
   <link rel="stylesheet" href="styles/leaderboard.css" />
   <link rel="stylesheet" href="./styles/modal-qr.css" />
+  <link rel="stylesheet" href="./styles/modal-common.css" />
   <!--  <link rel="stylesheet" href="./styles/backHome.css" />-->
   <link rel="stylesheet" href="styles/warningTime.css" />
   <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
   <link rel="stylesheet" href="./styles/modal-count-down.css" />
-
+  <link rel="stylesheet" href="./styles/modal-seminar.css"/>
 </head>
 <body>
 <div id="room-3" class="container room-3" style="background-image:url(images/room-4-bg.jpg)">
@@ -36,6 +37,17 @@
   </div>
 
 </div>
+<!-- Begin modal FAQ -->
+<div id="modal-faq" class="modal-common">
+  <div class="modal-common__overlay"></div>
+  <div class="modal-common__container">
+    <img src="./images/background-top-rater.png" alt="faq_image">
+  </div>
+  <img id="close-modal-faq" class="close-popup"
+       src="./images/close_icon.png"
+       alt="close_icon">
+</div>
+<!-- End modal FAQ -->
 
 <!--<div id="global-menu"></div>-->
 <div id="welcome-video-render"></div>
@@ -51,6 +63,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
 <script src="./scripts/fetch.js" type="text/babel"></script>
+<script src="./scripts/seminarProgram.js" type="text/babel"></script>
 <!--<script src="./scripts/menu.js" type="text/babel"></script>-->
 <!--<script src="./scripts/backHome.js" type="text/babel"></script>-->
 <script src="./scripts/common.js"></script>
@@ -61,7 +74,7 @@
 <script src="./scripts/iframe-game.js" type="text/babel"></script>
 <script src="./scripts/modal-qr.js" type="text/babel"></script>
 <script src="./scripts/videoJS.js" type="text/babel"></script>
-<script type="text/babel" src="./scripts/warningTime.js"></script>
+<!-- <script type="text/babel" src="./scripts/warningTime.js"></script> -->
 <script type="text/babel" src="./scripts/warningTimeBeforeEvent.js"></script>
 
 <script type="text/babel">
@@ -77,7 +90,7 @@
 
   const domIframeContainer = document.querySelector('#iframe-game-render');
   ReactDOM.render(
-          <IframeGame src="https://docs.google.com/forms/d/e/1FAIpQLSfxY5BC6i1srGe0YY1B-ivL7UoJB2ZaMemyf50QfLn7Q8i_5A/viewform" />,
+          <IframeGame src="https://docs.google.com/forms/d/e/1FAIpQLSfxY5BC6i1srGe0YY1B-ivL7UoJB2ZaMemyf50QfLn7Q8i_5A/viewform?embedded=true" />,
           domIframeContainer
   );
 </script>
@@ -93,5 +106,9 @@
 
 <script type="text/babel" src="./scripts/room-4-left.js"></script>
 <script type="text/babel" src="./scripts/room-4-right.js"></script>
+<script type="text/javascript" src="./scripts/trackRoomTime.js"></script>
+<script>
+  trackRoomTime('room-4');
+</script>
 </body>
 </html>

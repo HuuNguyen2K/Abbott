@@ -143,7 +143,7 @@ const Leaderboard = () => {
                         alt='background-gold'
                       />
                     )}
-                    <div className='item-content'>
+                    <div className='item-content slide-shine'>
                       <span className='item-rate'>{item.rank}</span>
 
                       <div className='item-user'>
