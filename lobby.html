@@ -22,6 +22,7 @@
     <div id="global-menu"></div>
     <div id="welcome-video-render"></div>
     <div id="global-leaderboard"></div>
+    <div id="iframe-game-render"></div>
     <div id="warning-time-out"></div>
 
     <script
@@ -63,6 +64,12 @@
           domContainer
         )
       }
+
+      const domIframeContainer = document.querySelector('#iframe-game-render');
+      ReactDOM.render(
+              <IframeGame src={URL_GAME_1} />,
+              domIframeContainer
+      );
     </script>
 
     <script src="./scripts/mobileDetect.js"></script>
