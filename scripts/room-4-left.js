@@ -73,6 +73,7 @@ const Room4Left = () => {
   const [lang, setLang] = useState('vn');
   const [showClip, setShowClip] = useState(true);
   const [currentClip, setCurrentClip] = useState('clip1');
+  const [showCME, setShowCME] = useState(false);
 
   const CLIPS = { // TODO
     clip1: {
@@ -106,9 +107,9 @@ const Room4Left = () => {
   }
 
   const GAMES = {
-    game1: { url: 'http://54.251.217.230/game/flappy-bird', time: 5000 }, // millisecond // TODO
-    game2: { url:'http://54.251.217.230/game/find-object', time: 5000 }, // millisecond TODO
-    game3: { url: 'http://54.251.217.230/game/word-filling-game', time: 5000}, // millisecond TODO
+    game1: { url: 'http://54.251.217.230/game/flappy-bird', time: 35000 }, // millisecond // TODO
+    game2: { url:'http://54.251.217.230/game/find-object', time: 35000 }, // millisecond TODO
+    game3: { url: 'http://54.251.217.230/game/word-filling-game', time: 35000}, // millisecond TODO
   }
 
   const playerRef = React.useRef();
@@ -120,7 +121,6 @@ const Room4Left = () => {
 
   const handleReady = (player) => {
     playerRef.current = player;
-    if (checkSeminarStart()) playerRef.current.play();
   };
 
   const handleChangeVideo = (type) => {
@@ -184,6 +184,8 @@ const Room4Left = () => {
         setShowClip(true);
         break;
       case 'clip7':
+        setShowCME(true)
+        break;
       default:
         break;
     }
@@ -206,7 +208,7 @@ const Room4Left = () => {
                 src={CLIPS[currentClip][lang]}
                 onReady={handleReady}
                 options={{
-                  autoplay: true,
+                  autoplay: checkSeminarStart(),
                   muted: currentClip === 'clip1'
                 }}
                 onEnded={handleEnded}
@@ -231,6 +233,9 @@ const Room4Left = () => {
       </div>
       {
         showGame && <IframeGame src={GAMES[currentGame].url} show={true} disabledClose={true} />
+      }
+      {
+        showCME && <ModalQR src="./images/cme_qr_code.png" show={true} />
       }
     </Fragment>
   )

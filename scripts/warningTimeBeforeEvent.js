@@ -1,7 +1,7 @@
 const { useEffect, Fragment, useRef, useState } = React;
 
 const WarningTimeBeforeEvent = (props) => {
-    const { forever, onEnd, children } = props;
+    const { forever, onEnd, children, disabledClose } = props;
     const startEventTime = useRef(START_EVENT_TIME);
     const handleShowPopup = useRef();
     const[durationTime, setDurationTime] = useState(moment.duration(startEventTime.current - moment()));
@@ -20,7 +20,7 @@ const WarningTimeBeforeEvent = (props) => {
 
     useEffect(() => {
         const modalCountDown=document.getElementById('event-count-down')
-        const btnCloseCountDown = document.getElementById('event-close-slide-left')
+        const btnCloseCountDown = document.getElementById('warning-time-before-event-close-slide-left')
 
         const showPopup = () => {
             modalCountDown.classList.add('open', 'overlay')
@@ -39,7 +39,7 @@ const WarningTimeBeforeEvent = (props) => {
             }
         }
 
-        btnCloseCountDown.addEventListener('click', hidePopup)
+        if (!disabledClose) btnCloseCountDown.addEventListener('click', hidePopup)
 
         const handleInterValUpdateCounter = setInterval(() => {
             handleUpdateCounter(() => clearInterval(handleInterValUpdateCounter));
@@ -89,8 +89,8 @@ const WarningTimeBeforeEvent = (props) => {
                         </div>
                     </div>
 
-                    <div id="event-close-slide-left" className="swiper-btn-close"
-                         style={{ backgroundImage: 'url(./images/btn-close-slider.png)'}}></div>
+                    <div id="warning-time-before-event-close-slide-left" className="swiper-btn-close"
+                         style={{ backgroundImage: 'url(./images/btn-close-slider.png)'}} />
                 </div>
             </div>
         </Fragment>

@@ -82,11 +82,11 @@
   // ReactDOM.render(<VideoJS
   //   src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8" />, domContainer);
 
-  const domModalQrContainer = document.querySelector('#global-modal-qr');
-  ReactDOM.render(
-          <ModalQR src="./images/cme_qr_code.png" />,
-          domModalQrContainer
-  );
+  // const domModalQrContainer = document.querySelector('#global-modal-qr');
+  // ReactDOM.render(
+  //         <ModalQR src="./images/cme_qr_code.png" />,
+  //         domModalQrContainer
+  // );
 
   const domIframeContainer = document.querySelector('#iframe-game-render');
   ReactDOM.render(
@@ -99,7 +99,7 @@
   const domModalQrContainer = document.querySelector('#warning-time-before-event');
 
   ReactDOM.render(
-     <WarningTimeBeforeEvent forever/>,
+     <WarningTimeBeforeEvent forever disabledClose={true} />,
      domModalQrContainer
   );
 </script>

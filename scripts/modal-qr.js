@@ -1,7 +1,7 @@
 const { useEffect } = React;
 
 const ModalQR = (props) => {
-  const { src } = props
+  const { src, show } = props
 
   const handleDocumentDownload = () => {
     // TODO: handle download
@@ -31,7 +31,7 @@ const ModalQR = (props) => {
   }, []);
 
   return (
-      <div className="modal-qr">
+      <div className={`modal-qr ${show ? 'modal-qr-visible' : ''}`} >
         <div className="qr-container">
           <h3 className="qr-title">Mời Quý Chuyên viên y tế <br/>chọn các tính năng bên dưới</h3>
           <img className="qr-code" src={ src } alt="qr_code"/>
