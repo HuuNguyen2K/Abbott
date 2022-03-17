@@ -5,6 +5,8 @@ const openModalRemindGame = () => {
   }, 1500) // 1.5s
 }
 
+trackRoomTime('1')
+
 const openIframeGame = () => {
   const element = document.querySelector('.shield')
 
