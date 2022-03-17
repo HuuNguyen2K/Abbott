@@ -1,8 +1,6 @@
-const { useEffect, useRef } = React;
+const { useEffect } = React;
 
 const Menu = () => {
-    const game1Ref = useRef(null)
-    const game2Ref = useRef(null)
     const userName = localStorage.getItem('user') ?
         JSON.parse(localStorage.getItem('user')).name : '-Tên khách tham dự-'
 
@@ -28,7 +26,6 @@ const Menu = () => {
         handleToggleByIssue();
         handleToggleSubMenu();
     }, []);
-
 
     return (
        <div>
@@ -94,11 +91,11 @@ const Menu = () => {
                         </p>
                         <ul className="menu-submenu">
                             <li className="menu-item submenu-item">
-                                <a onClick={() => game1Ref.current.classList.add('open-iframe')}  href="javascript:void(0)">
+                                <a href="javascript:void(0)">
                                     ổn định đường huyết - tăng cường miễn dịch
                                 </a>
                             </li>
-                            <li onClick={() => game2Ref.current.classList.add('open-iframe')} className="menu-item submenu-item">
+                            <li className="menu-item submenu-item">
                                 <a href="javascript:void(0)">dinh dưỡng tối ưu</a>
                             </li>
                         </ul>
@@ -135,8 +132,6 @@ const Menu = () => {
                  src="./images/close_icon.png"
                  alt="close_icon" />
             </div>
-            <IframeGame ref={game1Ref} src={URL_GAME_1} />
-            <IframeGame ref={game2Ref} src={URL_GAME_2} />
        </div>
     );
 };
