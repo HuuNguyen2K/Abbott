@@ -56,7 +56,9 @@ const Menu = () => {
                 </h5>
                 <ul className="menu-root">
                     <li className="menu-item">
-                        <a href="javascript:void(0)" id="menu-seminar">Chương trình hội thảo</a>
+                        <WarningTimeBeforeEvent onEnd={() => { window.location = "./room-4.html" }}>
+                            <a href="#" onClick={(e) => e.propertyIsEnumerable()} id="menu-seminar">Chương trình hội thảo</a>
+                        </WarningTimeBeforeEvent>
                     </li>
                     <li className="menu-item">
                         <p className="submenu-title">
@@ -89,7 +91,9 @@ const Menu = () => {
                         </p>
                         <ul className="menu-submenu">
                             <li className="menu-item submenu-item">
-                                <a href="javascript:void(0)">ổn định đường huyết - tăng cường miễn dịch</a>
+                                <a href="javascript:void(0)">
+                                    ổn định đường huyết - tăng cường miễn dịch
+                                </a>
                             </li>
                             <li className="menu-item submenu-item">
                                 <a href="javascript:void(0)">dinh dưỡng tối ưu</a>

@@ -1,6 +1,6 @@
-const { useEffect } = React;
+const { useEffect,  forwardRef } = React;
 
-const IframeGame = (props) => {
+const IframeGame = forwardRef((props, ref) => {
   const { src } = props
 
   useEffect(() => {
@@ -8,7 +8,7 @@ const IframeGame = (props) => {
   }, []);
 
   return (
-      <div className="sec-iframe">
+      <div ref={ref} className="sec-iframe">
         <div data-control={ JSON.stringify({
                 render_name: '.sec-iframe',
                 command: 'close',
@@ -33,4 +33,4 @@ const IframeGame = (props) => {
              alt="close_icon"/>
       </div>
   );
-};
+});
