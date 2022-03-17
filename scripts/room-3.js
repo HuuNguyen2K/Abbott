@@ -10,6 +10,9 @@ const eventCloseSlideLeft= document.getElementById('event-close-slide-left')
 const eventCloseSlideCenter = document.getElementById('event-close-slide-center')
 const eventCloseSlideRight = document.getElementById('event-close-slide-right')
 
+let timeOpenMiddle = null
+let timeOpenRight = null
+
 const showPopup = (event) => {
   event.preventDefault();
   let showEventPopup = event.target.getAttribute('data-toggle');
@@ -24,34 +27,110 @@ const hidePopup = (event) => {
 }
 
 
-btnRoom3Left.addEventListener('click', (e) => {
+btnRoom3Left.addEventListener('click', async (e) => {
   // api thống kê
-  // const endPoint = ''
-  // const user = JSON.parse(localStorage.getItem('user'))
-  // const payload = {
-  //     access_token: user.access_token,
-  //     user_id: user.id
-  // }
-
-  // try {
-  //     const rs = await fetchData(endpoint, 'POST', payload)
-  // } catch (error) {}
   showPopup(e)
+  const endPoint = '/api/topic_3_libre_click'
+  const user = JSON.parse(localStorage.getItem('user'))
+  const payload = {
+      access_token: user.access_token,
+      user_id: user.id,
+      direction: 'left'
+  }
+
+  try {
+      await fetchData(endPoint, 'POST', payload)
+  } catch (error) {
+  }
 })
 
-btnRoom3Center.addEventListener('click', (e) => {
+btnRoom3Center.addEventListener('click', async (e) => {
   showPopup(e)
+  const endPoint = '/api/topic_3_libre_click'
+  const user = JSON.parse(localStorage.getItem('user'))
+  const payload = {
+      access_token: user.access_token,
+      user_id: user.id,
+      direction: 'middle'
+  }
+
+  try {
+      await fetchData(endPoint, 'POST', payload)
+  } catch (error) {
+  }
+
+  // lưu thời gian ấn 
+  const now = moment()
+  timeOpenMiddle = now
 })
 
-btnRoom3Right.addEventListener('click', (e) => {
+btnRoom3Right.addEventListener('click', async (e) => {
   showPopup(e)
+  const endPoint = '/api/topic_3_libre_click'
+  const user = JSON.parse(localStorage.getItem('user'))
+  const payload = {
+      access_token: user.access_token,
+      user_id: user.id,
+      direction: 'right'
+  }
+
+  try {
+      await fetchData(endPoint, 'POST', payload)
+  } catch (error) {
+  }
+
+  // lưu thời gian ấn 
+  const now = moment()
+  timeOpenRight = now
 })
 
 elRoom3PopupLeft.addEventListener('click', hidePopup)
 
-elRoom3PopupCenter.addEventListener('click', hidePopup)
+elRoom3PopupCenter.addEventListener('click', async (e) => {
+  if(!timeOpenMiddle) return
+  const timeScreen = moment().subtract(timeOpenMiddle).seconds()
+  const target = e.target 
+  if(target.classList.contains('swiper-btn-close') || target.classList.contains('room-3__popup-center') ) {
+    const endPoint = '/api/topic_3_libre_duration'
+    const user = JSON.parse(localStorage.getItem('user'))
+    const payload = {
+        access_token: user.access_token,
+        user_id: user.id,
+        direction: 'middle',
+        duration: timeScreen / 60,
+    }
 
-elRoom3PopupRight.addEventListener('click', hidePopup)
+    try {
+        await fetchData(endPoint, 'POST', payload)
+    } catch (error) {
+    }
+  }
+  timeOpenMiddle = null
+  hidePopup(e)
+})
+
+elRoom3PopupRight.addEventListener('click', async (e) => {
+  if(!timeOpenRight) return
+  const timeScreen = moment().subtract(timeOpenRight).seconds()
+  const target = e.target 
+  if(target.classList.contains('swiper-btn-close') || target.classList.contains('room-3__popup-right') ) {
+    const endPoint = '/api/topic_3_libre_duration'
+    const user = JSON.parse(localStorage.getItem('user'))
+    const payload = {
+        access_token: user.access_token,
+        user_id: user.id,
+        direction: 'right',
+        duration: timeScreen / 60,
+    }
+
+    try {
+        await fetchData(endPoint, 'POST', payload)
+    } catch (error) {
+    }
+  }
+  timeOpenRight = null
+  hidePopup(e)
+})
 
 eventCloseSlideLeft.addEventListener('click', function () {
   if(elRoom3PopupLeft) elRoom3PopupLeft.classList.remove('open', 'overlay')
