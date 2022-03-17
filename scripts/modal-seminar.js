@@ -7,13 +7,9 @@ const btnSeminarRight = document.getElementById('seminar-click-right')
 const btnCloseSeminarOne = document.getElementById('close-modal-seminar-one')
 const btnCloseSeminarTwo = document.getElementById('close-modal-seminar-two')
 
-console.log(btnSeminarLeft)
-console.log(btnSeminarRight)
-console.log(btnSeminar)
 const showPopup = () => {
   modalSeminar.classList.add('open', 'overlay')
 }
-
 
 const hidePopup = () => {
   modalSeminar.classList.remove('open', 'overlay')
@@ -24,7 +20,6 @@ const showSeminarOne = () => {
     seminarOne.classList.remove('hide')
     seminarTwo.classList.add('hide')
   }
-
 }
 
 const showSeminarTwo = () => {

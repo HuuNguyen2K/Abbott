@@ -56,9 +56,12 @@ const Menu = () => {
                 </h5>
                 <ul className="menu-root">
                     <li className="menu-item">
-                        <WarningTimeBeforeEvent onEnd={() => { window.location = "./room-4.html" }}>
-                            <a href="#" onClick={(e) => e.propertyIsEnumerable()} id="menu-seminar">Chương trình hội thảo</a>
-                        </WarningTimeBeforeEvent>
+                        {/*<WarningTimeBeforeEvent onEnd={() => { window.location = "./room-4.html" }}>*/}
+                        {/*    <a href="#" onClick={(e) => e.propertyIsEnumerable()} id="menu-seminar">Chương trình hội thảo</a>*/}
+                        {/*</WarningTimeBeforeEvent> */}
+                        <SeminarProgram>
+                            <a href="#" id="menu-seminar">Chương trình hội thảo</a>
+                        </SeminarProgram>
                     </li>
                     <li className="menu-item">
                         <p className="submenu-title">
