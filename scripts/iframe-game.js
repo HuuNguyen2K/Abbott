@@ -13,7 +13,8 @@ const IframeGame = (props) => {
                 render_name: '.sec-iframe',
                 command: 'close',
                 active_class: 'open-iframe',
-                without_ele: null
+                without_ele: null,
+                iframe: true
              }) }
              className="iframe-overlay">
         </div>
@@ -25,7 +26,8 @@ const IframeGame = (props) => {
                render_name: '.sec-iframe',
                command: 'close',
                active_class: 'open-iframe',
-               without_ele: null
+               without_ele: null,
+               iframe: true
              }) }
              src="./images/close_icon.png"
              alt="close_icon"/>
