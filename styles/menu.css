@@ -314,6 +314,10 @@
   #menu .menu-logo img {
     height: 3.2vw;
   }
+
+  #menu .menu-logo img.big-size {
+    height: 3.4vw;
+  }
 }
 
 @media only screen and (max-height: 400px) {

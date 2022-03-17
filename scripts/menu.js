@@ -138,7 +138,8 @@ const Menu = () => {
                 <div className="menu-logo">
                   <img src="./images/logo-abbott.png"
                        alt="logo_abbott" />
-                  <img src="./images/logo-vade.png"
+                  <img className="big-size"
+                       src="./images/logo-vade.png"
                        alt="logo_vade" />
                 </div>
             </div>
