@@ -69,10 +69,15 @@ eventCloseSlideRight.addEventListener('click', function () {
 const swiper = new Swiper('.swiper', {
   centeredSlides: true,
   spaceBetween: 120,
+
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-
+  breakpoints: {
+    1024: {
+      spaceBetween: 80,
+    },
+  },
 })
