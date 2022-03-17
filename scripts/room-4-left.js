@@ -66,34 +66,128 @@ const PostQuestion = () => {
 }
 
 const Room4Left = () => {
+
+  const [showGame, setShowGame] = useState(false);
+  const [currentGame, setCurrentGame] = useState('game1');
+
+  const [lang, setLang] = useState('vn');
+  const [showClip, setShowClip] = useState(true);
+  const [currentClip, setCurrentClip] = useState('clip1');
+
+  const CLIPS = { // TODO
+    clip1: {
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
+    },
+    clip2: {
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+    },
+    clip3: {
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+    },
+    clip4: {
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+    },
+    clip5: {
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+    },
+    clip6: {
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+    },
+    clip7: {
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+    },
+  }
+
+  const GAMES = {
+    game1: { url: 'http://54.251.217.230/game/flappy-bird', time: 5000 }, // millisecond // TODO
+    game2: { url:'http://54.251.217.230/game/find-object', time: 5000 }, // millisecond TODO
+    game3: { url: 'http://54.251.217.230/game/word-filling-game', time: 5000}, // millisecond TODO
+  }
+
   const playerRef = React.useRef();
+
+  const checkSeminarStart = () => {
+    const now = moment();
+    return now.isSameOrAfter(START_EVENT_TIME);
+  }
 
   const handleReady = (player) => {
     playerRef.current = player;
+    if (checkSeminarStart()) playerRef.current.play();
   };
 
   const handleChangeVideo = (type) => {
     if (!playerRef.current) return ;
-    let src;
-
-    switch (type) {
-      case 'vi':
-        src = "https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8";
-        break;
-      case 'en':
-        src = "https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8";
-        break;
-      default:
-        src = "https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8";
-        break;
-    }
+    setLang(type);
 
     playerRef.current.pause();
     const currentTime = playerRef.current.currentTime();
-    playerRef.current.src([{ src, type: 'application/x-mpegURL'}]);
+    playerRef.current.src([{ src: CLIPS[currentClip][type], type: 'application/x-mpegURL'}]);
     playerRef.current.currentTime(currentTime);
     playerRef.current.play();
   };
+
+  const handleEnded = () => {
+    switch (currentClip) {
+      case 'clip1':
+        setCurrentClip('clip2');
+      break;
+      case 'clip2':
+        setCurrentClip('clip3');
+        break;
+      case 'clip3':
+        setShowClip(false);
+        setShowGame(true);
+        const setTimeoutGame1 = setTimeout(() => {
+          setShowGame(false);
+          setCurrentClip('clip4');
+          setShowClip(true);
+          clearTimeout(setTimeoutGame1);
+        }, GAMES[currentGame].time);
+        break;
+
+      case 'clip4':
+        setShowClip(false);
+        setCurrentGame('game2');
+        setShowGame(true);
+        const setTimeoutGame2 = setTimeout(() => {
+          setShowGame(false);
+          setCurrentClip('clip5');
+          setShowClip(true);
+          clearTimeout(setTimeoutGame2);
+        }, GAMES[currentGame].time);
+        break;
+
+      case 'clip5':
+        setShowClip(false);
+        setCurrentGame('game3');
+        setShowGame(true);
+        const setTimeoutGame3 = setTimeout(() => {
+          setShowGame(false);
+          setCurrentClip('clip6');
+          setShowClip(true);
+          clearTimeout(setTimeoutGame3);
+        }, GAMES[currentGame].time);
+        break;
+
+      case 'clip6':
+        alert('Bạn có đồng ý xem tiếp không ?');
+        setShowGame(false);
+        setCurrentClip('clip7');
+        setShowClip(true);
+        break;
+      case 'clip7':
+      default:
+        break;
+    }
+  }
 
   return (
     <Fragment>
@@ -105,10 +199,20 @@ const Room4Left = () => {
       >
         <div id='room-4-video-left'></div>
         <div id='video-js-center' className='video-js-center'>
-          <VideoJS
-              src='https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
-              onReady={handleReady}
-          />
+          {
+            showClip && (
+              <VideoJS
+                key={currentClip}
+                src={CLIPS[currentClip][lang]}
+                onReady={handleReady}
+                options={{
+                  autoplay: true,
+                  muted: currentClip === 'clip1'
+                }}
+                onEnded={handleEnded}
+              />
+            )
+          }
         </div>
         <div className='live-btn'>
           Live <span className='circle'></span>
@@ -125,6 +229,9 @@ const Room4Left = () => {
           </select>
         </div>
       </div>
+      {
+        showGame && <IframeGame src={GAMES[currentGame].url} show={true} disabledClose={true} />
+      }
     </Fragment>
   )
 }
