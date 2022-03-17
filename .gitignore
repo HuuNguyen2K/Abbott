@@ -34,3 +34,4 @@ dist/
 .idea/
 .idea/**/workspace.xml
 docs/aws/*
+time.js
