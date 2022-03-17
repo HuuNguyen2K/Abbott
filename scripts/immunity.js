@@ -9,10 +9,12 @@ const openIframeGame = () => {
   const element = document.querySelector('.shield')
 
   element && element.addEventListener('click', async (evt) => {
-    const iframeGame = document.querySelector('.sec-iframe')
+    const containIframeGame = document.querySelector('.sec-iframe')
+    const iframeGame = containIframeGame.querySelector('.iframe-game')
+
     // BLock action user click without shield element
     if (evt.target.localName === 'span') return
-    const isShow = iframeGame?.classList.contains('open-iframe')
+    const isShow = containIframeGame?.classList.contains('open-iframe')
     if(!isShow) {
       const endpoint = '/api/user_click_game'
       const user = JSON.parse(localStorage.getItem('user'))
@@ -23,7 +25,9 @@ const openIframeGame = () => {
       }
       await fetchData(endpoint, 'POST', payload)
     }
-    iframeGame?.classList?.toggle('open-iframe')
+
+    iframeGame.setAttribute('src', evt.target.dataset['source'])
+    containIframeGame?.classList?.toggle('open-iframe')
   })
 }
 
