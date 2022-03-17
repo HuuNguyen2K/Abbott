@@ -13,8 +13,21 @@ const ModalQR = (props) => {
     // a.click();
   }
 
+  const handleOpenModalFaq = () => {
+    const modalFaq = document.querySelector('#modal-faq')
+    modalFaq && modalFaq.classList.add('modal-common-visible')
+  }
+
   useEffect(() => {
+    const closeModalFaq = document.querySelector('#close-modal-faq')
+    const modalFaq = document.querySelector('#modal-faq')
+    closeModalFaq && closeModalFaq.addEventListener('click', _ => {
+      modalFaq.classList.remove('modal-common-visible')
+    })
+
     handleToggleByIssue()
+
+    return () => closeModalFaq.removeEventListener('click', _ => {})
   }, []);
 
   return (
@@ -30,9 +43,11 @@ const ModalQR = (props) => {
                    render_name: '.sec-iframe',
                    command: 'open',
                    active_class: 'open-iframe',
-                   without_ele: null
+                   without_ele: null,
+                   iframe: true
                  }) } />
-            <div className="qr-button faq"/>
+            <div className="qr-button faq"
+                 onClick={handleOpenModalFaq}/>
           </div>
         </div>
       </div>
