@@ -107,9 +107,9 @@ const Room4Left = () => {
   }
 
   const GAMES = {
-    game1: { url: 'http://54.251.217.230/game/flappy-bird', time: 35000 }, // millisecond // TODO
-    game2: { url:'http://54.251.217.230/game/find-object', time: 35000 }, // millisecond TODO
-    game3: { url: 'http://54.251.217.230/game/word-filling-game', time: 35000}, // millisecond TODO
+    game1: { url: 'http://54.251.217.230/game/word-filling-game/questions.php?id=1', time: 41000 }, // millisecond
+    game2: { url:'http://54.251.217.230/game/word-filling-game/questions.php?id=2', time: 41000 }, // millisecond
+    game3: { url: 'http://54.251.217.230/game/word-filling-game/questions.php?id=3', time: 41000}, // millisecond
   }
 
   const playerRef = React.useRef();
@@ -184,9 +184,10 @@ const Room4Left = () => {
         setShowClip(true);
         break;
       case 'clip7':
-        setShowCME(true)
-        break;
       default:
+        setShowClip(false);
+        setShowGame(false);
+        setShowCME(true);
         break;
     }
   }
