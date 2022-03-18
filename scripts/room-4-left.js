@@ -77,16 +77,16 @@ const Room4Left = () => {
 
   const CLIPS = { // TODO
     clip1: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/countdown/hlscountdown.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/countdown/hlscountdown.m3u8',
     },
     clip2: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip05/hlsclip05.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip05/hlsclip05.m3u8'
     },
     clip3: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ElenaPresentEnglish/hlsElenaPresentEnglish.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ElenaPresentEnglish/hlsElenaPresentEnglish.m3u8'
     },
     clip4: {
       en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
@@ -267,16 +267,17 @@ const Room4Left = () => {
                 onReady={handleReady}
                 options={{
                   autoplay: checkSeminarStart(),
-                  muted: currentClip === 'clip1'
+                  muted: currentClip === 'clip1',
+                  controls: true,
                 }}
                 onEnded={handleEnded}
               />
             )
           }
         </div>
-        <div className='live-btn'>
-          Live <span className='circle'></span>
-        </div>
+        {/*<div className='live-btn'>*/}
+        {/*  Live <span className='circle'></span>*/}
+        {/*</div>*/}
       </div>
       <div className='room-4__left-option'>
         <PostQuestion />
