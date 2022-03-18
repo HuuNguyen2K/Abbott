@@ -470,6 +470,34 @@ body {
     display: none;
 }
 
+
+.room-3__popup-right .popup-video{
+    width: 482px;
+    height: 595px;
+}
+@media screen and (max-width: 930px) {
+    .room-3__popup-right .popup-video{
+        width: 300px;
+        height: 364px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .room-3__popup-right .popup-video{
+        width: 242px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .room-3__popup-center .popup-video{
+        width: 600px;
+        height: 339px;
+    }
+}
+
+
+
 /*Animations*/
 @keyframes tutorial-text-fadeInDown {
     0% {
