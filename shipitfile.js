@@ -8,6 +8,12 @@ module.exports = function (shipit) {
       deployUser: 'bitnami',
       deployTo: "/home/bitnami/htdocs/solution-abbott-event/",
       key: "docs/aws/gms-abbott-production.pem",
+    },
+    "solution-abbott-production": {
+      servers: ["bitnami@13.213.62.4"],
+      deployUser: 'bitnami',
+      deployTo: "/home/bitnami/htdocs/solution-abbott-event/",
+      key: "docs/aws/gms-abbott-production.pem",
     }
   });
 
