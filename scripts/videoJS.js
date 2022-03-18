@@ -54,7 +54,10 @@ const VideoJS = ( props ) => {
     if (ended) return null;
 
     return (
-        <div data-vjs-player>
+        <div data-vjs-player className='live-btn'>
+            <div className='live-btn'>
+                Live <span className='circle'></span>
+            </div>
             <video ref={videoRef} className="video-js vjs-big-play-centered"/>
         </div>
     );
