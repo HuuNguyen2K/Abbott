@@ -22,7 +22,7 @@ const Leaderboard = () => {
 
     const timer = setInterval(() => {
       getRank()
-    }, 5000)
+    }, 10000)
 
     return () => clearInterval(timer)
   }, [])

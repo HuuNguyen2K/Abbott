@@ -22,6 +22,67 @@ const Menu = () => {
         })
     };
 
+    const handleRoom1Click = async (e) => {
+        e.preventDefault()
+        const url = '/api/user_click_topic'
+        const user = JSON.parse(localStorage.getItem('user'))
+        const payload = {
+          access_token: user.access_token,
+          user_id: user.id,
+          topic_number: 1,
+        }
+        try {
+          await fetchData(url, 'POST', payload)
+        } catch (error) {}
+        location.href = './immunity.html?welcome=true'
+    }
+
+    const handleRoom2Click = async (e) => {
+        e.preventDefault()
+        const url = '/api/user_click_topic'
+        const user = JSON.parse(localStorage.getItem('user'))
+        const payload = {
+          access_token: user.access_token,
+          user_id: user.id,
+          topic_number: 2,
+        }
+        try {
+          await fetchData(url, 'POST', payload)
+        } catch (error) {}
+        location.href = './room-2.html?welcome=true'
+    }
+
+    const handleRoom3Click = async (e) => {
+        e.preventDefault()
+        const url = '/api/user_click_topic'
+        const user = JSON.parse(localStorage.getItem('user'))
+        const payload = {
+          access_token: user.access_token,
+          user_id: user.id,
+          topic_number: 3,
+        }
+    
+        try {
+          await fetchData(url, 'POST', payload)
+        } catch (error) {}
+        location.href = './room-3.html?welcome=true'
+    }
+
+    const handleRoom4Click = async (e) => {
+        // e.preventDefault()
+        // const url = '/api/user_click_topic'
+        // const user = JSON.parse(localStorage.getItem('user'))
+        // const payload = {
+        //   access_token: user.access_token,
+        //   user_id: user.id,
+        //   topic_number: 4,
+        // }
+        //  try {
+        //   await fetchData(url, 'POST', payload)
+        // } catch (error) {}
+        location.href = './room-4.html'
+    }
+
     useEffect(() => {
         handleToggleByIssue();
         handleToggleSubMenu();
@@ -71,16 +132,16 @@ const Menu = () => {
                         </p>
                         <ul className="menu-submenu">
                             <li className="menu-item submenu-item">
-                                <a href="./immunity.html?welcome=true">Miễn dịch</a>
+                                <a onClick={handleRoom1Click}>Miễn dịch</a>
                             </li>
                             <li className="menu-item submenu-item">
-                                <a href="./room-2.html?welcome=true">Dinh Dưỡng Và<br/>Giải Pháp Đột Phá</a>
+                                <a onClick={handleRoom2Click}>Dinh Dưỡng Và<br/>Giải Pháp Đột Phá</a>
                             </li>
                             <li className="menu-item submenu-item">
-                              <a href="./room-3.html?welcome=true">theo dõi<br/>glucose liên tục</a>
+                              <a onClick={handleRoom3Click}>theo dõi<br/>glucose liên tục</a>
                             </li>
                             <li className="menu-item submenu-item">
-                                <WarningTimeBeforeEvent onEnd={() => { window.location = "./room-4.html" }}>
+                                <WarningTimeBeforeEvent onEnd={handleRoom4Click}>
                                     <a href="#" onClick={(e) => e.propertyIsEnumerable()}>Hội Thảo Khoa Học</a>
                                 </WarningTimeBeforeEvent>
                             </li>
