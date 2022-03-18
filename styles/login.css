@@ -171,7 +171,8 @@ body {
   align-items: center;
 }
 
-.avt img {
+.avt img,
+.avt .default {
   width: 150px;
   height: 150px;
   object-fit: cover;
@@ -543,7 +544,8 @@ label {
 }
 
 @media screen and (max-width: 520px) {
-  .avt img {
+  .avt img,
+  .avt .default {
     width: 100px;
     height: 100px;
   }

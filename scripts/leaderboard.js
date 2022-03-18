@@ -15,6 +15,15 @@ const Leaderboard = () => {
     })
   }
 
+  const getAbbreviationName = (_name) => {
+    const nameSplit = _name.split(' ')
+    const length = nameSplit.length
+    if (length <= 1) return _name[0].toUpperCase()
+
+    const result = nameSplit[0][0] + nameSplit[length - 1][0]
+    return result.toUpperCase()
+  }
+
   useEffect(() => {
     getRank().then(() => {
       handleToggleByIssue()
@@ -46,18 +55,21 @@ const Leaderboard = () => {
 
               <div className='top-content'>
                 <div className='medal-item silver-medal'>
-                  <div
-                    style={{
-                      backgroundImage: `${
-                        rank.medals.silver.user.avatar
-                          ? `url("${
-                              URL_API_PREFIX + rank.medals.silver.user.avatar
-                            }")`
-                          : 'url("../images/avatar-frame.png")'
-                      }`,
-                    }}
-                    className='user-avatar slide-shine'
-                  />
+                  <div className='user-avatar slide-shine'>
+                    {rank.medals.silver.user.avatar ? (
+                      <img
+                        style={{ objectFit: 'cover' }}
+                        src={`${
+                          URL_API_PREFIX + rank.medals.silver.user.avatar
+                        }`}
+                        alt=''
+                      />
+                    ) : (
+                      <div className='default'>
+                        {getAbbreviationName(rank.medals.silver.user.name)}
+                      </div>
+                    )}
+                  </div>
                   <img
                     className='medal-img'
                     src='./images/silver-medal.png'
@@ -70,18 +82,19 @@ const Leaderboard = () => {
                 </div>
 
                 <div className='medal-item gold-medal'>
-                  <div
-                    style={{
-                      backgroundImage: `${
-                        rank.medals.gold.user.avatar
-                          ? `url("${
-                              URL_API_PREFIX + rank.medals.gold.user.avatar
-                            }")`
-                          : 'url("../images/avatar-frame.png")'
-                      }`,
-                    }}
-                    className='user-avatar slide-shine'
-                  />
+                  <div className='user-avatar slide-shine'>
+                    {rank.medals.gold.user.avatar ? (
+                      <img
+                        style={{ objectFit: 'cover' }}
+                        src={`${URL_API_PREFIX + rank.medals.gold.user.avatar}`}
+                        alt=''
+                      />
+                    ) : (
+                      <div className='default'>
+                        {getAbbreviationName(rank.medals.gold.user.name)}
+                      </div>
+                    )}
+                  </div>
                   <img
                     className='medal-img'
                     src='./images/gold-medal.png'
@@ -94,18 +107,21 @@ const Leaderboard = () => {
                 </div>
 
                 <div className='medal-item bronze-medal'>
-                  <div
-                    style={{
-                      backgroundImage: `${
-                        rank.medals.bronze.user.avatar
-                          ? `url("${
-                              URL_API_PREFIX + rank.medals.bronze.user.avatar
-                            }")`
-                          : 'url("../images/avatar-frame.png")'
-                      }`,
-                    }}
-                    className='user-avatar slide-shine'
-                  />
+                  <div className='user-avatar slide-shine'>
+                    {rank.medals.bronze.user.avatar ? (
+                      <img
+                        style={{ objectFit: 'cover' }}
+                        src={`${
+                          URL_API_PREFIX + rank.medals.bronze.user.avatar
+                        }`}
+                        alt=''
+                      />
+                    ) : (
+                      <div className='default'>
+                        {getAbbreviationName(rank.medals.bronze.user.name)}
+                      </div>
+                    )}
+                  </div>
                   <img
                     className='medal-img'
                     src='./images/bronze-medal.png'
@@ -147,16 +163,27 @@ const Leaderboard = () => {
                       <span className='item-rate'>{item.rank}</span>
 
                       <div className='item-user'>
-                        <div
-                          style={{
-                            backgroundImage: `${
-                              item.user.avatar
-                                ? `url("${URL_API_PREFIX + item.user.avatar}")`
-                                : 'url("../images/avatar-frame.png")'
-                            }`,
-                          }}
-                          className='user-avatar'
-                        />
+                        <div className='user-avatar'>
+                          {item.user.avatar ? (
+                            <img
+                              style={{
+                                objectFit: 'cover',
+                                borderRadius: '50%',
+                              }}
+                              src={`${URL_API_PREFIX + item.user.avatar}`}
+                              alt=''
+                            />
+                          ) : (
+                            <div
+                              style={{
+                                borderRadius: '50%',
+                              }}
+                              className='default list'
+                            >
+                              {getAbbreviationName(item.user.name)}
+                            </div>
+                          )}
+                        </div>
                         <p className='user-name'>{item.user.name}</p>
                       </div>
 
