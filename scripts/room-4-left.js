@@ -239,7 +239,7 @@ const Room4Left = () => {
         showCME && <ModalQR
             src="./images/cme_qr_code.png"
             show={true}
-            documentUrl="documents/Hoi-thao-dai-thao-duong.zip"
+            documentUrl="./documents/Hoi-thao-dai-thao-duong.zip"
         />
       }
     </Fragment>
