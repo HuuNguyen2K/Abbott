@@ -239,21 +239,21 @@
     padding: 0 60px;
 }
 
-@media screen and (max-width:992px) {
+@media screen and (max-width: 992px) {
     .popup-slide .swiper {
         width: 680px;
         height: 318px;
     }
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
     .popup-slide .swiper {
         width: 640px;
         height: 300px;
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
     .popup-slide .swiper {
         width: 540px;
         height: 272px;
@@ -269,15 +269,31 @@
 }
 
 .popup-slide .swiper-btn {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     position: absolute;
-    bottom: 42px;
+    bottom: 40px;
     right: 120px;
-    background: transparent;
     display: flex;
     width: 200px;
     height: 70px;
+    z-index:99;
 }
-.popup-slide .swiper-btn-close{
+
+@media screen and (max-width: 992px) {
+    .popup-slide .swiper-btn {
+        right:60px;
+        width: 150px;
+        height: 50px;
+        bottom: 25px;
+    }
+}
+
+.popup-slide .swiper-btn-close {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -290,20 +306,20 @@
     z-index: 99;
 }
 
-@media screen and (max-width:992px) {
-    .popup-slide .swiper-btn-close{
+@media screen and (max-width: 992px) {
+    .popup-slide .swiper-btn-close {
         top: 8px;
         right: 74px;
     }
 }
 
-@media screen and (max-width:680px) {
+@media screen and (max-width: 680px) {
     .popup-slide .swiper-btn-close {
         right: 70px;
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
     .popup-slide .swiper-btn-close {
         top: 4px;
         right: 42px;
@@ -322,7 +338,7 @@
     height: 60px;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
     .popup-slide .swiper-button-prev, .popup-slide .swiper-button-next {
         top: calc(50% + 15px);
         width: 30px;
