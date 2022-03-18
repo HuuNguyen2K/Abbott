@@ -74,11 +74,13 @@
                 <div
                   class="swiper-slide"
                   style="
-                    background-image: url(./images/room-2-slide-tdna-3.png);
+                    background-image: url(./images/room-2-tDNA-3.png);
                   "
                 >
                   <button
-                    style="border: none"
+                      style="
+                    background-image: url(./images/room-2-btn-tDNA.png);
+                  "
                     id="download"
                     class="swiper-btn"
                   ></button>
@@ -154,7 +156,6 @@
     <script src="./scripts/iframe-game.js" type="text/babel"></script>
     <script src="./scripts/seminarProgram.js" type="text/babel"></script>
     <script src="./scripts/menu.js" type="text/babel"></script>
-    <!--<script src="./scripts/modal-qr.js" type="text/babel"></script>-->
     <script src="./scripts/videoJS.js" type="text/babel"></script>
     <script type="text/babel" src="./scripts/backHome.js"></script>
 
@@ -172,12 +173,6 @@
           domContainer
         )
       }
-
-      // const domModalQrContainer = document.querySelector('#global-modal-qr');
-      // ReactDOM.render(
-      //     <ModalQR src="./images/qrcode_dummy.png" />,
-      //     domModalQrContainer
-      // );
 
       const domIframeContainer = document.querySelector('#iframe-game-render')
       ReactDOM.render(<IframeGame src={URL_GAME_2} />, domIframeContainer)
