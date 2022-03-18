@@ -40,16 +40,16 @@ const Lobby = () => {
     location.href = './room-3.html?welcome=true'
   }
   const handleRoom4Click = async () => {
-    const url = '/api/user_click_topic'
-    const user = JSON.parse(localStorage.getItem('user'))
-    const payload = {
-      access_token: user.access_token,
-      user_id: user.id,
-      topic_number: 4,
-    }
-     try {
-      await fetchData(url, 'POST', payload)
-    } catch (error) {}
+    // const url = '/api/user_click_topic'
+    // const user = JSON.parse(localStorage.getItem('user'))
+    // const payload = {
+    //   access_token: user.access_token,
+    //   user_id: user.id,
+    //   topic_number: 4,
+    // }
+    //  try {
+    //   await fetchData(url, 'POST', payload)
+    // } catch (error) {}
     location.href = './room-4.html'
   }
   return (

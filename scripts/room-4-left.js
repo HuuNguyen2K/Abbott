@@ -134,15 +134,30 @@ const Room4Left = () => {
     playerRef.current.play();
   };
 
+  const handleLeaveTime = async () => {
+    const url = '/api/store_topic_4_leave_time'
+    const user = JSON.parse(localStorage.getItem('user'))
+    const payload = {
+      access_token: user.access_token,
+      user_id: user.id,
+    }
+    try {
+      await fetchData(url, 'POST', payload)
+    } catch (error) {}
+  }
+
   const handleEnded = () => {
     switch (currentClip) {
       case 'clip1':
+        handleLeaveTime()
         setCurrentClip('clip2');
       break;
       case 'clip2':
+        handleLeaveTime()
         setCurrentClip('clip3');
         break;
       case 'clip3':
+        handleLeaveTime()
         setShowClip(false);
         setShowGame(true);
         const setTimeoutGame1 = setTimeout(() => {
@@ -154,6 +169,7 @@ const Room4Left = () => {
         break;
 
       case 'clip4':
+        handleLeaveTime()
         setShowClip(false);
         setCurrentGame('game2');
         setShowGame(true);
@@ -166,6 +182,7 @@ const Room4Left = () => {
         break;
 
       case 'clip5':
+        handleLeaveTime()
         setShowClip(false);
         setCurrentGame('game3');
         setShowGame(true);
@@ -178,18 +195,58 @@ const Room4Left = () => {
         break;
 
       case 'clip6':
+        handleLeaveTime()
         alert('Bạn có đồng ý xem tiếp không ?');
         setShowGame(false);
         setCurrentClip('clip7');
         setShowClip(true);
         break;
       case 'clip7':
+        handleLeaveTime()
         setShowCME(true)
         break;
       default:
         break;
     }
   }
+
+  const handleStatisticInit = async () => {
+    const url = '/api/user_click_topic'
+    const user = JSON.parse(localStorage.getItem('user'))
+    const payload = {
+      access_token: user.access_token,
+      user_id: user.id,
+      topic_number: 4,
+      language: 'VN',
+    }
+    try {
+      await fetchData(url, 'POST', payload)
+    } catch (error) {}
+  }
+
+  const handleStatisticLang = async (_l) => {
+    const l = _l.toUpperCase()
+    const url = '/api/store_topic_4_language'
+    const user = JSON.parse(localStorage.getItem('user'))
+    const payload = {
+      access_token: user.access_token,
+      user_id: user.id,
+      topic_number: 4,
+      language: 'VN',
+    }
+    try {
+      await fetchData(url, 'POST', payload)
+    } catch (error) {}
+  }
+
+  useEffect(() => {
+    handleStatisticInit()
+  }, [])
+
+  useEffect(() => {
+    handleStatisticLang(lang)
+  }, [lang])
+
 
   return (
     <Fragment>
