@@ -50,9 +50,24 @@
 }
 
 .leaderboard .leaderboard-top img,
-.leaderboard .leaderboard-list .leaderboard-list__item img {
+.leaderboard .leaderboard-list .leaderboard-list__item img,
+.leaderboard .leaderboard-top .default,
+.leaderboard .leaderboard-list .leaderboard-list__item .default {
   width: 100%;
   height: 100%;
+}
+
+.default {
+  background-color: #0087bf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+}
+
+.default.list {
+  font-size: 20px;
 }
 
 .leaderboard .leaderboard-top .top-content {
@@ -123,7 +138,6 @@
 .leaderboard .leaderboard-top .bronze-medal {
   padding-top: 8vw;
 }
-
 
 .leaderboard .leaderboard-top .gold-medal .user-avatar {
   width: 11.5vw;
@@ -237,6 +251,7 @@
 
 /* ===== Responsive ===== */
 @media only screen and (max-width: 1700px) {
+
   .leaderboard .leaderboard-top .top-content {
     padding: 2vw 5vw;
   }
@@ -262,6 +277,16 @@
 
   .leaderboard .medal-item .user-score {
     font-size: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 1023px)  {
+  .default {
+    font-size: 30px;
+  }
+
+  .default.list {
+    font-size: 11px;
   }
 }
 
@@ -358,3 +383,4 @@
   }
 }
 /* ===== Responsive - END ===== */
+

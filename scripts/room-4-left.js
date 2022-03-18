@@ -107,9 +107,9 @@ const Room4Left = () => {
   }
 
   const GAMES = {
-    game1: { url: 'http://54.251.217.230/game/word-filling-game/questions.php?id=1', time: 41000 }, // millisecond
-    game2: { url:'http://54.251.217.230/game/word-filling-game/questions.php?id=2', time: 41000 }, // millisecond
-    game3: { url: 'http://54.251.217.230/game/word-filling-game/questions.php?id=3', time: 41000}, // millisecond
+    game1: { url: URL_GAME_3_1, time: 41000 }, // millisecond
+    game2: { url: URL_GAME_3_2, time: 41000 }, // millisecond
+    game3: { url: URL_GAME_3_3, time: 41000}, // millisecond
   }
 
   const playerRef = React.useRef();
