@@ -49,11 +49,14 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)"></div>
-                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)"></div>
-                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)"></div>
-                        <div class="swiper-slide" style="background-image: url(./images/r3-frame-slide.png)"></div>
-                        ...
+                        <div class="swiper-slide" style="background-image: url(./images/room-3-slide-01.jpg)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/room-3-slide-02.jpg)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/room-3-slide-03.jpg)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/room-3-slide-04.jpg)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/room-3-slide-05.jpg)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/room-3-slide-06.jpg)"></div>
+                        <div class="swiper-slide" style="background-image: url(./images/room-3-slide-07.jpg)"></div>
+
                     </div>
                     <!-- If we need pagination -->
                     <div id="event-close-slide-left" class="swiper-btn-close" style="background-image: url(./images/btn-close-slider.png)"></div>
@@ -62,8 +65,6 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
 
-                    <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
                 </div>
             </div>
 
@@ -155,7 +156,7 @@
     const domContainer1 = document.querySelector("#video-js-right");
     ReactDOM.render(
         <VideoJS
-            src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"
+            src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/video2/hlsvideo2.m3u8"
             onReady={handlePlayerReady1}
         />,
         domContainer1
@@ -174,7 +175,7 @@
     const domContainer = document.querySelector("#video-js-center");
     ReactDOM.render(
         <VideoJS
-            src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8"
+            src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/video1/hlsvideo1.m3u8"
             onReady={handlePlayerReady}
         />,
         domContainer

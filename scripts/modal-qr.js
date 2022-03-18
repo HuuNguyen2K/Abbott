@@ -1,16 +1,15 @@
 const { useEffect } = React;
 
 const ModalQR = (props) => {
-  const { src, show } = props
+  const { src, documentUrl, show } = props
 
   const handleDocumentDownload = () => {
-    // TODO: handle download
-    // let a = document.createElement('a');
-    // const url = '...'
-    // a.href = url
-    // a.download = url.split('/').pop()
-    // a.target = '_blank';
-    // a.click();
+    let a = document.createElement('a');
+    const url = documentUrl
+    a.href = url
+    a.download = url.split('/').pop()
+    a.target = '_blank';
+    a.click();
   }
 
   const handleOpenModalFaq = () => {
