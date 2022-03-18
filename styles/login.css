@@ -587,6 +587,12 @@ label {
   }
 }
 
+@media only screen and (max-height: 660px) {
+  .content {
+    height: 50%;
+  }
+}
+
 @media only screen and (max-height: 610px) {
   .content {
     height: 56%;
@@ -738,6 +744,17 @@ label {
     font-size: 1.4vw;
   }
   /* ===== Modal OTP - END ===== */
+}
+
+@media (max-width: 1367px) and (max-height: 610px) {
+  .content {
+    height: 72%;
+    width: 79vw;
+  }
+
+  .form-sign-up {
+    width: 70%;
+  }
 }
 
 @media only screen and (max-height: 550px) {
