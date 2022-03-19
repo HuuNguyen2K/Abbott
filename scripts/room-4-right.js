@@ -19,6 +19,11 @@ const Question = () => {
     setOpenAnswerReport(!openAnswerReport);
   }
 
+  const handleCheckAnswerReport = () => {
+    if (moment().isBetween(TIME_TO_ASK_HOST_FROM, TIME_TO_ASK_HOST_TO)) return setOpenAnswerReport(false);
+    if (moment().isAfter(TIME_TO_ASK_HOST_TO)) return setOpenAnswerReport(true);
+  }
+
   useEffect(() => {
     getData()
 
@@ -31,9 +36,11 @@ const Question = () => {
 
   return (
     <div className='room-4__list-employee'>
-      <div className='answer-from-reporter' onClick={handleOpenAnswerReport}>
-        <img src='../images/button-document-download.png' />
+      <div className='answer-from-reporter' onClick={handleCheckAnswerReport}>
+        {(moment().isBetween(TIME_TO_ASK_HOST_FROM, TIME_TO_ASK_HOST_TO)) && <img src='../images/answeer-reporter-1.png' />}
+        {(moment().isAfter(TIME_TO_ASK_HOST_TO)) && <img src='../images/answeer-reporter-2.png' />}
       </div>
+
       { openAnswerReport && <AnswerReporter onClose={handleOpenAnswerReport}/> }
       {questionList &&
         questionList.map((item, idx) => (
