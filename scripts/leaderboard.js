@@ -16,6 +16,7 @@ const Leaderboard = () => {
   }
 
   const getAbbreviationName = (_name) => {
+    if (_.isEmpty(name)) return '';
     const nameSplit = _name.split(' ')
     const length = nameSplit.length
     if (length <= 1) return _name[0].toUpperCase()
@@ -56,7 +57,7 @@ const Leaderboard = () => {
               <div className='top-content'>
                 <div className='medal-item silver-medal'>
                   <div className='user-avatar slide-shine'>
-                    {rank.medals.silver.user.avatar ? (
+                    {_.get(rank, 'medals.silver.user.avatar') ? (
                       <img
                         style={{ objectFit: 'cover' }}
                         src={`${
@@ -66,7 +67,7 @@ const Leaderboard = () => {
                       />
                     ) : (
                       <div className='default'>
-                        {getAbbreviationName(rank.medals.silver.user.name)}
+                        {getAbbreviationName(_.get(rank, 'medals.silver.user.name', ''))}
                       </div>
                     )}
                   </div>
@@ -75,15 +76,15 @@ const Leaderboard = () => {
                     src='./images/silver-medal.png'
                     alt='silver-medal'
                   />
-                  <p className='user-name'>{rank.medals.silver.user.name}</p>
+                  <p className='user-name'>{_.get(rank, 'medals.silver.user.name', '')}</p>
                   <strong className='user-score'>
-                    {rank.medals.silver.score}
+                    {_.get(rank, 'medals.silver.score', 0)}
                   </strong>
                 </div>
 
                 <div className='medal-item gold-medal'>
                   <div className='user-avatar slide-shine'>
-                    {rank.medals.gold.user.avatar ? (
+                    {_.get(rank, 'medals.gold.user.avatar') ? (
                       <img
                         style={{ objectFit: 'cover' }}
                         src={`${URL_API_PREFIX + rank.medals.gold.user.avatar}`}
@@ -100,15 +101,15 @@ const Leaderboard = () => {
                     src='./images/gold-medal.png'
                     alt='gold-medal'
                   />
-                  <p className='user-name'>{rank.medals.gold.user.name}</p>
+                  <p className='user-name'>{_.get(rank, 'medals.gold.user.name', '')}</p>
                   <strong className='user-score'>
-                    {rank.medals.gold.score}
+                    {_.get(rank, 'medals.gold.score', 0)}
                   </strong>
                 </div>
 
                 <div className='medal-item bronze-medal'>
                   <div className='user-avatar slide-shine'>
-                    {rank.medals.bronze.user.avatar ? (
+                    {_.get(rank, 'medals.bronze.user.avatar') ? (
                       <img
                         style={{ objectFit: 'cover' }}
                         src={`${
@@ -118,7 +119,7 @@ const Leaderboard = () => {
                       />
                     ) : (
                       <div className='default'>
-                        {getAbbreviationName(rank.medals.bronze.user.name)}
+                        {getAbbreviationName(_.get(rank, 'medals.bronze.user.name', ''))}
                       </div>
                     )}
                   </div>
@@ -127,16 +128,16 @@ const Leaderboard = () => {
                     src='./images/bronze-medal.png'
                     alt='bronze-medal'
                   />
-                  <p className='user-name'>{rank.medals.bronze.user.name}</p>
+                  <p className='user-name'>{_.get(rank, 'medals.bronze.user.name', '')}</p>
                   <strong className='user-score'>
-                    {rank.medals.bronze.score}
+                    {_.get(rank, 'medals.bronze.score', 0)}
                   </strong>
                 </div>
               </div>
             </div>
 
             <div className='leaderboard-list'>
-              {rank.top_list.slice(0).map((item) => {
+              {!_.isEmpty(_.get(rank, 'top_list')) && rank.top_list.slice(0).map((item) => {
                 return (
                   <div
                     key={item.rank}
@@ -164,7 +165,7 @@ const Leaderboard = () => {
 
                       <div className='item-user'>
                         <div className='user-avatar'>
-                          {item.user.avatar ? (
+                          {_.get(item, 'user.avatar') ? (
                             <img
                               style={{
                                 objectFit: 'cover',

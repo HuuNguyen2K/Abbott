@@ -77,32 +77,32 @@ const Room4Left = () => {
 
   const CLIPS = { // TODO
     clip1: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/countdown/hlscountdown.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/countdown/hlscountdown.m3u8',
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/drelena_en/hlsvideo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/drelena_vie/hlsvideo.m3u8',
     },
-    clip2: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip05/hlsclip05.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip05/hlsclip05.m3u8'
-    },
-    clip3: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ElenaPresentEnglish/hlsElenaPresentEnglish.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ElenaPresentEnglish/hlsElenaPresentEnglish.m3u8'
-    },
+    // clip2: {
+    //   en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip05/hlsclip05.m3u8',
+    //   vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip05/hlsclip05.m3u8'
+    // },
+    // clip3: {
+    //   en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ElenaPresentEnglish/hlsElenaPresentEnglish.m3u8',
+    //   vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ElenaPresentEnglish/hlsElenaPresentEnglish.m3u8'
+    // },
     clip4: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/JEFFFREY_PRESENT_ENGLISH_VERSION/hlsvideo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/JEFFFREY_PRESENT_VIETNAM_v2/hlsvideo.m3u8'
     },
     clip5: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/BSNAM02/hlsvideo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/BSNAM02/hlsvideo.m3u8'
     },
     clip6: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ramat2/hlsvideo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ramat2/hlsvideo.m3u8'
     },
     clip7: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/GLUCERNA_ROOM+4_CLIP6_ENG_3/hlsvideo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/GLUCERNA_ROOM4_CLIP6_VIE_3/hlsvideo.m3u8'
     },
   }
 
@@ -148,15 +148,15 @@ const Room4Left = () => {
 
   const handleEnded = () => {
     switch (currentClip) {
+      // case 'clip1':
+      //   handleLeaveTime()
+      //   setCurrentClip('clip2');
+      // break;
+      // case 'clip2':
+      //   handleLeaveTime()
+      //   setCurrentClip('clip3');
+      //   break;
       case 'clip1':
-        handleLeaveTime()
-        setCurrentClip('clip2');
-      break;
-      case 'clip2':
-        handleLeaveTime()
-        setCurrentClip('clip3');
-        break;
-      case 'clip3':
         handleLeaveTime()
         setShowClip(false);
         setShowGame(true);
@@ -271,6 +271,7 @@ const Room4Left = () => {
                   controls: true,
                 }}
                 onEnded={handleEnded}
+                isLive={true}
               />
             )
           }

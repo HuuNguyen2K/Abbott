@@ -75,7 +75,7 @@ const WarningTimeBeforeEvent = (props) => {
                                 </span>
                             </div>
 
-                            <div className="text" style={{marginRight: '3px'}}>Phút</div>
+                            <div className="texts" style={{marginRight: '3px'}}>Phút</div>
                         </div>
                         <div className="modal__count-down-time-wrap">
                             <div className="modal__count-down-time-bg"
@@ -85,7 +85,7 @@ const WarningTimeBeforeEvent = (props) => {
                                 </span>
                             </div>
 
-                            <div className="text">Giây</div>
+                            <div className="texts">Giây</div>
                         </div>
                     </div>
 

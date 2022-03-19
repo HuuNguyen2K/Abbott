@@ -5,12 +5,12 @@ const Question = () => {
   const [openAnswerReport, setOpenAnswerReport] = useState(false);
 
   const getData = async () => {
-    const endPoint = '/api/get_approve_user_symposium_comment'
+    const endPoint = '/api/get_list_approve_user_symposium_comment'
     try {
       const rs = await fetchData(endPoint)
       const { success, data } = rs
       if (success === true && data) {
-        setQuestionList((prev) => [...prev, data])
+        setQuestionList(data);
       }
     } catch (error) {}
   }
@@ -36,7 +36,7 @@ const Question = () => {
       </div>
       { openAnswerReport && <AnswerReporter onClose={handleOpenAnswerReport}/> }
       {questionList &&
-        questionList.reverse().map((item, idx) => (
+        questionList.map((item, idx) => (
           <div key={idx} className='room-4__item-employee'>
             <h3>{item.pic}</h3>
             <p>{item.symposium_user_comment}</p>

@@ -85,10 +85,11 @@ const WellComeVideo = (props) => {
             border: 'none',
             zIndex: '2',
           }}
-          onClick={() => { setMuted((prev) => !prev) }}
+          onClick={(e) => { e.preventDefault(); setMuted((prev) => !prev) }}
         >
           {!muted ? (
             <img
+                onClick={(e) => e.preventDefault()}
               style={{
                 width: '60px',
                 height: '60px',
@@ -98,6 +99,7 @@ const WellComeVideo = (props) => {
             />
           ) : (
             <img
+                onClick={(e) => e.preventDefault()}
               style={{
                 width: '60px',
                 height: '60px',

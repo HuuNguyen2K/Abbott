@@ -128,9 +128,11 @@
       crossorigin
     ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.5/mobile-detect.min.js"></script>
+    <script src="//unpkg.com/prevent-orientation"></script>
 
     <script src="./scripts/linkGame.js"></script>
     <script src="./scripts/iframe-game.js" type="text/babel"></script>
@@ -169,13 +171,13 @@
       if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render')
         ReactDOM.render(
-          <WellComeVideo src='https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8' />,
+          <WellComeVideo src='https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip04phong2/hlsvideo.m3u8' />,
           domContainer
         )
       }
 
       const domIframeContainer = document.querySelector('#iframe-game-render')
-      ReactDOM.render(<IframeGame src={URL_GAME_2} />, domIframeContainer)
+      ReactDOM.render(<IframeGame />, domIframeContainer)
     </script>
 
     <script src="./scripts/room-2.js"></script>
