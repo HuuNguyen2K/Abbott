@@ -1,6 +1,5 @@
 const VideoJS = ( props ) => {
 
-    const [ended, setEnded] = useState(false);
     const videoRef = React.useRef(null);
     const playerRef = React.useRef(null);
     const { src, options, onReady, onEnded, isLive } = props;
@@ -27,7 +26,7 @@ const VideoJS = ( props ) => {
                 // console.log("player is ready");
                 onReady && onReady(player);
                 // playerRef.current.controlBar.progressControl.disable(); // TODO
-                this.on('ended', () => { setEnded(true); onEnded && onEnded()});
+                this.on('ended', () => { onEnded && onEnded()});
             });
         } else {
             // you can update player here [update player through props]
@@ -50,8 +49,6 @@ const VideoJS = ( props ) => {
             }
         };
     }, [playerRef]);
-
-    if (ended) return null;
 
     return (
         <div data-vjs-player className='live-btn'>
