@@ -43,6 +43,17 @@
   align-items: center;
 }
 
+.modal-qr .qr-notice {
+  font-size: 1.8vw;
+  font-weight: bold;
+  max-width: 39vw;
+  margin: 1vw auto 0;
+}
+
+.modal-qr .qr-notice a {
+  color: #0000EE;
+}
+
 .modal-qr .qr-button {
   width: 21vw;
   height: 7vw;
@@ -63,6 +74,7 @@
 }
 
 .modal-qr .direct-google {
+  display: block;
   width: 24vw;
   background-image: url('../images/button-invite-fill-form.png');
 }
