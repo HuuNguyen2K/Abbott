@@ -267,7 +267,8 @@ const Room4Left = () => {
                 onReady={handleReady}
                 options={{
                   autoplay: checkSeminarStart(),
-                  muted: currentClip === 'clip1',
+                  // muted: currentClip === 'clip1',
+                  muted: true,
                   controls: true,
                 }}
                 onEnded={handleEnded}
