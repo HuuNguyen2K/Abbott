@@ -48,8 +48,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 800px;
-    height: 420px;
+    width: 85vh;
+    height: 85vh;
     z-index: 9;
 
 }
