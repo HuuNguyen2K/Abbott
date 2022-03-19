@@ -26,7 +26,7 @@ const Question = () => {
   return (
     <div className='room-4__list-employee'>
       {questionList &&
-        questionList?.map((item, idx) => (
+        questionList.map((item, idx) => (
           <div key={idx} className='room-4__item-employee'>
             <h3>{item.pic}</h3>
             <p>{item.symposium_user_comment}</p>
