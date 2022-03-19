@@ -5,6 +5,15 @@ const WellComeVideo = (props) => {
   const [muted, setMuted] = useState(true);
   const [ended, setEnded] = useState(false);
 
+  const [styleVideo, setStyleVideo] = useState({
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      right: '0',
+      bottom: '0',
+      zIndex: '1'
+  });
+
   const addQueryParam = (key, value) => {
     const url = new URL(window.location.href)
     url.searchParams.set(key, value)
@@ -58,18 +67,26 @@ const WellComeVideo = (props) => {
       }, 1500) // 1.5s
   };
 
+  useEffect(() => {
+      var md = new MobileDetect(window.navigator.userAgent);
+      if (md.mobile()) {
+          setStyleVideo({
+              position: 'absolute',
+              top: '0',
+              left: '72px',
+              right: '0',
+              bottom: '0',
+              zIndex: '1',
+              width: '691px',
+          });
+      }
+  }, []);
+
   if (ended) return null;
 
   return (
     <div
-      style={{
-        position: 'absolute',
-        top: '0',
-        left: '0',
-        right: '0',
-        bottom: '0',
-        zIndex: '1'
-      }}
+      style={styleVideo}
       className='modal-video'
     >
       <div id='welcome-video'>
