@@ -25,6 +25,7 @@ const VideoJS = ( props ) => {
             const player = playerRef.current = videojs(videoElement, {...defaultOptions, ...options}, function (){
                 // console.log("player is ready");
                 onReady && onReady(player);
+                player.playsinline();
                 // playerRef.current.controlBar.progressControl.disable(); // TODO
                 this.on('ended', () => { onEnded && onEnded()});
             });
@@ -59,7 +60,7 @@ const VideoJS = ( props ) => {
                     </div>
                 )
             }
-            <video ref={videoRef} className="video-js vjs-big-play-centered"/>
+            <video ref={videoRef} className="video-js vjs-big-play-centered" playsInline/>
         </div>
     );
 }
