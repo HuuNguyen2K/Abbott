@@ -56,7 +56,7 @@ const Leaderboard = () => {
               <div className='top-content'>
                 <div className='medal-item silver-medal'>
                   <div className='user-avatar slide-shine'>
-                    {rank?.medals?.silver?.user?.avatar ? (
+                    {_.get(rank, 'medals.silver.user.avatar') ? (
                       <img
                         style={{ objectFit: 'cover' }}
                         src={`${
@@ -83,7 +83,7 @@ const Leaderboard = () => {
 
                 <div className='medal-item gold-medal'>
                   <div className='user-avatar slide-shine'>
-                    {rank?.medals?.gold?.user?.avatar ? (
+                    {_.get(rank, 'medals.gold.user.avatar') ? (
                       <img
                         style={{ objectFit: 'cover' }}
                         src={`${URL_API_PREFIX + rank.medals.gold.user.avatar}`}
@@ -108,7 +108,7 @@ const Leaderboard = () => {
 
                 <div className='medal-item bronze-medal'>
                   <div className='user-avatar slide-shine'>
-                    {rank?.medals?.bronze?.user?.avatar ? (
+                    {_.get(rank, 'medals.bronze.user.avatar') ? (
                       <img
                         style={{ objectFit: 'cover' }}
                         src={`${
@@ -164,7 +164,7 @@ const Leaderboard = () => {
 
                       <div className='item-user'>
                         <div className='user-avatar'>
-                          {item?.user?.avatar ? (
+                          {_.get(item, 'user.avatar') ? (
                             <img
                               style={{
                                 objectFit: 'cover',
