@@ -10,7 +10,7 @@ module.exports = function (shipit) {
       key: "docs/aws/gms-abbott-production.pem",
     },
     "solution-abbott-production": {
-      servers: ["bitnami@13.213.62.4"],
+      servers: ["bitnami@54.169.169.219"],
       deployUser: 'bitnami',
       deployTo: "/home/bitnami/htdocs/solution-abbott-event/",
       key: "docs/aws/gms-abbott-production.pem",
