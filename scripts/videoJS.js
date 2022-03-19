@@ -25,7 +25,7 @@ const VideoJS = ( props ) => {
             const player = playerRef.current = videojs(videoElement, {...defaultOptions, ...options}, function (){
                 // console.log("player is ready");
                 onReady && onReady(player);
-                // player.playsinline();
+                player.playsinline();
                 // playerRef.current.controlBar.progressControl.disable(); // TODO
                 this.on('ended', () => { onEnded && onEnded()});
             });
