@@ -36,6 +36,8 @@ const Leaderboard = () => {
     return () => clearInterval(timer)
   }, [])
 
+  console.log(rank);
+
   if (!rank) return null
 
   return (
@@ -66,7 +68,7 @@ const Leaderboard = () => {
                       />
                     ) : (
                       <div className='default'>
-                        {getAbbreviationName(rank.medals.silver.user.name)}
+                        {getAbbreviationName(_.get(rank, 'medals.silver.user.name', ''))}
                       </div>
                     )}
                   </div>
@@ -75,9 +77,9 @@ const Leaderboard = () => {
                     src='./images/silver-medal.png'
                     alt='silver-medal'
                   />
-                  <p className='user-name'>{rank.medals.silver.user.name}</p>
+                  <p className='user-name'>{_.get(rank, 'medals.silver.user.name', '')}</p>
                   <strong className='user-score'>
-                    {rank.medals.silver.score}
+                    {_.get(rank, 'medals.silver.score', 0)}
                   </strong>
                 </div>
 
@@ -100,9 +102,9 @@ const Leaderboard = () => {
                     src='./images/gold-medal.png'
                     alt='gold-medal'
                   />
-                  <p className='user-name'>{rank.medals.gold.user.name}</p>
+                  <p className='user-name'>{_.get(rank, 'medals.gold.user.name', '')}</p>
                   <strong className='user-score'>
-                    {rank.medals.gold.score}
+                    {_.get(rank, 'medals.gold.score', 0)}
                   </strong>
                 </div>
 
@@ -118,7 +120,7 @@ const Leaderboard = () => {
                       />
                     ) : (
                       <div className='default'>
-                        {getAbbreviationName(rank.medals.bronze.user.name)}
+                        {getAbbreviationName(_.get(rank, 'medals.bronze.user.name', ''))}
                       </div>
                     )}
                   </div>
@@ -127,16 +129,16 @@ const Leaderboard = () => {
                     src='./images/bronze-medal.png'
                     alt='bronze-medal'
                   />
-                  <p className='user-name'>{rank.medals.bronze.user.name}</p>
+                  <p className='user-name'>{_.get(rank, 'medals.bronze.user.name', '')}</p>
                   <strong className='user-score'>
-                    {rank.medals.bronze.score}
+                    {_.get(rank, 'medals.bronze.score', 0)}
                   </strong>
                 </div>
               </div>
             </div>
 
             <div className='leaderboard-list'>
-              {rank.top_list.slice(0).map((item) => {
+              {!_.isEmpty(_.get(rank, 'top_list')) && rank.top_list.slice(0).map((item) => {
                 return (
                   <div
                     key={item.rank}
