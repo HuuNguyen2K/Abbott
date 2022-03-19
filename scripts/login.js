@@ -805,6 +805,9 @@ function Login() {
                 />
                 <span>Hiện mật khẩu</span>
               </div>
+                <div style={{ fontSize: '12.5px', position: 'relative', top: '-7px' }}>
+                    Nếu gặp sự cố đăng nhập, vui lòng liên hệ số hotline: 0937 437 548 - 0773 899 567 hoặc liên hệ nhân viên Abbott để được hỗ trợ
+                </div>
               <div className='action'>
                 <button className='btn' onClick={() => setMode(MODE.SIGN_UP)}>
                   ĐĂNG KÝ
