@@ -196,7 +196,7 @@ const Room4Left = () => {
 
       case 'clip6':
         handleLeaveTime()
-        alert('Bạn có đồng ý xem tiếp không ?');
+        alert('Hãy chung tay cùng chúng tôi cải thiện sức khoẻ bệnh nhân đái tháo đường!');
         setShowGame(false);
         setCurrentClip('clip7');
         setShowClip(true);
