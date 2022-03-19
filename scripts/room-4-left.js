@@ -90,15 +90,15 @@ const Room4Left = () => {
     // },
     clip4: {
       en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/JEFFFREY_PRESENT_ENGLISH_VERSION/hlsvideo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/GLUCERNA_ROOM4_CLIP6_VIE_3/hlsvideo.m3u8'
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/JEFFFREY_PRESENT_VIETNAM_v2/hlsvideo.m3u8'
     },
     clip5: {
       en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/BSNAM02/hlsvideo.m3u8',
       vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/BSNAM02/hlsvideo.m3u8'
     },
     clip6: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ramat/hlsvideo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ramat/hlsvideo.m3u8'
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ramat2/hlsvideo.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ramat2/hlsvideo.m3u8'
     },
     clip7: {
       en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/GLUCERNA_ROOM+4_CLIP6_ENG_3/hlsvideo.m3u8',
