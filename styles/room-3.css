@@ -473,7 +473,7 @@ body {
 
 .room-3__popup-right .popup-video{
     width: 482px;
-    height: 595px;
+    height: 272px;
 }
 @media screen and (max-width: 930px) {
     .room-3__popup-right .popup-video{

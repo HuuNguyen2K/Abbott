@@ -3,7 +3,7 @@ const VideoJS = ( props ) => {
     const [ended, setEnded] = useState(false);
     const videoRef = React.useRef(null);
     const playerRef = React.useRef(null);
-    const { src, options, onReady, onEnded } = props;
+    const { src, options, onReady, onEnded, isLive } = props;
 
     const defaultOptions = {
         autoplay: false,
@@ -55,9 +55,13 @@ const VideoJS = ( props ) => {
 
     return (
         <div data-vjs-player className='live-btn'>
-            <div className='live-btn'>
-                Live <span className='circle'></span>
-            </div>
+            {
+                isLive && (
+                    <div className='live-btn'>
+                        Live <span className='circle'></span>
+                    </div>
+                )
+            }
             <video ref={videoRef} className="video-js vjs-big-play-centered"/>
         </div>
     );

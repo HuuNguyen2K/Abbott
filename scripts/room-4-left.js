@@ -271,6 +271,7 @@ const Room4Left = () => {
                   controls: true,
                 }}
                 onEnded={handleEnded}
+                isLive={true}
               />
             )
           }
