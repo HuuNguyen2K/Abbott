@@ -20,7 +20,7 @@
     /*padding-right: 15px;*/
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
 }
 
 @media screen and (max-width: 768px) and (max-height: 768px){
@@ -306,10 +306,17 @@
     justify-content: flex-start;
     flex-direction: column;
     width: 100%;
-    padding: 30px 20px;
+    padding: 20px 20px;
     height: 100%;
     overflow: auto;
     max-height: 992px;
+}
+
+.room-4__list-employee .answer-from-reporter span {
+    /*background: url("../images/answeer-reporter.png");*/
+    /*background-size: auto;*/
+    /*width: 200px;*/
+    /*height: 100px;*/
 }
 
 .room-4__item-employee {
