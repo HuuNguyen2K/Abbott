@@ -16,7 +16,8 @@ btnDownload.addEventListener('click', async (e) => {
 
     try {
         const rs = await fetchData(endPoint, 'POST', payload)
-    } catch (error) {}
+    } catch (error) {
+    }
 
     e.preventDefault()
     const aTag = document.createElement('a')
@@ -39,7 +40,8 @@ const showPopup = async (event) => {
 
     try {
         const rs = await fetchData(endPoint, 'POST', payload)
-    } catch (error) {}
+    } catch (error) {
+    }
 
 
     let showEventPopup = event.target.getAttribute('data-toggle');
@@ -79,35 +81,32 @@ const swiper = new Swiper('.swiper', {
 
 });
 
-const openModalRemindGame = () => {
-    const element = document.querySelector('.touch-shield')
-    element && setTimeout(() => {
-        element.classList.add('fadeIn')
-    }, 1500) // 1.5s
-}
-
 const openIframeGame = () => {
-    const iframeGame = document.querySelector('.sec-iframe')
+    const element = document.querySelector('.shield')
 
-    btnRoom2Right && btnRoom2Right.addEventListener('click', async (evt) => {
+    element && element.addEventListener('click', async (evt) => {
+        const containIframeGame = document.querySelector('.sec-iframe')
+        const iframeGame = containIframeGame.querySelector('.iframe-game')
+
         // BLock action user click without shield element
         if (evt.target.localName === 'span') return
-        // const isShow = iframeGame?.classList.contains('open-iframe')
+        // const isShow = containIframeGame?.classList.contains('open-iframe')
         // if(!isShow) {
-        // const endpoint = '/api/user_click_game'
-        // const user = JSON.parse(localStorage.getItem('user'))
-        // const payload = {
+        //   const endpoint = '/api/user_click_game'
+        //   const user = JSON.parse(localStorage.getItem('user'))
+        //   const payload = {
         //     access_token: user.access_token,
         //     user_id: user.id,
-        //     game_number: 2
+        //     game_number: 1
+        //   }
+        //   await fetchData(endpoint, 'POST', payload)
         // }
-        // await fetchData(endpoint, 'POST', payload)
-        // }
-        iframeGame?.classList?.toggle('open-iframe')
+
+        iframeGame.setAttribute('src', evt.target.dataset['source'])
+        containIframeGame?.classList?.toggle('open-iframe')
     })
 }
 
 window.addEventListener('load', () => {
-    openModalRemindGame()
     openIframeGame()
 });
