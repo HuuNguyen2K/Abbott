@@ -10,7 +10,7 @@ const Question = () => {
       const rs = await fetchData(endPoint)
       const { success, data } = rs
       if (success === true && data) {
-        setQuestionList(data);
+        setQuestionList(data)
       }
     } catch (error) {}
   }

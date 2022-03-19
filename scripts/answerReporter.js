@@ -15,7 +15,6 @@ const AnswerReporter = (props) => {
             modalCountDown.classList.remove('open', 'overlay')
         }
 
-        debugger
         if (!disabledClose) {
             btnCloseCountDown.addEventListener('click', hidePopup)
         }
