@@ -2,6 +2,8 @@ const { useState, useEffect } = React
 
 const Question = () => {
   const [questionList, setQuestionList] = useState([])
+  const [openAnswerReport, setOpenAnswerReport] = useState(false);
+
   const getData = async () => {
     const endPoint = '/api/get_approve_user_symposium_comment'
     try {
@@ -11,6 +13,10 @@ const Question = () => {
         setQuestionList((prev) => [...prev, data])
       }
     } catch (error) {}
+  }
+
+  const handleOpenAnswerReport = () => {
+    setOpenAnswerReport(!openAnswerReport);
   }
 
   useEffect(() => {
@@ -25,6 +31,10 @@ const Question = () => {
 
   return (
     <div className='room-4__list-employee'>
+      <div className='answer-from-reporter' onClick={handleOpenAnswerReport}>
+        <img src='../images/button-document-download.png' />
+      </div>
+      { openAnswerReport && <AnswerReporter onClose={handleOpenAnswerReport}/> }
       {questionList &&
         questionList.reverse().map((item, idx) => (
           <div key={idx} className='room-4__item-employee'>

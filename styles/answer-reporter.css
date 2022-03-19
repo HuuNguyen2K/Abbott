@@ -1,0 +1,157 @@
+.btn-count-down{
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+/* Popup event css*/
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: opacity 200ms;
+    z-index: 9;
+}
+
+.answer-report {
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out;
+}
+
+.answer-report.open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__count-down-bg {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 420px;
+    z-index: 9;
+
+}
+
+@media screen and (max-width: 1024px) {
+    .modal__count-down-bg {
+        width: 600px;
+        height: 320px;
+    }
+}
+
+.modal__count-down-time {
+    position: absolute;
+    /*top: 50%;*/
+    left: 50%;
+    bottom: 55px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 30%;
+    z-index: 9;
+}
+
+@media screen and (max-width: 1024px) {
+    .modal__count-down-time {
+        bottom: 35px;
+    }
+}
+
+.modal__count-down-time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal__count-down-time-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+    .modal__count-down-time-bg {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.modal__count-down-time-bg .hour, .modal__count-down-time-bg .minutes {
+    color: #fff;
+    display: block;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px 5px 5px;
+    margin-bottom:20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .modal__count-down-time-bg .hour, .modal__count-down-time-bg .minutes {
+        font-size: 40px;
+    }
+}
+
+.modal__count-down-time .text{
+    color: #8a226d;
+    font-size: 31px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    margin-right: 5px;
+    text-shadow: -2px 2px 5px rgba(0,0,0,0.4);
+}
+
+@media screen and (max-width: 1024px) {
+    .modal__count-down-time .text{
+        font-size: 24px;
+    }
+}
+
+.swiper-btn-close {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    z-index: 99;
+}
+
+@media screen and (max-width: 1024px) {
+    .swiper-btn-close {
+        top: 15px;
+        right: 10px;
+    }
+}
