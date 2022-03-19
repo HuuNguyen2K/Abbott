@@ -191,8 +191,11 @@
         height: 70px;
     }
 }
-
-/* Popup event css*/
+.room-2__btn-right .shield{
+    width:100%;
+    height:100%;
+}
+    /* Popup event css*/
 .overlay {
     position: absolute;
     top: 0;
