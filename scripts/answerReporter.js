@@ -23,7 +23,10 @@ const AnswerReporter = (props) => {
     return (
         <Fragment>
             <div id="answer-reporter" className="modal__answer-report open overlay">
-                <div className="modal__count-down-bg" style={{ backgroundImage: 'url(images/count-down-bg-text.png)'}}>
+                <div className="modal__count-down-bg">
+                    <div style={{ height: '100%', overflow: 'auto'}}>
+                        <img src='images/answer-report.jpg' />
+                    </div>
 
                     {/*<div className="modal__count-down-time">*/}
                     {/*    <div className="modal__count-down-time-wrap">*/}
