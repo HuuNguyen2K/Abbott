@@ -34,13 +34,18 @@
       const search = window.location.search.substring(1)
       const params = new URLSearchParams(search)
       const welcome = params.get('welcome')
+
+      var md = new MobileDetect(window.navigator.userAgent);
+      const deviceSource = {
+        mobile: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/CLIP_01_toanha/hlsvideo.m3u8',
+        pc: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/CLIP_01_toanha/hlsvideo.m3u8'
+      }
       if (welcome === 'true') {
-        const domContainer = document.querySelector('#welcome-video-render')
+        const domContainer = document.querySelector('#welcome-video-render');
         ReactDOM.render(
-          // <WellComeVideo src='http://hoithaodaithaoduong.com/video/tearsing-clip-06-03.mp4' />,
-          <WellComeVideo src='https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/CLIP_01_toanha/hlsvideo.m3u8' />,
-          domContainer
-        )
+                <WellComeVideo src={md.mobile() ? deviceSource.mobile : deviceSource.pc }/>,
+                domContainer
+        );
       }
     </script>
     <script src="./scripts/mobileDetect.js"></script>

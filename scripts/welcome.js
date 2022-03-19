@@ -67,20 +67,21 @@ const WellComeVideo = (props) => {
       }, 1500) // 1.5s
   };
 
-  useEffect(() => {
-      var md = new MobileDetect(window.navigator.userAgent);
-      if (md.mobile()) {
-          setStyleVideo({
-              position: 'absolute',
-              top: '0',
-              left: '72px',
-              right: '0',
-              bottom: '0',
-              zIndex: '1',
-              width: '691px',
-          });
-      }
-  }, []);
+  var md = new MobileDetect(window.navigator.userAgent);
+
+  // useEffect(() => {
+  //     if (md.mobile()) {
+  //         setStyleVideo({
+  //             position: 'absolute',
+  //             top: '0',
+  //             left: '72px',
+  //             right: '0',
+  //             bottom: '0',
+  //             zIndex: '1',
+  //             width: '691px',
+  //         });
+  //     }
+  // }, []);
 
   if (ended) return null;
 
@@ -104,27 +105,55 @@ const WellComeVideo = (props) => {
           }}
           onClick={(e) => { e.preventDefault(); setMuted((prev) => !prev) }}
         >
-          {!muted ? (
-            <img
-                onClick={(e) => e.preventDefault()}
-              style={{
-                width: '60px',
-                height: '60px',
-              }}
-              src='../images/unmute-icon.png'
-              alt=''
-            />
-          ) : (
-            <img
-                onClick={(e) => e.preventDefault()}
-              style={{
-                width: '60px',
-                height: '60px',
-              }}
-              src='../images/mute-icon.png'
-              alt=''
-            />
-          )}
+            {
+                !md.mobile() && !muted && (
+                    <img
+                        onClick={(e) => e.preventDefault()}
+                        style={{
+                            width: '60px',
+                            height: '60px',
+                        }}
+                        src='../images/unmute-icon.png'
+                        alt=''
+                    />
+                )
+            }
+
+            {
+                !md.mobile() && muted && (
+                    <img
+                        onClick={(e) => e.preventDefault()}
+                        style={{
+                            width: '60px',
+                            height: '60px',
+                        }}
+                        src='../images/mute-icon.png'
+                        alt=''
+                    />
+                )
+            }
+
+          {/*{!muted ? (*/}
+          {/*  <img*/}
+          {/*      onClick={(e) => e.preventDefault()}*/}
+          {/*    style={{*/}
+          {/*      width: '60px',*/}
+          {/*      height: '60px',*/}
+          {/*    }}*/}
+          {/*    src='../images/unmute-icon.png'*/}
+          {/*    alt=''*/}
+          {/*  />*/}
+          {/*) : (*/}
+          {/*  <img*/}
+          {/*      onClick={(e) => e.preventDefault()}*/}
+          {/*    style={{*/}
+          {/*      width: '60px',*/}
+          {/*      height: '60px',*/}
+          {/*    }}*/}
+          {/*    src='../images/mute-icon.png'*/}
+          {/*    alt=''*/}
+          {/*  />*/}
+          {/*)}*/}
         </button>
       </div>
     </div>
