@@ -119,7 +119,7 @@
     }
 }
 
-.modal__count-down-time .text{
+.modal__count-down-time .texts{
     color: #8a226d;
     font-size: 31px;
     font-weight: bold;
@@ -131,7 +131,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .modal__count-down-time .text{
+    .modal__count-down-time .texts{
         font-size: 24px;
     }
 }
