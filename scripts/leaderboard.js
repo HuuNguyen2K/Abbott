@@ -56,7 +56,7 @@ const Leaderboard = () => {
               <div className='top-content'>
                 <div className='medal-item silver-medal'>
                   <div className='user-avatar slide-shine'>
-                    {rank.medals.silver.user.avatar ? (
+                    {rank?.medals?.silver?.user?.avatar ? (
                       <img
                         style={{ objectFit: 'cover' }}
                         src={`${
