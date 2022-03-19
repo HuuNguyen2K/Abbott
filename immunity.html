@@ -65,14 +65,14 @@
       if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
         ReactDOM.render(
-                <WellComeVideo src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8" />,
+                <WellComeVideo src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ROOM1_LR/hlsROOM1_LR.m3u8" />,
                 domContainer
         );
       }
 
       const domIframeContainer = document.querySelector('#iframe-game-render');
       ReactDOM.render(
-                <IframeGame src={URL_GAME_1} />,
+                <IframeGame  />,
               domIframeContainer
       );
     </script>

@@ -77,16 +77,16 @@ const Room4Left = () => {
 
   const CLIPS = { // TODO
     clip1: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/countdown/hlscountdown.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/countdown/hlscountdown.m3u8',
     },
     clip2: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip05/hlsclip05.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip05/hlsclip05.m3u8'
     },
     clip3: {
-      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
-      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8'
+      en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ElenaPresentEnglish/hlsElenaPresentEnglish.m3u8',
+      vn: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ElenaPresentEnglish/hlsElenaPresentEnglish.m3u8'
     },
     clip4: {
       en: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8',
@@ -107,9 +107,9 @@ const Room4Left = () => {
   }
 
   const GAMES = {
-    game1: { url: 'http://54.251.217.230/game/word-filling-game/questions.php?id=1', time: 41000 }, // millisecond
-    game2: { url:'http://54.251.217.230/game/word-filling-game/questions.php?id=2', time: 41000 }, // millisecond
-    game3: { url: 'http://54.251.217.230/game/word-filling-game/questions.php?id=3', time: 41000}, // millisecond
+    game1: { url: URL_GAME_3_1, time: 41000 }, // millisecond
+    game2: { url: URL_GAME_3_2, time: 41000 }, // millisecond
+    game3: { url: URL_GAME_3_3, time: 41000}, // millisecond
   }
 
   const playerRef = React.useRef();
@@ -267,16 +267,17 @@ const Room4Left = () => {
                 onReady={handleReady}
                 options={{
                   autoplay: checkSeminarStart(),
-                  muted: currentClip === 'clip1'
+                  muted: currentClip === 'clip1',
+                  controls: true,
                 }}
                 onEnded={handleEnded}
               />
             )
           }
         </div>
-        <div className='live-btn'>
-          Live <span className='circle'></span>
-        </div>
+        {/*<div className='live-btn'>*/}
+        {/*  Live <span className='circle'></span>*/}
+        {/*</div>*/}
       </div>
       <div className='room-4__left-option'>
         <PostQuestion />

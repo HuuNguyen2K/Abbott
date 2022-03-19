@@ -21,7 +21,7 @@
     <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/modal-seminar.css"/>
   </head>
-  <body>
+  <body style="height: 100vh; overflow: hidden;">
     <div
       id="room-2"
       class="container room-2"
@@ -169,13 +169,13 @@
       if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render')
         ReactDOM.render(
-          <WellComeVideo src='https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ResearchStreaming/hlsdemo.m3u8' />,
+          <WellComeVideo src='https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip03/hlsclip03.m3u8' />,
           domContainer
         )
       }
 
       const domIframeContainer = document.querySelector('#iframe-game-render')
-      ReactDOM.render(<IframeGame src={URL_GAME_2} />, domIframeContainer)
+      ReactDOM.render(<IframeGame />, domIframeContainer)
     </script>
 
     <script src="./scripts/room-2.js"></script>

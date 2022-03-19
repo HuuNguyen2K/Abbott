@@ -44,7 +44,7 @@ const ToastErr = (props) => {
             color: 'rgb(127 125 125)',
           }}
           onClick={() => setShow(false)}
-          className="close-toast"
+          className='close-toast'
         >
           x
         </div>
@@ -661,6 +661,7 @@ function Login() {
   const labelRef = React.useRef(null)
   const [selectedFile, setSelectedFile] = React.useState(null)
   const [preview, setPreview] = React.useState()
+  const [previewName, setPreviewName] = React.useState(null)
 
   const login = async () => {
     const idEle = document.querySelector('#id')
@@ -739,10 +740,24 @@ function Login() {
       })
   }
 
+  const getAbbreviationName = (_name) => {
+    const nameSplit = _name.split(' ')
+    const length = nameSplit.length
+    if (length <= 1) return _name[0].toUpperCase()
+
+    const result = nameSplit[0][0] + nameSplit[length - 1][0]
+    return result.toUpperCase()
+  }
+
   React.useEffect(() => {
     if (mode === MODE.AVT) {
-      const { avatar } = user
-      avatar && setPreview(URL_API_PREFIX + avatar)
+      const { avatar, name } = user
+      if (avatar) {
+        setPreview(URL_API_PREFIX + avatar)
+      } else if (name) {
+        const newName = getAbbreviationName(name)
+        setPreviewName(newName)
+      }
     }
   }, [mode])
 
@@ -757,7 +772,10 @@ function Login() {
         <div className='content'>
           {mode === MODE.SIGN_IN && (
             <div>
-              <div className='title'>Mời quý chuyên viên y tế <br /> đăng nhập để tham gia chương trình</div>
+              <div className='title'>
+                Mời quý chuyên viên y tế <br /> đăng nhập để tham gia chương
+                trình
+              </div>
               <div className='group'>
                 <span>Username</span>
                 <input
@@ -802,7 +820,20 @@ function Login() {
               {preview ? (
                 <img src={preview} alt='' />
               ) : (
-                <img src='../images/avt-up.png' alt='' />
+                // <img src='../images/avt-up.png' alt='' />
+                <div
+                  style={{
+                    backgroundColor: '#0087bf',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '50px',
+                    color: '#fff',
+                  }}
+                  className='default'
+                >
+                  {previewName || 'HN'}
+                </div>
               )}
               <input
                 onChange={onSelect}

@@ -56,22 +56,52 @@ const Lobby = () => {
     <div
       className='container'
       style={{
-        backgroundImage: 'url(./images/lobby-background.png)',
+        backgroundImage: 'url(./images/lobbynewbg.png',
       }}
     >
       <div onClick={handleRoom1Click} className='room room-1 slide-shine'>
-        <img src='./images/room-1-icon.png' alt='' />
+        <img
+          onMouseOver={(e) =>
+            (e.currentTarget.src = './images/room-1-icon-hv.png')
+          }
+          onMouseOut={(e) => (e.currentTarget.src = './images/room-1-icon.png')}
+          src='./images/room-1-icon.png'
+          alt=''
+        />
       </div>
       <div onClick={handleRoom2Click} className='room room-2 slide-shine'>
-        <img src='./images/room-2-icon.png' alt='' />
+        <img
+          onMouseOver={(e) =>
+            (e.currentTarget.src = './images/room-2-icon-hv.png')
+          }
+          onMouseOut={(e) => (e.currentTarget.src = './images/room-2-icon.png')}
+          src='./images/room-2-icon.png'
+          alt=''
+        />
       </div>
       <div onClick={handleRoom3Click} className='room room-3 slide-shine'>
-        <img src='./images/room-3-icon.png' alt='' />
+        <img
+          onMouseOver={(e) =>
+            (e.currentTarget.src = './images/room-3-icon-hv.png')
+          }
+          onMouseOut={(e) => (e.currentTarget.src = './images/room-3-icon.png')}
+          src='./images/room-3-icon.png'
+          alt=''
+        />
       </div>
       {
         <WarningTimeBeforeEvent onEnd={handleRoom4Click}>
           <div className='room room-4 slide-shine'>
-            <img src='./images/room-4-icon.png' alt='' />
+            <img
+              onMouseOver={(e) =>
+                (e.currentTarget.src = './images/room-4-icon-hv.png')
+              }
+              onMouseOut={(e) =>
+                (e.currentTarget.src = './images/room-4-icon.png')
+              }
+              src='./images/room-4-icon.png'
+              alt=''
+            />
           </div>
         </WarningTimeBeforeEvent>
       }
@@ -81,12 +111,12 @@ const Lobby = () => {
           alt='Mời Qúy chuyên viên Y Tế chọn khu vực trải nghiệm'
         />
       </div>
-      <div className='text'>
+      {/* <div className='text'>
         <span>
           VAI TRÒ CỦA MIỄN DỊCH VÀ DINH DƯỠNG ĐỐI VỚI BỆNH NHÂN ĐÁI THÁO ĐƯỜNG
           TRONG GIAI ĐOẠN BÌNH THƯỜNG MỚI
         </span>
-      </div>
+      </div> */}
     </div>
   )
 }
