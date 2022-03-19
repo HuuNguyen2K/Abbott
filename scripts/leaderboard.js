@@ -16,6 +16,7 @@ const Leaderboard = () => {
   }
 
   const getAbbreviationName = (_name) => {
+    if (_.isEmpty(name)) return '';
     const nameSplit = _name.split(' ')
     const length = nameSplit.length
     if (length <= 1) return _name[0].toUpperCase()
