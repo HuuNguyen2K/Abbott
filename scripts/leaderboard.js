@@ -36,8 +36,6 @@ const Leaderboard = () => {
     return () => clearInterval(timer)
   }, [])
 
-  console.log(rank);
-
   if (!rank) return null
 
   return (
