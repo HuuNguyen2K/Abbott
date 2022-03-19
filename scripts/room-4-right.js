@@ -8,7 +8,7 @@ const Question = () => {
       const rs = await fetchData(endPoint)
       const { success, data } = rs
       if (success === true && data) {
-        setQuestionList((prev) => [...prev, data])
+        setQuestionList(data);
       }
     } catch (error) {}
   }
