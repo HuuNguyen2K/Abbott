@@ -296,7 +296,7 @@ const Room4Left = () => {
         showGame && <IframeGame src={GAMES[currentGame].url} show={true} disabledClose={true} />
       }
       {
-        showCME && <ModalQR
+        showCME || <ModalQR
             src="./images/cme_qr_code.png"
             show={true}
             documentUrl="http://54.251.217.230/avatars/Hoi-thao-dai-thao-duong.zip"
