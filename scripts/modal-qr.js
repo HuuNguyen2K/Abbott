@@ -37,17 +37,24 @@ const ModalQR = (props) => {
           <div className="qr-action">
             <div className="qr-button document-download"
                  onClick={handleDocumentDownload}/>
-            <div className="qr-button direct-google"
-                 data-control={ JSON.stringify({
-                   render_name: '.sec-iframe',
-                   command: 'open',
-                   active_class: 'open-iframe',
-                   without_ele: null,
-                   iframe: true
-                 }) } />
+            {/*<div className="qr-button direct-google"*/}
+            {/*     data-control={ JSON.stringify({*/}
+            {/*       render_name: '.sec-iframe',*/}
+            {/*       command: 'open',*/}
+            {/*       active_class: 'open-iframe',*/}
+            {/*       without_ele: null,*/}
+            {/*       iframe: true*/}
+            {/*     }) } />*/}
+            <a className="qr-button direct-google"
+               href="https://docs.google.com/forms/d/e/1FAIpQLSfxY5BC6i1srGe0YY1B-ivL7UoJB2ZaMemyf50QfLn7Q8i_5A/viewform"
+               target="_blank" />
             <div className="qr-button faq"
                  onClick={handleOpenModalFaq}/>
           </div>
+          <p className="qr-notice">
+            Nếu không có Gmail, vui lòng nhấn vào đường link:
+            <a href="https://bit.ly/CME220320" target="_blank"> https://bit.ly/CME220320</a>
+          </p>
         </div>
       </div>
   )
