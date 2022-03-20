@@ -20,6 +20,7 @@ const Question = () => {
   }
 
   const handleCheckAnswerReport = () => {
+    return;
     if (moment().isSameOrBefore(TIME_TO_ASK_HOST)) return setOpenAnswerReport(false);
     if (moment().isAfter(TIME_TO_ASK_HOST)) return setOpenAnswerReport(true);
   }
@@ -36,10 +37,10 @@ const Question = () => {
 
   return (
     <div className='room-4__list-employee'>
-      <div className='answer-from-reporter' onClick={handleCheckAnswerReport}>
-        {moment().isSameOrBefore(TIME_TO_ASK_HOST) && <img src='../images/answeer-reporter-1.png' />}
-        {(moment().isAfter(TIME_TO_ASK_HOST)) && <img src='../images/answeer-reporter-2.png' />}
-      </div>
+      {/*<div className='answer-from-reporter' onClick={handleCheckAnswerReport}>*/}
+      {/*  {moment().isSameOrBefore(TIME_TO_ASK_HOST) && <img src='../images/answeer-reporter-1.png' />}*/}
+      {/*  {(moment().isAfter(TIME_TO_ASK_HOST)) && <img src='../images/answeer-reporter-2.png' />}*/}
+      {/*</div>*/}
 
       { openAnswerReport && <AnswerReporter onClose={handleOpenAnswerReport}/> }
       {questionList &&

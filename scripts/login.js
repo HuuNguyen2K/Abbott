@@ -680,10 +680,12 @@ function Login() {
         localStorage.setItem('user', JSON.stringify(data))
           localStorage.setItem('userLoginTime', moment().format(FORMAT_EVENT_TIME));
         if (moment().isAfter(TIME_OVER)) {
-            const myConfirm = confirm('Chương trình hội thảo khoa học chỉ dành cho Chuyên viên y tế, vui lòng xác nhận bạn là Chuyên viên y tế!');
-            if (myConfirm) {
-                window.location = 'https://bit.ly/hoithao20032022';
-            }
+            // const myConfirm = confirm('Chương trình hội thảo khoa học chỉ dành cho Chuyên viên y tế, vui lòng xác nhận bạn là Chuyên viên y tế!');
+            // if (myConfirm) {
+            //     window.location = 'https://bit.ly/hoithao20032022';
+            // }
+            alert('Chương trình hội thảo khoa học chỉ dành cho Chuyên viên y tế, vui lòng xác nhận bạn là Chuyên viên y tế!');
+            window.location = 'https://bit.ly/hoithao20032022';
         }
         setMode(MODE.AVT)
       } else {
