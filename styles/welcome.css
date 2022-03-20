@@ -1,5 +1,5 @@
 body {
-  overflow: hidden;
+  overflow: auto;
 }
 
 #video {
@@ -9,4 +9,9 @@ body {
   right: 0;
   bottom: 0;
   z-index: 2;
+}
+
+
+.video-js .vjs-progress-control {
+  display: flex;
 }
