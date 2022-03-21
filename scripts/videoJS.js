@@ -2,7 +2,7 @@ const VideoJS = ( props ) => {
 
     const videoRef = React.useRef(null);
     const playerRef = React.useRef(null);
-    const { src, options, onReady, onEnded, isLive } = props;
+    const { src, options, onReady, onEnded, isLive, keep } = props;
 
     const defaultOptions = {
         autoplay: false,
@@ -16,6 +16,23 @@ const VideoJS = ( props ) => {
         }]
     };
 
+    const addQueryParam = (key, value) => {
+        const url = new URL(window.location.href)
+        url.searchParams.set(key, value)
+        window.history.pushState({}, '', url.toString())
+    }
+
+    const deleteQueryParam = (key) => {
+        const url = new URL(window.location.href)
+        url.searchParams.delete(key)
+        window.history.pushState({}, '', url.toString())
+    }
+
+    const getQueryParam = (key) => {
+        const url = new URL(window.location.href);
+        return url.searchParams.get(key);
+    }
+
     React.useEffect(() => {
         // make sure Video.js player is only initialized once
         if (!playerRef.current) {
@@ -23,11 +40,33 @@ const VideoJS = ( props ) => {
             if (!videoElement) return;
 
             const player = playerRef.current = videojs(videoElement, {...defaultOptions, ...options}, function (){
+                let trackingTimeInterval;
                 // console.log("player is ready");
+
                 onReady && onReady(player);
                 player.playsinline();
+
+                if (keep) {
+                    // Check have currentTime
+                    const currentTime = getQueryParam('currentTime');
+                    if (currentTime) playerRef.current.currentTime(currentTime);
+
+                    this.on('play', () => {
+                        // Tracking time
+                        trackingTimeInterval = setInterval(() => {
+                            const currentTime = playerRef.current.currentTime();
+                            addQueryParam('currentTime', currentTime);
+                        }, 1000);
+                    });
+                    this.on('pause', () => clearInterval(trackingTimeInterval));
+                }
+
                 //playerRef.current.controlBar.progressControl.disable(); // TODO
-                this.on('ended', () => { onEnded && onEnded()});
+                this.on('ended', () => {
+                    clearInterval(trackingTimeInterval);
+                    deleteQueryParam('currentTime');
+                    onEnded && onEnded()
+                });
             });
         } else {
             // you can update player here [update player through props]
