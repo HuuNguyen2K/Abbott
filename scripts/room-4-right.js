@@ -1,6 +1,9 @@
 const { useState, useEffect } = React
 
 const Question = () => {
+  // remove 
+  // return null
+  
   const [questionList, setQuestionList] = useState([])
   const [openAnswerReport, setOpenAnswerReport] = useState(false);
 
@@ -25,19 +28,20 @@ const Question = () => {
     if (moment().isAfter(TIME_TO_ASK_HOST)) return setOpenAnswerReport(true);
   }
 
-  useEffect(() => {
-    getData()
+  // useEffect(() => {
+  //   getData()
 
-    const timer = setInterval(() => {
-      getData()
-    }, 5000)
+  //   const timer = setInterval(() => {
+  //     getData()
+  //   }, 5000)
 
-    return () => clearInterval(timer)
-  }, [])
+  //   return () => clearInterval(timer)
+  // }, [])
 
   return (
     <div className='room-4__list-employee'>
-      <div className='answer-from-reporter' onClick={handleCheckAnswerReport}>
+     <p style={{fontSize: '40px'}}> 2 button chỗ này</p>
+      {/* <div className='answer-from-reporter' onClick={handleCheckAnswerReport}>
         {moment().isSameOrBefore(TIME_TO_ASK_HOST) && <img src='../images/answeer-reporter-1.png' />}
         {(moment().isAfter(TIME_TO_ASK_HOST)) && <img src='../images/answeer-reporter-2.png' />}
       </div>
@@ -49,7 +53,7 @@ const Question = () => {
             <h3>{item.pic}</h3>
             <p>{item.symposium_user_comment}</p>
           </div>
-        ))}
+        ))} */}
     </div>
   )
 }

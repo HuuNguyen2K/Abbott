@@ -1,7 +1,7 @@
-body {
+/* body {
     height: 100vh;
     overflow: hidden;
-}
+} */
 
 .container {
     height: 100vh;
@@ -304,7 +304,8 @@ body {
     background-position: center center;
     position: absolute;
     top: 50%;
-    height: 148px;
+    /* height: 148px; */
+    height: 260px;
     width: 100%;
     transform: translateY(-50%);
     perspective: 900px;
