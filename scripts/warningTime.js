@@ -1,6 +1,7 @@
 const { useEffect, useState, useRef } = React;
 
 const WarningTimeOut = () => {
+
   // [startTime1] -5 minutes- [endTime1] ----- [startTime2] -30 seconds- [endTime2]
 
   const endTime2Ref = useRef(START_EVENT_TIME); // start event
@@ -38,13 +39,13 @@ const WarningTimeOut = () => {
     return now.isSameOrAfter(endTime2Ref.current);
   }
 
-  useEffect(() => {
-    const handleInterval = setInterval(() => {
-      handleShowWarning();
-      setSeminarStart(checkSeminarStart());
-    }, 1000);
-    return () => { clearInterval(handleInterval) }
-  }, []);
+  // useEffect(() => {
+  //   const handleInterval = setInterval(() => {
+  //     handleShowWarning();
+  //     setSeminarStart(checkSeminarStart());
+  //   }, 1000);
+  //   return () => { clearInterval(handleInterval) }
+  // }, []);
 
   useEffect(() =>{
     if (isSeminarStart) {

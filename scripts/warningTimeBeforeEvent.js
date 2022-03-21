@@ -41,28 +41,28 @@ const WarningTimeBeforeEvent = (props) => {
 
         if (!disabledClose) btnCloseCountDown.addEventListener('click', hidePopup)
 
-        const handleInterValUpdateCounter = setInterval(() => {
-            handleUpdateCounter(() => clearInterval(handleInterValUpdateCounter));
-        }, 1000);
+        // const handleInterValUpdateCounter = setInterval(() => {
+        //     handleUpdateCounter(() => clearInterval(handleInterValUpdateCounter));
+        // }, 1000);
 
-        let handleIntervalShowPopup;
-        if (forever) {
-            handleIntervalShowPopup = setInterval(() => {
-                handleShowPopup.current(() => {
-                    clearInterval(handleIntervalShowPopup)
-                });
-            }, 1000);
-        }
+        // let handleIntervalShowPopup;
+        // if (forever) {
+        //     handleIntervalShowPopup = setInterval(() => {
+        //         handleShowPopup.current(() => {
+        //             clearInterval(handleIntervalShowPopup)
+        //         });
+        //     }, 1000);
+        // }
 
-        return () => {
-            clearInterval(handleInterValUpdateCounter);
-            clearInterval(handleIntervalShowPopup)
-        }
+        // return () => {
+        //     clearInterval(handleInterValUpdateCounter);
+        //     clearInterval(handleIntervalShowPopup)
+        // }
     }, []);
 
     return (
         <Fragment>
-            { children && <div onClick={() => {handleShowPopup.current(onEnd)}}>{children}</div> }
+            { children && <div onClick={onEnd}>{children}</div> }
             <div id="event-count-down" className="modal__count-down">
                 <div className="modal__count-down-bg" style={{ backgroundImage: 'url(images/count-down-bg-text.png)'}}>
 
