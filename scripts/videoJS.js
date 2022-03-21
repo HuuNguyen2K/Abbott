@@ -47,7 +47,7 @@ const VideoJS = ( props ) => {
                 player.playsinline();
 
                 if (keep) {
-                    // Check have currentTime
+                    // Check have currentTime to restore video
                     const currentTime = getQueryParam('currentTime');
                     if (currentTime) playerRef.current.currentTime(currentTime);
 
