@@ -36,7 +36,8 @@ const ModalQR = (props) => {
           <img className="qr-code" src={ src } alt="qr_code"/>
           <div className="qr-action">
             <div className="qr-button document-download"
-                 onClick={handleDocumentDownload}/>
+                 // onClick={handleDocumentDownload}
+            />
             {/*<div className="qr-button direct-google"*/}
             {/*     data-control={ JSON.stringify({*/}
             {/*       render_name: '.sec-iframe',*/}
@@ -46,10 +47,13 @@ const ModalQR = (props) => {
             {/*       iframe: true*/}
             {/*     }) } />*/}
             <a className="qr-button direct-google"
-               href="https://docs.google.com/forms/d/e/1FAIpQLSfxY5BC6i1srGe0YY1B-ivL7UoJB2ZaMemyf50QfLn7Q8i_5A/viewform"
-               target="_blank" />
+               // href="https://docs.google.com/forms/d/e/1FAIpQLSfxY5BC6i1srGe0YY1B-ivL7UoJB2ZaMemyf50QfLn7Q8i_5A/viewform"
+               // target="_blank"
+                href='#'
+            />
             <div className="qr-button faq"
-                 onClick={handleOpenModalFaq}/>
+                 // onClick={handleOpenModalFaq}
+            />
           </div>
           <p className="qr-notice">
             Nếu không có Gmail, vui lòng nhấn vào đường link:

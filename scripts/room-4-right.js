@@ -20,6 +20,7 @@ const Question = () => {
   }
 
   const handleCheckAnswerReport = () => {
+	  return;
     if (moment().isSameOrBefore(TIME_TO_ASK_HOST)) return setOpenAnswerReport(false);
     if (moment().isAfter(TIME_TO_ASK_HOST)) return setOpenAnswerReport(true);
   }

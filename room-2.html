@@ -42,7 +42,7 @@
           class="room-2__btn-right"
           style="background-image: url(images/room-2-btn-right.png)"
         >
-          <div class="shield" data-source="http://54.251.217.230/game/find-object">
+          <div class="shield" data-source="https://hoithaodaithaoduong.com/game/find-object">
             <span class="curtain curtain-1"></span>
             <span class="curtain curtain-2"></span>
             <span class="curtain curtain-3"></span>
@@ -171,7 +171,7 @@
 
       var md = new MobileDetect(window.navigator.userAgent);
       const deviceSource = {
-        mobile: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip04phong2/hlsvideo.m3u8',
+        mobile: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/PHONG02/hlsvideo.m3u8',
         pc: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip04phong2/hlsvideo.m3u8'
       }
       if (welcome === 'true') {
@@ -183,7 +183,7 @@
       }
 
       const domIframeContainer = document.querySelector('#iframe-game-render')
-      ReactDOM.render(<IframeGame />, domIframeContainer)
+      ReactDOM.render(<IframeGame src="/game/word-filling-game/screens/blank.php"/>, domIframeContainer)
     </script>
 
     <script src="./scripts/room-2.js"></script>

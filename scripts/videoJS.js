@@ -26,7 +26,7 @@ const VideoJS = ( props ) => {
                 // console.log("player is ready");
                 onReady && onReady(player);
                 player.playsinline();
-                // playerRef.current.controlBar.progressControl.disable(); // TODO
+                playerRef.current.controlBar.progressControl.disable(); // TODO
                 this.on('ended', () => { onEnded && onEnded()});
             });
         } else {
