@@ -71,7 +71,7 @@ const ToastErr = (props) => {
   )
 }
 
-const Policy = ({ show = false, setShow = () => {} }) => {
+const Policy = ({ show = false, setShow = () => { } }) => {
   return (
     <React.Fragment>
       <div
@@ -238,9 +238,9 @@ const Policy = ({ show = false, setShow = () => {} }) => {
 const OTP = ({
   phone,
   errOTP = false,
-  setShow = () => {},
-  showToast = () => {},
-  onSubmit = () => {},
+  setShow = () => { },
+  showToast = () => { },
+  onSubmit = () => { },
 }) => {
   const [count, setCount] = React.useState(90)
 
@@ -654,7 +654,7 @@ Password: ${rs.data.name.toLowerCase().replace(/\s/g, '')}`,
   )
 }
 
-function Login() {
+function Login () {
   const [isTypePassword, setIsTypePassword] = React.useState(true)
   const [mode, setMode] = React.useState(MODE.SIGN_IN)
   const [user, setUser] = React.useState({})
@@ -662,13 +662,19 @@ function Login() {
   const [selectedFile, setSelectedFile] = React.useState(null)
   const [preview, setPreview] = React.useState()
   const [previewName, setPreviewName] = React.useState(null)
+  const [state, setState] = React.useState({
+    uid: '0988123456',
+    password: 'abbott'
+  })
 
-  const login = async () => {
-    const idEle = document.querySelector('#id')
-    const passwordEle = document.querySelector('#password')
+  const repState = (newState) => setState((prevState) => ({
+    ...prevState,
+    ...newState,
+  }))
 
-    const uid = idEle.value
-    const password = passwordEle.value
+  const handleLogin = async () => {
+    const uid = state.uid
+    const password = state.password
 
     if (!uid || !password) return
 
@@ -678,14 +684,14 @@ function Login() {
         const { data } = rs
         setUser(data)
         localStorage.setItem('user', JSON.stringify(data))
-          localStorage.setItem('userLoginTime', moment().format(FORMAT_EVENT_TIME));
+        localStorage.setItem('userLoginTime', moment().format(FORMAT_EVENT_TIME));
         if (moment().isAfter(TIME_OVER)) {
-            // const myConfirm = confirm('Chương trình hội thảo khoa học chỉ dành cho Chuyên viên y tế, vui lòng xác nhận bạn là Chuyên viên y tế!');
-            // if (myConfirm) {
-            //     window.location = 'https://bit.ly/hoithao20032022';
-            // }
-            //alert('Chương trình hội thảo khoa học chỉ dành cho Chuyên viên y tế, vui lòng xác nhận bạn là Chuyên viên y tế!');
-            //window.location = 'https://bit.ly/hoithao20032022';
+          // const myConfirm = confirm('Chương trình hội thảo khoa học chỉ dành cho Chuyên viên y tế, vui lòng xác nhận bạn là Chuyên viên y tế!');
+          // if (myConfirm) {
+          //     window.location = 'https://bit.ly/hoithao20032022';
+          // }
+          //alert('Chương trình hội thảo khoa học chỉ dành cho Chuyên viên y tế, vui lòng xác nhận bạn là Chuyên viên y tế!');
+          //window.location = 'https://bit.ly/hoithao20032022';
         }
         setMode(MODE.AVT)
       } else {
@@ -743,7 +749,7 @@ function Login() {
             user.avatar = data.avatar
             setUser(user)
             localStorage.setItem('user', JSON.stringify(user))
-            window.location = './lobby.html?welcome=true'
+            window.location = './lobby.html'
           }
         }
       })
@@ -793,6 +799,8 @@ function Login() {
                   id='id'
                   name='ID'
                   type='text'
+                  value={state.uid}
+                  onChange={(e) => repState({ uid: e.target.value })}
                 />
               </div>
               <div className='group'>
@@ -803,6 +811,8 @@ function Login() {
                   id='password'
                   name='Password'
                   type={isTypePassword ? 'password' : 'text'}
+                  value={state.password}
+                  onChange={(e) => repState({ password: e.target.value })}
                 />
               </div>
               <div className='show-password'>
@@ -814,14 +824,14 @@ function Login() {
                 />
                 <span>Hiện mật khẩu</span>
               </div>
-                <div style={{ fontSize: '12.5px', position: 'relative', top: '-7px' }}>
-                    Nếu gặp sự cố đăng nhập, vui lòng liên hệ số hotline: 0937 437 548 - 0773 899 567 hoặc liên hệ nhân viên Abbott để được hỗ trợ
-                </div>
+              <div style={{ fontSize: '12.5px', position: 'relative', top: '-7px' }}>
+                Nếu gặp sự cố đăng nhập, vui lòng liên hệ số hotline: 0937 437 548 - 0773 899 567 hoặc liên hệ nhân viên Abbott để được hỗ trợ
+              </div>
               <div className='action'>
                 <button className='btn' onClick={() => setMode(MODE.SIGN_UP)}>
                   ĐĂNG KÝ
                 </button>
-                <button id='login-form' onClick={login} className='btn'>
+                <button id='login-form' onClick={handleLogin} className='btn'>
                   ĐĂNG NHẬP
                 </button>
               </div>
@@ -844,7 +854,7 @@ function Login() {
                   }}
                   className='default'
                 >
-                  {previewName || 'HN'}
+                  {previewName}
                 </div>
               )}
               <input
@@ -866,7 +876,7 @@ function Login() {
                   CHỌN ẢNH TỪ THIẾT BỊ
                 </button>
                 <button style={{ margin: 0 }} className='btn'>
-                  <a href='./lobby.html?welcome=true'>BỎ QUA</a>
+                  <a href='./lobby.html'>BỎ QUA</a>
                 </button>
               </div>
             </div>
