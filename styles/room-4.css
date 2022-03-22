@@ -98,7 +98,7 @@
 .room-4__left-option {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     height: calc(100% - 70%);
     padding: 20px 15px;
