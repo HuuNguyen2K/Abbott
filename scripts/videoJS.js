@@ -67,7 +67,7 @@ const VideoJS = ( props ) => {
                 this.on('ended', () => {
                     clearInterval(trackingTimeInterval);
                     // deleteQueryParam('currentTime');
-                    localStorage.removeItem('currentTime');
+//                     localStorage.removeItem('currentTime');
                     onEnded && onEnded()
                 });
             });
