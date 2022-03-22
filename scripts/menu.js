@@ -182,18 +182,6 @@ const Menu = () => {
                             </li>
                         </ul>
                     </li>
-                    <li className="menu-item">
-                        <a href="javascript:void(0)"
-                           data-control={ JSON.stringify({
-                             render_name: '#global-leaderboard .leaderboard',
-                             command: 'open',
-                             active_class: 'leaderboard-visible',
-                             without_ele: null
-                           }) }
-                        >
-                            bảng xếp hạng
-                        </a>
-                    </li>
                 </ul>
 
                 <div className="menu-logo">
