@@ -68,7 +68,7 @@
       // if (welcome === 'true') {
       //   const domContainer = document.querySelector('#welcome-video-render');
       //   ReactDOM.render(
-      //           <WellComeVideo src={md.mobile() ? deviceSource.mobile : deviceSource.pc }/>,
+      //           <WellComeVideo src={md.phone() ? deviceSource.mobile : deviceSource.pc }/>,
       //           domContainer
       //   );
       // }
@@ -81,7 +81,7 @@
       if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
         ReactDOM.render(
-                <WellComeVideoV2 src={md.mobile() ? deviceSource.mobile : deviceSource.pc }/>,
+                <WellComeVideoV2 src={md.phone() ? deviceSource.mobile : deviceSource.pc }/>,
                 domContainer
         );
       }
