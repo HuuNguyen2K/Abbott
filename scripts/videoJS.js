@@ -48,14 +48,16 @@ const VideoJS = ( props ) => {
 
                 if (keep) {
                     // Check have currentTime to restore video
-                    const currentTime = getQueryParam('currentTime');
+                    // const currentTime = getQueryParam('currentTime');
+                    const currentTime = localStorage.getItem('currentTime');
                     if (currentTime) playerRef.current.currentTime(currentTime);
 
                     this.on('play', () => {
                         // Tracking time
                         trackingTimeInterval = setInterval(() => {
                             const currentTime = playerRef.current.currentTime();
-                            addQueryParam('currentTime', currentTime);
+                            // addQueryParam('currentTime', currentTime);
+                            localStorage.setItem('currentTime', currentTime);
                         }, 1000);
                     });
                     this.on('pause', () => clearInterval(trackingTimeInterval));
@@ -64,7 +66,8 @@ const VideoJS = ( props ) => {
                 //playerRef.current.controlBar.progressControl.disable(); // TODO
                 this.on('ended', () => {
                     clearInterval(trackingTimeInterval);
-                    deleteQueryParam('currentTime');
+                    // deleteQueryParam('currentTime');
+                    localStorage.removeItem('currentTime');
                     onEnded && onEnded()
                 });
             });

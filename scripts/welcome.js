@@ -67,7 +67,7 @@ const WellComeVideo = (props) => {
       }, 1500) // 1.5s
   };
 
-  var md = new MobileDetect(window.navigator.userAgent);
+  // var md = new MobileDetect(window.navigator.userAgent);
 
   // useEffect(() => {
   //     if (md.mobile()) {
@@ -107,7 +107,7 @@ const WellComeVideo = (props) => {
           onClick={(e) => { e.preventDefault(); setMuted((prev) => !prev) }}
         >
             {
-                !md.mobile() && !muted && (
+                !muted && (
                     <img
                         onClick={(e) => e.preventDefault()}
                         style={{
@@ -121,7 +121,7 @@ const WellComeVideo = (props) => {
             }
 
             {
-                !md.mobile() && muted && (
+                muted && (
                     <img
                         onClick={(e) => e.preventDefault()}
                         style={{
