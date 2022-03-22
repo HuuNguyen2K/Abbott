@@ -76,12 +76,17 @@
       const md = new MobileDetect(window.navigator.userAgent);
       const deviceSource = {
         mobile: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/CLIP_01_toanha/hlsvideo.m3u8',
+        tablet: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/CLIP_01_toanha/hlsvideo.m3u8',
         pc: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/CLIP_01_toanha/hlsvideo.m3u8'
       }
       if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
+        let src = deviceSource.pc
+
+        if(md.phone()) src = deviceSource.mobile
+        if(md.tablet()) src = deviceSource.tablet
         ReactDOM.render(
-                <WellComeVideoV2 src={md.phone() ? deviceSource.mobile : deviceSource.pc }/>,
+                <WellComeVideoV2 src={src}/>,
                 domContainer
         );
       }

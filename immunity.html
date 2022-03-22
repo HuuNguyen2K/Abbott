@@ -65,13 +65,18 @@
 
       var md = new MobileDetect(window.navigator.userAgent);
       const deviceSource = {
-        mobile: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ROM+1_896_400/hlsvideo.m3u8',
+        mobile: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/PHONG01/hlsvideo.m3u8',
+        tablet: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ROOM1_LR/hlsROOM1_LR.m3u8',
         pc: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/ROOM1_LR/hlsROOM1_LR.m3u8'
       }
       if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
+        let src = deviceSource.pc
+        if(md.phone()) src = deviceSource.mobile
+        if(md.tablet()) src = deviceSource.tablet
+
         ReactDOM.render(
-                <WellComeVideo thumbnail='../images/thn123.png' src={md.phone() ? deviceSource.mobile : deviceSource.pc }/>,
+                <WellComeVideo thumbnail='../images/thn123.png' src={src}/>,
                 domContainer
         );
       }
