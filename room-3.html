@@ -141,7 +141,7 @@
     if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
         ReactDOM.render(
-            <WellComeVideo thumbnail='../images/thn123.png' src={md.mobile() ? deviceSource.mobile : deviceSource.pc }/>,
+            <WellComeVideo thumbnail='../images/thn123.png' src={md.phone() ? deviceSource.mobile : deviceSource.pc }/>,
             domContainer
         );
     }
@@ -164,6 +164,7 @@
     const domContainer1 = document.querySelector("#video-js-right");
     ReactDOM.render(
         <VideoJS
+            thumbnail='../images/thbnail-3-r.jpg'
             src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/libre/hlsvideo.m3u8"
             onReady={handlePlayerReady1}
         />,
@@ -183,6 +184,7 @@
     const domContainer = document.querySelector("#video-js-center");
     ReactDOM.render(
         <VideoJS
+            thumbnail='../images/thbnail-3-m.png'
             src="https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/video1/hlsvideo1.m3u8"
             onReady={handlePlayerReady}
         />,

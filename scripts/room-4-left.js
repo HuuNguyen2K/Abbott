@@ -285,6 +285,7 @@ const Room4Left = () => {
                 onEnded={handleEnded}
                 isLive={false}
                 keep={true}
+                thumbnail='../images/thbnail-4.png'
               />
             )
           }

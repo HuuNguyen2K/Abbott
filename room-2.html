@@ -34,7 +34,7 @@
           href="#event-room-2-left"
           data-toggle="event-room-2-left"
           class="room-2__btn-left"
-          style="background-image: url(images/room-2-btn-left.png)"
+          style="background-image: url(images/r-2-l.png)"
         ></a>
 
         <a
@@ -178,7 +178,7 @@
       if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
         ReactDOM.render(
-                <WellComeVideo thumbnail='../images/thn123.png' src={md.mobile() ? deviceSource.mobile : deviceSource.pc }/>,
+                <WellComeVideo thumbnail='../images/thn123.png' src={md.phone() ? deviceSource.mobile : deviceSource.pc }/>,
                 domContainer
         );
       }

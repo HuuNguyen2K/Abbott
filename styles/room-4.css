@@ -312,6 +312,19 @@
     max-height: 992px;
 }
 
+.room-4__list-employee .dl {
+
+}
+
+.room-4__list-employee .dl.ta {
+    
+}
+
+.room-4__list-employee .dl.tv {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .room-4__list-employee .answer-from-reporter span {
     /*background: url("../images/answeer-reporter.png");*/
     /*background-size: auto;*/

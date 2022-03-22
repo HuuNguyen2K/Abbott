@@ -40,7 +40,18 @@ const Question = () => {
 
   return (
     <div className='room-4__list-employee'>
-     <p style={{fontSize: '40px'}}> 2 button chỗ này</p>
+     <a className='dl ta' href={URL_API_PREFIX + '/avatars/Tai-lieu-tieng-Anh.zip'} download='Tai-lieu-tieng-Anh.zip'>
+       <img src="../images/Button-dl-TA.png" alt="" />
+     </a>
+
+     <a className='dl tv'  href={URL_API_PREFIX + '/avatars/Tai-lieu-tieng-Viet.zip'} download='Tai-lieu-tieng-Anh.zip'>
+       <img src="../images/Button-dl-TV.png" alt="" />
+     </a>
+     <a  href='http://glusymposium2003.com/'>
+       <img src="../images/button-ENGLISH.png" alt="" />
+     </a>
+     
+
       {/* <div className='answer-from-reporter' onClick={handleCheckAnswerReport}>
         {moment().isSameOrBefore(TIME_TO_ASK_HOST) && <img src='../images/answeer-reporter-1.png' />}
         {(moment().isAfter(TIME_TO_ASK_HOST)) && <img src='../images/answeer-reporter-2.png' />}
