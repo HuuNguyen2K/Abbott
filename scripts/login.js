@@ -685,7 +685,7 @@ function Login () {
         setUser(data)
         localStorage.setItem('user', JSON.stringify(data))
         localStorage.setItem('userLoginTime', moment().format(FORMAT_EVENT_TIME));
-        localStorage.removeItem('currentTime');
+        // localStorage.removeItem('currentTime');
         if (moment().isAfter(TIME_OVER)) {
           // const myConfirm = confirm('Chương trình hội thảo khoa học chỉ dành cho Chuyên viên y tế, vui lòng xác nhận bạn là Chuyên viên y tế!');
           // if (myConfirm) {
