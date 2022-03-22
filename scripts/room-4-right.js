@@ -44,7 +44,7 @@ const Question = () => {
         <img src="../images/Button-dl-TA.png" alt="" />
       </a>
 
-      <a className='dl tv' href={URL_API_PREFIX + '/avatars/Tai-lieu-tieng-Viet.zip'} download='Tai-lieu-tieng-Anh.zip'>
+      <a className='dl tv' href={URL_API_PREFIX + '/avatars/Tai-lieu-tieng-Viet.zip'} download='Tai-lieu-tieng-Viet.zip'>
         <img src="../images/Button-dl-TV.png" alt="" />
       </a>
 
