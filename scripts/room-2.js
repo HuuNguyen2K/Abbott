@@ -7,17 +7,17 @@ const btnDownload = document.getElementById('download')
 
 btnDownload.addEventListener('click', async (e) => {
     // api down tài liệu
-    const endPoint = '/api/topic_2_download_document_count'
-    const user = JSON.parse(localStorage.getItem('user'))
-    const payload = {
-        access_token: user.access_token,
-        user_id: user.id
-    }
+    // const endPoint = '/api/topic_2_download_document_count'
+    // const user = JSON.parse(localStorage.getItem('user'))
+    // const payload = {
+    //     access_token: user.access_token,
+    //     user_id: user.id
+    // }
 
-    try {
-        const rs = await fetchData(endPoint, 'POST', payload)
-    } catch (error) {
-    }
+    // try {
+    //     const rs = await fetchData(endPoint, 'POST', payload)
+    // } catch (error) {
+    // }
 
     e.preventDefault()
     const aTag = document.createElement('a')
@@ -31,17 +31,17 @@ const showPopup = async (event) => {
     // event.preventDefault();
 
     // api tDnA
-    const endPoint = '/api/topic_2_tdna_count'
-    const user = JSON.parse(localStorage.getItem('user'))
-    const payload = {
-        access_token: user.access_token,
-        user_id: user.id
-    }
+    // const endPoint = '/api/topic_2_tdna_count'
+    // const user = JSON.parse(localStorage.getItem('user'))
+    // const payload = {
+    //     access_token: user.access_token,
+    //     user_id: user.id
+    // }
 
-    try {
-        const rs = await fetchData(endPoint, 'POST', payload)
-    } catch (error) {
-    }
+    // try {
+    //     const rs = await fetchData(endPoint, 'POST', payload)
+    // } catch (error) {
+    // }
 
 
     let showEventPopup = event.target.getAttribute('data-toggle');

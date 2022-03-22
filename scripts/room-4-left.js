@@ -16,21 +16,21 @@ const PostQuestion = () => {
 
     if (!symposium_user_comment.trim()) return
 
-    const endpoint = '/api/store_user_symposium_comment'
-    const user = JSON.parse(localStorage.getItem('user'))
-    const payload = {
-      access_token: user.access_token,
-      user_id: user.id,
-      symposium_user_comment,
-      pic,
-    }
+    // const endpoint = '/api/store_user_symposium_comment'
+    // const user = JSON.parse(localStorage.getItem('user'))
+    // const payload = {
+    //   access_token: user.access_token,
+    //   user_id: user.id,
+    //   symposium_user_comment,
+    //   pic,
+    // }
 
-    try {
-      const rs = await fetchData(endpoint, 'POST', payload)
-      if (rs.success === true) {
-        textRef.current.value = ''
-      }
-    } catch (error) { }
+    // try {
+    //   const rs = await fetchData(endpoint, 'POST', payload)
+    //   if (rs.success === true) {
+    //     textRef.current.value = ''
+    //   }
+    // } catch (error) { }
   }
 
   return (
@@ -81,7 +81,7 @@ const Room4Left = () => {
   const [currentClip, setCurrentClip] = useState('clip1');
   const [showCME, setShowCME] = useState(false);
 
-  const CLIP = 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/drelena_vie/hlsvideo.m3u8'
+  const CLIP = 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/GLUCERNA_SYMPOSIUM_UPDATE/hlsvideo.m3u8'
 
   const CLIPS = { // TODO
     clip1: {

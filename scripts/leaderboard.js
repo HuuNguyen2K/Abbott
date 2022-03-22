@@ -1,6 +1,7 @@
 const { useEffect, useState } = React
 
 const Leaderboard = () => {
+  return null
   const [rank, setRank] = useState(null)
   const getRank = async () => {
     const endPoint = '/api/get_all_game_ranking'
