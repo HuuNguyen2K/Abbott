@@ -1,42 +1,42 @@
 const Lobby = () => {
   const handleRoom1Click = async () => {
-    const url = '/api/user_click_topic'
-    const user = JSON.parse(localStorage.getItem('user'))
-    const payload = {
-      access_token: user.access_token,
-      user_id: user.id,
-      topic_number: 1,
-    }
-    try {
-      await fetchData(url, 'POST', payload)
-    } catch (error) {}
+    // const url = '/api/user_click_topic'
+    // const user = JSON.parse(localStorage.getItem('user'))
+    // const payload = {
+    //   access_token: user.access_token,
+    //   user_id: user.id,
+    //   topic_number: 1,
+    // }
+    // try {
+    //   await fetchData(url, 'POST', payload)
+    // } catch (error) {}
     location.href = './immunity.html?welcome=true'
   }
   const handleRoom2Click = async () => {
-    const url = '/api/user_click_topic'
-    const user = JSON.parse(localStorage.getItem('user'))
-    const payload = {
-      access_token: user.access_token,
-      user_id: user.id,
-      topic_number: 2,
-    }
-    try {
-      await fetchData(url, 'POST', payload)
-    } catch (error) {}
+    // const url = '/api/user_click_topic'
+    // const user = JSON.parse(localStorage.getItem('user'))
+    // const payload = {
+    //   access_token: user.access_token,
+    //   user_id: user.id,
+    //   topic_number: 2,
+    // }
+    // try {
+    //   await fetchData(url, 'POST', payload)
+    // } catch (error) {}
     location.href = './room-2.html?welcome=true'
   }
   const handleRoom3Click = async () => {
-    const url = '/api/user_click_topic'
-    const user = JSON.parse(localStorage.getItem('user'))
-    const payload = {
-      access_token: user.access_token,
-      user_id: user.id,
-      topic_number: 3,
-    }
+    // const url = '/api/user_click_topic'
+    // const user = JSON.parse(localStorage.getItem('user'))
+    // const payload = {
+    //   access_token: user.access_token,
+    //   user_id: user.id,
+    //   topic_number: 3,
+    // }
 
-    try {
-      await fetchData(url, 'POST', payload)
-    } catch (error) {}
+    // try {
+    //   await fetchData(url, 'POST', payload)
+    // } catch (error) {}
     location.href = './room-3.html?welcome=true'
   }
   const handleRoom4Click = async () => {
@@ -52,6 +52,18 @@ const Lobby = () => {
     // } catch (error) {}
     location.href = './room-4.html'
   }
+
+  const handleStatisticInit = async () => {
+    const url = '/api/count_application_access'
+     try {
+      await fetchData(url, 'POST')
+    } catch (error) {}
+  }
+
+  React.useEffect(() => {
+    handleStatisticInit()
+  }, [])
+
   return (
     <div
       className='container'

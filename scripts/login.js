@@ -5,6 +5,8 @@ const MODE = {
 }
 
 const ToastErr = (props) => {
+  return null
+  
   const { message = 'Mã thư mời là bắt buộc', show = false, setShow } = props
   return (
     <React.Fragment>
@@ -72,6 +74,8 @@ const ToastErr = (props) => {
 }
 
 const Policy = ({ show = false, setShow = () => { } }) => {
+  return null
+
   return (
     <React.Fragment>
       <div
@@ -242,6 +246,7 @@ const OTP = ({
   showToast = () => { },
   onSubmit = () => { },
 }) => {
+  return  null
   const [count, setCount] = React.useState(90)
 
   const handleSubmit = () => {
@@ -359,6 +364,7 @@ const OTP = ({
 }
 
 const SignUp = ({ setMode }) => {
+  return null
   const [state, setState] = React.useState({
     inviteNumber: '',
     name: '',
@@ -655,6 +661,8 @@ Password: ${rs.data.name.toLowerCase().replace(/\s/g, '')}`,
 }
 
 function Login () {
+  return null
+
   const [isTypePassword, setIsTypePassword] = React.useState(true)
   const [mode, setMode] = React.useState(MODE.SIGN_IN)
   const [user, setUser] = React.useState({})

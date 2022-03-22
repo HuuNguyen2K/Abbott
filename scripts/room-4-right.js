@@ -8,14 +8,14 @@ const Question = () => {
   const [openAnswerReport, setOpenAnswerReport] = useState(false);
 
   const getData = async () => {
-    const endPoint = '/api/get_list_approve_user_symposium_comment'
-    try {
-      const rs = await fetchData(endPoint)
-      const { success, data } = rs
-      if (success === true && data) {
-        setQuestionList(data)
-      }
-    } catch (error) {}
+    // const endPoint = '/api/get_list_approve_user_symposium_comment'
+    // try {
+    //   const rs = await fetchData(endPoint)
+    //   const { success, data } = rs
+    //   if (success === true && data) {
+    //     setQuestionList(data)
+    //   }
+    // } catch (error) {}
   }
 
   const handleOpenAnswerReport = () => {
