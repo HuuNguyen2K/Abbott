@@ -1,7 +1,7 @@
 const { useState } = React
 
 const WellComeVideo = (props) => {
-  const { src } = props;
+  const { src, thumbnail } = props;
   const [muted, setMuted] = useState(false);
   const [ended, setEnded] = useState(false);
 
@@ -92,7 +92,7 @@ const WellComeVideo = (props) => {
     >
       <div id='welcome-video'>
           {/* <VideoJS src={src} options={{ muted, autoplay: true }} onEnded={handleEnded} /> */}
-          <VideoJS src={src} options={{muted, autoplay: false }} onEnded={handleEnded} />
+          <VideoJS thumbnail={thumbnail} src={src} options={{muted, autoplay: false }} onEnded={handleEnded} />
         <button
           style={{
             position: 'absolute',
