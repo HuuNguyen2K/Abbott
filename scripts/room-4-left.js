@@ -295,7 +295,10 @@ const Room4Left = () => {
         {/*</div>*/}
       </div>
       <div className='room-4__left-option'>
-        <PostQuestion />
+        <a style={{width: '30%'}} href='http://glusymposium2003.com/'>
+          <img src="../images/button-ENGLISH.png" alt="" />
+        </a>
+        {/* <PostQuestion />
 
         <div className='room-4__select-language'>
           <label htmlFor='select-language'></label>
@@ -303,7 +306,7 @@ const Room4Left = () => {
             <option value='vn'>Tiếng Việt</option>
             <option value='en'>Tiếng Anh</option>
           </select>
-        </div>
+        </div> */}
       </div>
       {/* {
         showGame && <IframeGame src={GAMES[currentGame].url} show={true} disabledClose={true} />
