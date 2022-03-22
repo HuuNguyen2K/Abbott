@@ -293,17 +293,6 @@ const Room4Left = () => {
         {/*  Live <span className='circle'></span>*/}
         {/*</div>*/}
       </div>
-      <div className='room-4__left-option'>
-        <PostQuestion />
-
-        <div className='room-4__select-language'>
-          <label htmlFor='select-language'></label>
-          <select disabled id='select-language' onChange={(e) => handleChangeVideo(e.target.value)}>
-            <option value='vn'>Tiếng Việt</option>
-            <option value='en'>Tiếng Anh</option>
-          </select>
-        </div>
-      </div>
       {/* {
         showGame && <IframeGame src={GAMES[currentGame].url} show={true} disabledClose={true} />
       } */}
