@@ -422,6 +422,10 @@
         width: 626px;
         height: 342px;
     }
+
+    .room-3__btn-left, .room-3__btn-right, .room-3__btn-center {
+        height: 148px;
+    }
 }
 
 @media screen and (max-width: 568px) {
