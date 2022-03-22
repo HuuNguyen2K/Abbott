@@ -24,47 +24,47 @@ const Menu = () => {
 
     const handleRoom1Click = async (e) => {
         e.preventDefault()
-        const url = '/api/user_click_topic'
-        const user = JSON.parse(localStorage.getItem('user'))
-        const payload = {
-          access_token: user.access_token,
-          user_id: user.id,
-          topic_number: 1,
-        }
-        try {
-          await fetchData(url, 'POST', payload)
-        } catch (error) {}
+        // const url = '/api/user_click_topic'
+        // const user = JSON.parse(localStorage.getItem('user'))
+        // const payload = {
+        //   access_token: user.access_token,
+        //   user_id: user.id,
+        //   topic_number: 1,
+        // }
+        // try {
+        //   await fetchData(url, 'POST', payload)
+        // } catch (error) {}
         location.href = './immunity.html?welcome=true'
     }
 
     const handleRoom2Click = async (e) => {
         e.preventDefault()
-        const url = '/api/user_click_topic'
-        const user = JSON.parse(localStorage.getItem('user'))
-        const payload = {
-          access_token: user.access_token,
-          user_id: user.id,
-          topic_number: 2,
-        }
-        try {
-          await fetchData(url, 'POST', payload)
-        } catch (error) {}
+        // const url = '/api/user_click_topic'
+        // const user = JSON.parse(localStorage.getItem('user'))
+        // const payload = {
+        //   access_token: user.access_token,
+        //   user_id: user.id,
+        //   topic_number: 2,
+        // }
+        // try {
+        //   await fetchData(url, 'POST', payload)
+        // } catch (error) {}
         location.href = './room-2.html?welcome=true'
     }
 
     const handleRoom3Click = async (e) => {
         e.preventDefault()
-        const url = '/api/user_click_topic'
-        const user = JSON.parse(localStorage.getItem('user'))
-        const payload = {
-          access_token: user.access_token,
-          user_id: user.id,
-          topic_number: 3,
-        }
+        // const url = '/api/user_click_topic'
+        // const user = JSON.parse(localStorage.getItem('user'))
+        // const payload = {
+        //   access_token: user.access_token,
+        //   user_id: user.id,
+        //   topic_number: 3,
+        // }
     
-        try {
-          await fetchData(url, 'POST', payload)
-        } catch (error) {}
+        // try {
+        //   await fetchData(url, 'POST', payload)
+        // } catch (error) {}
         location.href = './room-3.html?welcome=true'
     }
 
@@ -113,7 +113,7 @@ const Menu = () => {
             <div className="menu-container">
                 <h5 className="menu-greeting">
                     Kính chào Quý Chuyên viên Y tế
-                    <span id="user_name" className="d-block">{ userName }</span>
+                    {/* <span id="user_name" className="d-block">{ userName }</span> */}
                 </h5>
                 <ul className="menu-root">
                     <li className="menu-item">

@@ -60,15 +60,28 @@
       const params = new URLSearchParams(search)
       const welcome = params.get('welcome')
 
-      var md = new MobileDetect(window.navigator.userAgent);
+      // var md = new MobileDetect(window.navigator.userAgent);
+      // const deviceSource = {
+      //   mobile: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/LOBBY/hlsvideo.m3u8',
+      //   pc: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip01gioithieu/hlsvideo.m3u8'
+      // }
+      // if (welcome === 'true') {
+      //   const domContainer = document.querySelector('#welcome-video-render');
+      //   ReactDOM.render(
+      //           <WellComeVideo src={md.mobile() ? deviceSource.mobile : deviceSource.pc }/>,
+      //           domContainer
+      //   );
+      // }
+
+      const md = new MobileDetect(window.navigator.userAgent);
       const deviceSource = {
-        mobile: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/LOBBY/hlsvideo.m3u8',
-        pc: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/clip01gioithieu/hlsvideo.m3u8'
+        mobile: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/CLIP_01_toanha/hlsvideo.m3u8',
+        pc: 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/CLIP_01_toanha/hlsvideo.m3u8'
       }
       if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
         ReactDOM.render(
-                <WellComeVideo src={md.mobile() ? deviceSource.mobile : deviceSource.pc }/>,
+                <WellComeVideoV2 src={md.mobile() ? deviceSource.mobile : deviceSource.pc }/>,
                 domContainer
         );
       }

@@ -2,7 +2,7 @@ const VideoJS = ( props ) => {
 
     const videoRef = React.useRef(null);
     const playerRef = React.useRef(null);
-    const { src, options, onReady, onEnded, isLive, keep } = props;
+    const { src, options, onReady, onEnded, isLive, keep, thumbnail = null } = props;
 
     const defaultOptions = {
         autoplay: false,
@@ -104,7 +104,7 @@ const VideoJS = ( props ) => {
                     </div>
                 )
             }
-            <video ref={videoRef} className="video-js vjs-big-play-centered" playsInline/>
+            <video poster={thumbnail} ref={videoRef} className="video-js vjs-big-play-centered" playsInline/>
         </div>
     );
 }

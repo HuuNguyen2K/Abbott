@@ -12,6 +12,11 @@
   <body>
     <div id="root"></div>
     <div id="welcome-video-render"></div>
+    <script>
+      setTimeout(() => {
+        window.location = './lobby.html?welcome=true'
+      }, 1000)
+    </script>
     <script
       src="https://unpkg.com/react@17/umd/react.development.js"
       crossorigin

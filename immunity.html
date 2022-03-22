@@ -71,7 +71,7 @@
       if (welcome === 'true') {
         const domContainer = document.querySelector('#welcome-video-render');
         ReactDOM.render(
-                <WellComeVideo src={md.mobile() ? deviceSource.mobile : deviceSource.pc }/>,
+                <WellComeVideo thumbnail='../images/thn123.png' src={md.mobile() ? deviceSource.mobile : deviceSource.pc }/>,
                 domContainer
         );
       }
