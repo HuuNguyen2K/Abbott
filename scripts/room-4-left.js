@@ -295,9 +295,10 @@ const Room4Left = () => {
         {/*</div>*/}
       </div>
       <div className='room-4__left-option'>
-        <a style={{width: '30%'}} href='http://glusymposium2003.com/'>
+        {/* <a style={{width: '30%'}} href='http://glusymposium2003.com/'>
           <img src="../images/button-ENGLISH.png" alt="" />
-        </a>
+        </a> */}
+        <img src="../images/r-4-tb.jpg" alt="" />
         {/* <PostQuestion />
 
         <div className='room-4__select-language'>

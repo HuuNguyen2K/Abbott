@@ -532,30 +532,30 @@
 
 @media screen and (max-width: 930px) {
     .room-3__popup-right .popup-video {
-        width: 610px;
-        height: 345px;
+        width: 570px;
+        height: 320px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .room-3__popup-right .popup-video {
-        width: 590px;
-        height: 333px;
+        width: 570px;
+        height: 320px;
     }
 }
 
 @media screen and (max-width: 560px) {
     .room-3__popup-right .popup-video {
-        width: 692px;
-        height: 387px;
+        width: 570px;
+        height: 320px;
     }
 }
 
 /* video center*/
 @media screen and (max-width: 900px) {
     .room-3__popup-center .popup-video {
-        width: 590px;
-        height: 336px
+        width: 570px;
+        height: 325px;
     }
 }
 

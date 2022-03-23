@@ -40,13 +40,14 @@ const Question = () => {
 
   return (
     <div className='room-4__list-employee'>
+      <a className='dl tv' href={URL_API_PREFIX + '/avatars/Tai-lieu-tieng-Viet.zip'} download='Tai-lieu-tieng-Viet.zip'>
+        <img src="../images/Button-dl-TV.png" alt="" />
+      </a>
+      
       <a className='dl ta' href={URL_API_PREFIX + '/avatars/Tai-lieu-tieng-Anh.zip'} download='Tai-lieu-tieng-Anh.zip'>
         <img src="../images/Button-dl-TA.png" alt="" />
       </a>
 
-      <a className='dl tv' href={URL_API_PREFIX + '/avatars/Tai-lieu-tieng-Viet.zip'} download='Tai-lieu-tieng-Viet.zip'>
-        <img src="../images/Button-dl-TV.png" alt="" />
-      </a>
 
       {/* <a href='http://glusymposium2003.com/'>
         <img src="../images/button-ENGLISH.png" alt="" />
