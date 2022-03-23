@@ -1,4 +1,4 @@
-const { useState } = React
+const { useState, useEffect } = React
 
 const WellComeVideo = (props) => {
   const { src, thumbnail } = props;
@@ -18,6 +18,20 @@ const WellComeVideo = (props) => {
     const url = new URL(window.location.href)
     url.searchParams.set(key, value)
     window.history.pushState({}, '', url.toString())
+  }
+
+  const hideContent = () => {
+    const root = document.querySelector('#root')
+    const container = document.querySelector('.container')
+    if(root) root.style.display = 'none'
+    if(container) container.style.display = 'none'
+  }
+
+  const showContent = () => {
+    const root = document.querySelector('#root')
+    const container = document.querySelector('.container')
+    if(root) root.style.display = 'block'
+    if(container) container.style.display = 'block'
   }
 
   // useEffect(() => {
@@ -57,6 +71,7 @@ const WellComeVideo = (props) => {
   // }, []);
 
   const handleEnded = () => {
+      showContent()
       setEnded(true);
       addQueryParam('welcome', 'false');
       // Custom for immunity page
@@ -82,6 +97,10 @@ const WellComeVideo = (props) => {
   //         });
   //     }
   // }, []);
+
+  useEffect(() => {
+    hideContent()
+  }, [])
 
   if (ended) return null;
 
