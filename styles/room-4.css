@@ -40,6 +40,11 @@
     justify-content: flex-start;
     flex-direction: column;
     background: #fff;
+    overflow: scroll;
+}
+
+.room-4__left::-webkit-scrollbar {
+    display: none;
 }
 
 .room-4__left-video {
