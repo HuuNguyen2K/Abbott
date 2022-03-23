@@ -81,7 +81,7 @@ const Room4Left = () => {
   const [currentClip, setCurrentClip] = useState('clip1');
   const [showCME, setShowCME] = useState(false);
 
-  const CLIP = 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/GLUCERNA_SYMPOSIUM_UPDATE/hlsvideo.m3u8'
+  const CLIP = 'https://gms-abbott-production.s3.ap-southeast-1.amazonaws.com/GLUCERNA_SYMPOSIUM_UPDATE_22_3_2022/hlsvideo.m3u8'
 
   const CLIPS = { // TODO
     clip1: {
