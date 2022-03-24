@@ -22,7 +22,7 @@ const IframeGame = forwardRef((props, ref) => {
         <iframe className="iframe-game" src={ src }></iframe>
           {
               !disabledClose && (
-                  <img className="close-popup"
+                  <img className="close-popup game-time"
                        data-control={ JSON.stringify({
                            render_name: '.sec-iframe',
                            command: 'close',

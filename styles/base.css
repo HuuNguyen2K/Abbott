@@ -49,6 +49,10 @@ img {
   z-index: 9;
 }
 
+.close-popup.game-time {
+  width: 25px;
+}
+
 /* --- Section iframe game --- */
 .sec-iframe {
   visibility: hidden;

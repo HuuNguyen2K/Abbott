@@ -10,7 +10,7 @@
 @media only screen and (max-height: 768px) {
     .back-home {
         position: absolute;
-        bottom: 2vw;
+        bottom: 3.5vw;
         right: 2vw;
         width: 16vw;
         height: auto;
