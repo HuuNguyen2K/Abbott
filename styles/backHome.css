@@ -1,8 +1,8 @@
 .back-home {
     z-index: 2;
     position: fixed;
-    bottom: 15px;
-    right: 15px;
+    bottom: 5vw;
+    right: 2vw;
     width: 210px;
     height: 55px;
 }
@@ -10,7 +10,7 @@
 @media only screen and (max-height: 768px) {
     .back-home {
         position: absolute;
-        bottom: 3.5vw;
+        bottom: 5vw;
         right: 2vw;
         width: 16vw;
         height: auto;
