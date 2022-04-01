@@ -1,7 +1,7 @@
 // sv dev
-// const domain = "http://54.251.217.230/" 
+const domain = "http://54.251.217.230/" 
 // sv product
- const domain = "https://hoithaodaithaoduong.com/" 
+//  const domain = "https://hoithaodaithaoduong.com/" 
 
 
 const URL_GAME_1 = domain + 'game/flappy-bird'
